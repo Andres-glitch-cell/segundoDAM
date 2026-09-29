@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96958000615",
+    "project_id": "com-example-myapplicatio-cedb8",
+    "storage_bucket": "com-example-myapplicatio-cedb8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96958000615:android:bb8ddfdbcdaf3969126142",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQtPj3iK4ARCjv-bislAUyQwwMZrTdMSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
