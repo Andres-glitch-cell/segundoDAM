@@ -1,0 +1,3 @@
+ 💰 Gastos compartidos: para pisos, viajes o grupos de amigos. Introduces quién ha pagado y la app calcula automáticamente quién debe dinero a quién.
+
+ 🏠 Mantenimiento de casa: recordar cuándo cambiar filtros, revisar electrodomésticos, pagar determinados servicios, etc.
