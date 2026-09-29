@@ -1,2 +1,2 @@
-# segundoDAM
-Este repositorio se basará en las carpteas y/o archivos del curso de Segundo de Desarollo de Aplicaciones Multiplataforma
+# 2-DAM
+Este repositorio esta basado para organizar y poner carpetas de todas las asignaturas
