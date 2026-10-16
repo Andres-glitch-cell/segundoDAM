@@ -6,3 +6,9 @@ jdkJava/
 **/build/
 **/.gradle/
 
+
+# JDK
+jdkJava/
+**/build/
+**/.gradle/
+
