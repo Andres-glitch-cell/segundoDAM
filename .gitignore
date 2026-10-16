@@ -1,2 +1,8 @@
 **/.gradle/
 **/build/
+
+# JDK
+jdkJava/
+**/build/
+**/.gradle/
+
