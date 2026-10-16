@@ -1,4 +1,3 @@
--- Active: 1791209848862@@3.85.42.109@3306
 package org.example;
 
 import java.sql.Connection;
