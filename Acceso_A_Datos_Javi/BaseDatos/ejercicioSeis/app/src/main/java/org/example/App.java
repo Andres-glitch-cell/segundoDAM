@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class App {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String urlConnection = "jdbc:mysql://3.85.42.109:3306/ejercicioCincoJavi";
@@ -37,10 +38,8 @@ public class App {
                     switch (opcion) {
                         // [IMPORTANT]: Hacer SELECT * FROM alumnos:
                         case 1:
-                            ResultSet hacerSelectTodosAlumnos = s
-                                    .executeQuery("SELECT * FROM alumnos");
-                            ResultSet hacerSelectPorEdadEspecifica = s
-                                    .executeQuery("SELECT * FROM alumnos WHERE edad > ???");
+                            ResultSet hacerSelectTodosAlumnos = s.executeQuery("SELECT * FROM alumnos");
+                            ResultSet hacerSelectPorEdadEspecifica = s.executeQuery("SELECT * FROM alumnos WHERE edad > ???");
                             while (hacerSelectTodosAlumnos.next()) {
                                 int id = hacerSelectTodosAlumnos.getInt(1);
                                 String nombre = hacerSelectTodosAlumnos.getString(2);
@@ -54,18 +53,15 @@ public class App {
 
                         // [IMPORTANT]: Hacer SELECT * FROM alumnos por CURSOS (DAM/DAW):
                         case 2:
-                            ResultSet hacerSelectPorCursoDAM = s
-                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAM\";");
-                            ResultSet hacerSelectPorCursoDAW = s
-                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAW\";");
-                            ResultSet hacerSelectPorCursoProfesorado = s
-                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Profesorado\";");
+                            ResultSet hacerSelectPorCursoDAM = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAM\";");
+                            ResultSet hacerSelectPorCursoDAW = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAW\";");
+                            ResultSet hacerSelectPorCursoProfesorado = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Profesorado\";");
 
                             System.out.println("\n¿Hay 2 cursos y 1 profesorado cual quieres elegir?");
                             System.out.println("Cursos: \n- Segundo de DAM \n- Segundo de DAW \n - Profesorado");
                             String opcionUsuarioCurso = sc.nextLine();
 
-                            if (opcionUsuarioCurso.toLowerCase() == "segundo de dam") {
+                            if (opcionUsuarioCurso.toLowerCase().equals("segundo de dam")) {
                                 while (hacerSelectPorCursoDAM.next()) {
                                     int id = hacerSelectPorCursoDAM.getInt(1);
                                     String nombre = hacerSelectPorCursoDAM.getString(2);
@@ -76,7 +72,7 @@ public class App {
                                 s.close();
                                 c.close();
 
-                            } else if (opcionUsuarioCurso.toLowerCase() == "segundo de daw") {
+                            } else if (opcionUsuarioCurso.toLowerCase().equals("segundo de daw")) {
                                 while (hacerSelectPorCursoDAW.next()) {
                                     int id = hacerSelectPorCursoDAW.getInt(1);
                                     String nombre = hacerSelectPorCursoDAW.getString(2);
@@ -87,7 +83,7 @@ public class App {
                                 s.close();
                                 c.close();
 
-                            } else if (opcionUsuarioCurso.toLowerCase() == "profesorado") {
+                            } else if (opcionUsuarioCurso.toLowerCase().equals("profesorado")) {
                                 while (hacerSelectPorCursoProfesorado.next()) {
                                     int id = hacerSelectPorCursoProfesorado.getInt(1);
                                     String nombre = hacerSelectPorCursoProfesorado.getString(2);
@@ -111,12 +107,12 @@ public class App {
                             do {
                                 System.out.println(
                                         "\n\u001B[31mError has elegido una opción incorrecta. (Has elegido la opción incorrecta "
-                                                + contador + " vez)" + "\u001B[0m");
+                                        + contador + " vez)" + "\u001B[0m");
                                 contador++;
                                 if (contador >= 1) {
                                     System.out.println(
                                             "\n\u001B[31mError has elegido una opción incorrecta. (Has elegido la opción incorrecta "
-                                                    + contador + " veces)" + "\u001B[0m");
+                                            + contador + " veces)" + "\u001B[0m");
                                     contador++;
                                 }
                             } while (contador == 1);
