@@ -1,2 +1,10 @@
+# JDK local: no subir Java completo
+/jdkJava/
+
+# Configuracion local de Firebase
+**/google-services.json
+
+# Configuracion local de Android Studio y Gradle
+**/local.properties
 **/.gradle/
 **/build/
