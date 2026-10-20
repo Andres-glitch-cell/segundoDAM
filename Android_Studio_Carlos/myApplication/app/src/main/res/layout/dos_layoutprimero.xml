@@ -1,91 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 1. Arriba a la izquierda -->
+    <!-- 1. Arriba a la izquierda: LEFT | TOP -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_gravity="top|left"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
-
-    <!-- 2. Arriba en el centro -->
-    <FrameLayout
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_gravity="left|top"
         android:background="#FFE0A3" />
 
-    <!-- 3. Arriba a la derecha -->
+    <!-- 2. Arriba en el centro: CENTER_HORIZONTAL | TOP -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_gravity="top|right"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
+        android:layout_gravity="center_horizontal|top"
+        android:background="#FFE0A3" />
 
-    <!-- 4. En el centro vertical, a la izquierda -->
+    <!-- 3. Arriba a la derecha: RIGHT | TOP -->
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="right|top"
+        android:background="#FFE0A3" />
 
-    <!-- 5. En el centro -->
-
+    <!-- 4. Centro izquierda: CENTER_VERTICAL | LEFT -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_gravity="center_vertical|left"
-        android:layout_marginLeft="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
+        android:background="#FFE0A3" />
 
+    <!-- 5. Centro: CENTER -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_gravity="center"
         android:background="#FFE0A3" />
 
-    <!-- 6. En el centro vertical, a la derecha -->
+    <!-- 6. Centro derecha: CENTER_VERTICAL | RIGHT -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_gravity="center_vertical|right"
-        android:layout_marginEnd="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
-
-    <!-- 7. Abajo a la izquierda -->
-    <FrameLayout
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="bottom|left"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
-
-    <!-- 8. Abajo en el centro -->
-    <FrameLayout
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="16dp"
         android:background="#FFE0A3" />
 
-    <!-- 9. Abajo a la derecha -->
+    <!-- 7. Abajo a la izquierda: LEFT | BOTTOM -->
     <FrameLayout
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="8dp"
-        android:background="#FFE0A3"
-        tools:ignore="RtlHardcoded" />
+        android:layout_gravity="left|bottom"
+        android:background="#FFE0A3" />
+
+    <!-- 8. Abajo en el centro: CENTER_HORIZONTAL | BOTTOM -->
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="#FFE0A3" />
+
+    <!-- 9. Abajo a la derecha: RIGHT | BOTTOM -->
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="right|bottom"
+        android:background="#FFE0A3" />
 
 </FrameLayout>
