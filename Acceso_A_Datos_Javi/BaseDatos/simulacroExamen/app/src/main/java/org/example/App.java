@@ -1,3 +1,4 @@
+
 package org.example;
 
 import java.sql.Connection;
@@ -10,25 +11,45 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
+    private static void crearTablasBaseDatos(Connection conexionBaseDatos) throws SQLException {
 
-        // Datos necesarios para conectarnos a la base de datos MySQL.
-        String url = "jdbc:mysql://54.242.112.251:3306/ejercicioCincoJavi";
-        String user = "admin_completo";
-        String password = "R00tR00t*12345";
+        String sentenciaCrearTablaAlumnos = "CREATE TABLE IF NOT EXISTS alumnos ("
+                + "id INT PRIMARY KEY AUTO_INCREMENT, "
+                + "nombre VARCHAR(100) NOT NULL, "
+                + "edad INT NOT NULL, "
+                + "curso VARCHAR(50) NOT NULL)";
 
-        try (Connection conexion = DriverManager.getConnection(url, user, password);
-                Scanner sc = new Scanner(System.in)) {
+        String sentenciaCrearTablaNotas = "CREATE TABLE IF NOT EXISTS notas ("
+                + "id INT PRIMARY KEY AUTO_INCREMENT, "
+                + "alumno_id INT NOT NULL, "
+                + "asignatura VARCHAR(100) NOT NULL, "
+                + "nota DECIMAL(4,2) NOT NULL, "
+                + "FOREIGN KEY (alumno_id) REFERENCES alumnos(id) "
+                + "ON DELETE CASCADE)";
+
+        try (Statement sentenciaSQL = conexionBaseDatos.createStatement()) {
+            sentenciaSQL.executeUpdate(sentenciaCrearTablaAlumnos);
+            sentenciaSQL.executeUpdate(sentenciaCrearTablaNotas);
+        }
+    }
+
+    public static void main(String[] argumentosPrograma) {
+
+        String direccionConexionBaseDatos = "jdbc:mysql://54.242.112.251:3306/ejercicioCincoJavi";
+        String usuarioBaseDatos = "admin_completo";
+        String contrasenaBaseDatos = "R00tR00t*12345";
+
+        try (Connection conexionBaseDatos = DriverManager.getConnection(direccionConexionBaseDatos, usuarioBaseDatos,
+                contrasenaBaseDatos)) {
+
+            Scanner sc = new Scanner(System.in);
 
             System.out.println("Conexión realizada correctamente.");
+            crearTablasBaseDatos(conexionBaseDatos);
 
-            // Creamos las tablas necesarias si todavía no existen.
-            crearTablas(conexion);
+            int opcionSeleccionadaMenu = 0;
 
-            int opcion = 0;
-
-            // El menú se repite hasta que el usuario elija la opción 12.
-            while (opcion != 12) {
+            while (opcionSeleccionadaMenu != 12) {
 
                 System.out.println("\n--- MENÚ DE ALUMNOS Y NOTAS ---");
                 System.out.println("1. Insertar nuevo alumno");
@@ -45,55 +66,61 @@ public class App {
                 System.out.println("12. Salir");
                 System.out.print("Elige una opción: ");
 
-                // Guardamos el número de la opción seleccionada.
-                opcion = leerEntero(sc      );
+                // Leemos el número directamente en el main.
+                opcionSeleccionadaMenu = sc.nextInt();
+                sc.nextLine();
 
                 try {
-                    // Ejecutamos la operación correspondiente a la opción elegida.
-                    switch (opcion) {
+                    switch (opcionSeleccionadaMenu) {
 
                         case 1:
-                            insertarAlumno(conexion, sc);
+                            insertarNuevoAlumno(conexionBaseDatos, sc);
                             break;
 
                         case 2:
-                            listarAlumnos(conexion);
+                            listarTodosLosAlumnos(conexionBaseDatos);
                             break;
 
                         case 3:
-                            registrarNota(conexion, sc);
+                            registrarNotaAlumno(conexionBaseDatos, sc);
                             break;
 
                         case 4:
-                            mostrarNotasAlumno(conexion, sc);
+                            mostrarTodasLasNotasAlumno(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 5:
-                            mediaAlumno(conexion, sc);
+                            calcularNotaMediaAlumno(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 6:
-                            mediaAsignaturas(conexion);
+                            calcularNotaMediaPorAsignatura(conexionBaseDatos);
                             break;
 
                         case 7:
-                            maximaYMinima(conexion, sc);
+                            mostrarNotaMaximaYMinima(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 8:
-                            edadMediaCurso(conexion, sc);
+                            calcularEdadMediaCurso(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 9:
-                            aprobadosSuspensos(conexion, sc);
+                            mostrarAprobadosYSuspensos(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 10:
-                            alumnosSobreMediaGlobal(conexion);
+                            mostrarAlumnosSobreMediaGlobal(conexionBaseDatos);
                             break;
 
                         case 11:
-                            eliminarAlumno(conexion, sc );
+                            eliminarAlumnoPorIdentificador(
+                                    conexionBaseDatos, sc);
                             break;
 
                         case 12:
@@ -105,395 +132,345 @@ public class App {
                             break;
                     }
 
-                } catch (SQLException e) {
-                    // Mostramos el error si falla alguna operación con la base de datos.
-                    System.out.println("Error al ejecutar la operación: " + e.getMessage());
+                } catch (SQLException excepcionBaseDatos) {
+                    System.out.println("Error al ejecutar la operación: " + excepcionBaseDatos.getMessage());
                 }
             }
 
-        } catch (SQLException e) {
-            // Mostramos el error si falla la conexión o la creación de las tablas.
+        } catch (SQLException excepcionConexionBaseDatos) {
             System.out.println("No se pudo conectar con la base de datos.");
-            System.err.println(e.getMessage());
+            System.err.println(excepcionConexionBaseDatos.getMessage());
         }
     }
 
-    // Creamos las tablas de alumnos y notas relacionadas mediante el ID.
-    private static void crearTablas(Connection c) throws SQLException {
-
-        String sqlAlumnos = "CREATE TABLE IF NOT EXISTS alumnos ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                + "nombre VARCHAR(100) NOT NULL, "
-                + "edad INT NOT NULL, "
-                + "curso VARCHAR(50) NOT NULL)";
-
-        String sqlNotas = "CREATE TABLE IF NOT EXISTS notas ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                + "alumno_id INT NOT NULL, "
-                + "asignatura VARCHAR(100) NOT NULL, "
-                + "nota DECIMAL(4,2) NOT NULL, "
-                + "FOREIGN KEY (alumno_id) REFERENCES alumnos(id) "
-                + "ON DELETE CASCADE)";
-
-        // Statement permite ejecutar las instrucciones SQL que crean las tablas.
-        try (Statement s = c.createStatement()) {
-            s.executeUpdate(sqlAlumnos);
-            s.executeUpdate(sqlNotas);
-        }
-    }
-
-    // Insertamos un alumno nuevo; MySQL genera automáticamente su ID.
-    private static void insertarAlumno(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 1. Insertar un alumno nuevo.
+    private static void insertarNuevoAlumno(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("Nombre: ");
-        String nombre = teclado.nextLine();
+        String nombreCompletoAlumno = sc.nextLine();
 
         System.out.print("Edad: ");
-        int edad = leerEntero(teclado);
+        int edadAlumno = sc.nextInt();
+        sc.nextLine();
 
         System.out.print("Curso: ");
-        String curso = teclado.nextLine();
+        String nombreCursoAlumno = sc.nextLine();
 
-        // Preparamos el INSERT para guardar los datos del alumno.
-        String sql = "INSERT INTO alumnos (nombre, edad, curso) VALUES (?, ?, ?)";
+        String consultaSQL = "INSERT INTO alumnos (nombre, edad, curso) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            // Asignamos los datos a los parámetros de la consulta.
-            ps.setString(1, nombre);
-            ps.setInt(2, edad);
-            ps.setString(3, curso);
-
-            // executeUpdate() ejecuta el INSERT y guarda el alumno.
-            ps.executeUpdate();
+            sentenciaPreparadaSQL.setString(1, nombreCompletoAlumno);
+            sentenciaPreparadaSQL.setInt(2, edadAlumno);
+            sentenciaPreparadaSQL.setString(3, nombreCursoAlumno);
+            sentenciaPreparadaSQL.executeUpdate();
 
             System.out.println("Alumno añadido correctamente.");
         }
     }
 
-    // Consultamos y mostramos todos los alumnos registrados.
-    private static void listarAlumnos(Connection c) throws SQLException {
+    // ! 2. Listar todos los alumnos.
+    private static void listarTodosLosAlumnos(Connection conexionBaseDatos) throws SQLException {
 
-        String sql = "SELECT * FROM alumnos ORDER BY id";
+        String consultaSQL = "SELECT * FROM alumnos ORDER BY id";
 
-        // ResultSet guarda las filas obtenidas al ejecutar el SELECT.
-        try (Statement s = c.createStatement();
-                ResultSet rs = s.executeQuery(sql)) {
+        try (Statement sentenciaSQL = conexionBaseDatos.createStatement();
+                ResultSet resultadoConsultaSQL = sentenciaSQL.executeQuery(consultaSQL)) {
 
-            boolean hayAlumnos = false;
+            boolean existenAlumnosRegistrados = false;
 
-            // rs.next() avanza por las filas mientras queden alumnos.
-            while (rs.next()) {
-                hayAlumnos = true;
+            while (resultadoConsultaSQL.next()) {
+                if (existenAlumnosRegistrados) {
+                    System.out.println(
+                            "ID: " + resultadoConsultaSQL.getInt("id")
+                                    + " | Nombre: "
+                                    + resultadoConsultaSQL.getString("nombre")
+                                    + " | Edad: "
+                                    + resultadoConsultaSQL.getInt("edad") + " años | Curso: "
+                                    + resultadoConsultaSQL.getString("curso"));
 
-                // Obtenemos los datos del alumno de la fila actual.
-                System.out.println(
-                        rs.getInt("id") + ", "
-                                + rs.getString("nombre") + ", "
-                                + rs.getInt("edad") + " años, curso: "
-                                + rs.getString("curso"));
+                }
             }
 
-            if (!hayAlumnos) {
+            if (!existenAlumnosRegistrados) {
                 System.out.println("No hay alumnos registrados.");
             }
         }
     }
 
-    // Registramos una nota asociada al ID de un alumno y a una asignatura.
-    private static void registrarNota(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 3. Registrar una nota.
+    private static void registrarNotaAlumno(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int alumnoId = leerEntero(teclado);
+        int identificadorAlumno = sc.nextInt();
+        sc.nextLine();
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String nombreAsignatura = sc.nextLine();
 
+        // [IMPORTANT]: COMPROBAR
         System.out.print("Nota (0-10): ");
-        double nota = leerDouble(teclado);
+        String textoCalificacionAlumno = sc.nextLine().replace(',', '.');
+        Scanner lectorNota = new Scanner(textoCalificacionAlumno);
+        double calificacionAlumno = lectorNota.nextDouble();
+        lectorNota.close();
 
-        // Comprobamos que la nota esté dentro del rango permitido.
-        if (nota < 0 || nota > 10) {
+        if (calificacionAlumno < 0 || calificacionAlumno > 10) {
             System.out.println("La nota debe estar entre 0 y 10.");
             return;
         }
 
-        // Preparamos el INSERT para guardar la nota del alumno.
-        String sql = "INSERT INTO notas (alumno_id, asignatura, nota) VALUES (?, ?, ?)";
+        String consultaSQL = "INSERT INTO notas (alumno_id, asignatura, nota) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            // Asignamos el alumno, la asignatura y la nota.
-            ps.setInt(1, alumnoId);
-            ps.setString(2, asignatura);
-            ps.setDouble(3, nota);
+            sentenciaPreparadaSQL.setInt(1, identificadorAlumno);
+            sentenciaPreparadaSQL.setString(2, nombreAsignatura);
+            sentenciaPreparadaSQL.setDouble(3, calificacionAlumno);
 
-            // executeUpdate() ejecuta el INSERT y registra la nota.
-            ps.executeUpdate();
+            sentenciaPreparadaSQL.executeUpdate();
 
             System.out.println("Nota registrada correctamente.");
         }
     }
 
-    // Mostramos todas las notas y asignaturas de un alumno concreto.
-    private static void mostrarNotasAlumno(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 4. Mostrar todas las notas de un alumno.
+    private static void mostrarTodasLasNotasAlumno(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int id = leerEntero(teclado);
+        int identificadorAlumno = sc.nextInt();
+        sc.nextLine();
 
-        String sql = "SELECT asignatura, nota FROM notas "
-                + "WHERE alumno_id = ? ORDER BY asignatura";
+        String consultaSQL = "SELECT asignatura, nota FROM notas " + "WHERE alumno_id = ? ORDER BY asignatura";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            // Indicamos el ID del alumno que queremos consultar.
-            ps.setInt(1, id);
+            sentenciaPreparadaSQL.setInt(1, identificadorAlumno);
 
-            // executeQuery() ejecuta el SELECT y devuelve las notas en un ResultSet.
-            try (ResultSet rs = ps.executeQuery()) {
+            try (ResultSet resultadoConsultaSQL = sentenciaPreparadaSQL.executeQuery()) {
 
-                boolean hayNotas = false;
+                boolean existenNotasRegistradas = false;
+                // ! Mientras haya resultados en la consulta SQL.
+                while (resultadoConsultaSQL.next()) {
+                    existenNotasRegistradas = true;
 
-                // Recorremos las notas que ha obtenido la consulta.
-                while (rs.next()) {
-                    hayNotas = true;
-
-                    System.out.println(rs.getString("asignatura")
-                            + ": " + rs.getDouble("nota"));
+                    System.out.println("Asignatura: " + resultadoConsultaSQL.getString("asignatura") + " | Nota: "
+                            + resultadoConsultaSQL.getDouble("nota"));
                 }
 
-                if (!hayNotas) {
-                    System.out.println("Este alumno no tiene notas registradas.");
+                if (!existenNotasRegistradas) {
+                    System.out.println(
+                            "Este alumno no tiene notas registradas.");
                 }
             }
         }
     }
 
-    // Calculamos la media de todas las notas de un alumno.
-    private static void mediaAlumno(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 5. Calcular la nota media de un alumno.
+    private static void calcularNotaMediaAlumno(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int id = leerEntero(teclado);
+        int identificadorAlumno = sc.nextInt();
+        sc.nextLine();
+        String consultaSQL = "SELECT AVG(nota) AS notaMediaCalculada, COUNT(*) AS totalNotas "
+                + "FROM notas WHERE alumno_id = ?";
 
-        String sql = "SELECT AVG(nota) AS media FROM notas WHERE alumno_id = ?";
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+            sentenciaPreparadaSQL.setInt(1, identificadorAlumno);
 
-            ps.setInt(1, id);
+            try (ResultSet resultadoConsultaSQL = sentenciaPreparadaSQL.executeQuery()) {
+                resultadoConsultaSQL.next();
 
-            // ResultSet contiene el resultado del cálculo de la media.
-            try (ResultSet rs = ps.executeQuery()) {
-                rs.next();
+                int totalNotas = resultadoConsultaSQL.getInt("totalNotas");
 
-                // Obtenemos la media calculada por AVG().
-                double media = rs.getDouble("media");
-
-                if (rs.wasNull()) {
+                if (totalNotas == 0) {
                     System.out.println("El alumno no tiene notas registradas.");
                 } else {
-                    System.out.printf("Nota media: %.2f%n", media);
+                    double notaMediaCalculada = resultadoConsultaSQL.getDouble("notaMediaCalculada");
+                    System.out.printf("Nota media: %.2f%n", notaMediaCalculada);
                 }
             }
         }
     }
 
-    // Calculamos la nota media de cada asignatura.
-    private static void mediaAsignaturas(Connection c) throws SQLException {
+    // ! 6. Calcular la nota media de cada asignatura.
+    private static void calcularNotaMediaPorAsignatura(Connection conexionBaseDatos) throws SQLException {
 
-        String sql = "SELECT asignatura, AVG(nota) AS media "
+        String consultaSQL = "SELECT asignatura, AVG(nota) AS notaMediaCalculada "
                 + "FROM notas GROUP BY asignatura ORDER BY asignatura";
 
-        // GROUP BY agrupa las notas por asignatura y AVG() calcula su media.
-        try (Statement s = c.createStatement();
-                ResultSet rs = s.executeQuery(sql)) {
+        try (Statement sentenciaSQL = conexionBaseDatos.createStatement();
+                ResultSet resultadoConsultaSQL = sentenciaSQL.executeQuery(consultaSQL)) {
 
-            // Recorremos los resultados para mostrar la media de cada asignatura.
-            while (rs.next()) {
-                System.out.printf("%s: %.2f%n",
-                        rs.getString("asignatura"),
-                        rs.getDouble("media"));
+            boolean existenNotasRegistradas = false;
+
+            while (resultadoConsultaSQL.next()) {
+                existenNotasRegistradas = true;
+
+                System.out.printf(
+                        "Asignatura: %s | Media: %.2f%n", resultadoConsultaSQL.getString("asignatura"),
+                        resultadoConsultaSQL.getDouble("notaMediaCalculada"));
+            }
+            if (!existenNotasRegistradas) {
+                System.out.println("Todavía no hay notas registradas.");
             }
         }
     }
 
-    // Buscamos la nota máxima y mínima de una asignatura e indicamos los alumnos.
-    private static void maximaYMinima(Connection c, Scanner teclado)
-            throws SQLException {
+    // TODO: PREGUNTAR A CHAT
+    // ! 7. Mostrar la nota máxima y mínima de una asignatura.
+    private static void mostrarNotaMaximaYMinima(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String nombreAsignatura = sc.nextLine();
 
-        // JOIN relaciona las notas con los alumnos para obtener sus nombres.
-        String sql = "SELECT a.nombre, n.nota FROM notas n "
-                + "JOIN alumnos a ON n.alumno_id = a.id "
-                + "WHERE n.asignatura = ? ORDER BY n.nota DESC";
+        String consultaSQL = "SELECT alumnos.nombre, notas.nota " + "FROM notas "
+                + "JOIN alumnos ON notas.alumno_id = alumnos.id " + "WHERE notas.asignatura = ? "
+                + "ORDER BY notas.nota DESC";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            ps.setString(1, asignatura);
+            sentenciaPreparadaSQL.setString(1, nombreAsignatura);
 
-            // ResultSet contiene las notas y los nombres de los alumnos.
-            try (ResultSet rs = ps.executeQuery()) {
+            try (ResultSet resultadoConsultaSQL = sentenciaPreparadaSQL.executeQuery()) {
 
-                if (!rs.next()) {
+                if (!resultadoConsultaSQL.next()) {
                     System.out.println("No hay notas para esa asignatura.");
                     return;
                 }
 
-                // La primera nota es la máxima porque los resultados están ordenados.
-                double maxima = rs.getDouble("nota");
-                String nombreMax = rs.getString("nombre");
+                double notaMaximaAsignatura = resultadoConsultaSQL.getDouble("nota");
 
-                // Inicializamos la mínima con la primera nota obtenida.
-                double minima = maxima;
-                String nombreMin = nombreMax;
+                String nombreAlumnoNotaMaxima = resultadoConsultaSQL.getString("nombre");
 
-                // Recorremos las demás notas para encontrar la mínima.
-                while (rs.next()) {
-                    double notaActual = rs.getDouble("nota");
+                double notaMinimaAsignatura = notaMaximaAsignatura;
 
-                    if (notaActual < minima) {
-                        minima = notaActual;
-                        nombreMin = rs.getString("nombre");
+                String nombreAlumnoNotaMinima = nombreAlumnoNotaMaxima;
+
+                while (resultadoConsultaSQL.next()) {
+                    double calificacionActual = resultadoConsultaSQL.getDouble("nota");
+
+                    if (calificacionActual < notaMinimaAsignatura) {
+                        notaMinimaAsignatura = calificacionActual;
+
+                        nombreAlumnoNotaMinima = resultadoConsultaSQL.getString("nombre");
                     }
                 }
 
-                System.out.println("Nota máxima: " + maxima
-                        + " - Alumno: " + nombreMax);
-                System.out.println("Nota mínima: " + minima
-                        + " - Alumno: " + nombreMin);
+                System.out.println(
+                        "Nota máxima: " + notaMaximaAsignatura
+                                + " | Alumno: " + nombreAlumnoNotaMaxima);
+
+                System.out.println(
+                        "Nota mínima: " + notaMinimaAsignatura
+                                + " | Alumno: " + nombreAlumnoNotaMinima);
             }
         }
     }
 
-    // Calculamos la edad media de los alumnos de un curso.
-    private static void edadMediaCurso(Connection c, Scanner teclado)
-            throws SQLException {
+    // TODO: QUITAR EL WASNULL
+    // ! 8. Calcular la edad media de los alumnos de un curso.
+    private static void calcularEdadMediaCurso(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("Curso: ");
-        String curso = teclado.nextLine();
+        String nombreCursoAlumno = sc.nextLine();
 
-        String sql = "SELECT AVG(edad) AS media FROM alumnos WHERE curso = ?";
+        String consultaSQL = "SELECT AVG(edad) AS edadMediaCalculada " + "FROM alumnos WHERE curso = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            ps.setString(1, curso);
+            sentenciaPreparadaSQL.setString(1, nombreCursoAlumno);
 
-            // executeQuery() devuelve el resultado del cálculo de la media.
-            try (ResultSet rs = ps.executeQuery()) {
-                rs.next();
+            try (ResultSet resultadoConsultaSQL = sentenciaPreparadaSQL.executeQuery()) {
 
-                // Obtenemos la edad media del curso indicado.
-                double media = rs.getDouble("media");
+                resultadoConsultaSQL.next();
+                double edadMediaCalculada = resultadoConsultaSQL.getDouble("edadMediaCalculada");
 
-                if (rs.wasNull()) {
+                if (resultadoConsultaSQL.wasNull()) {
                     System.out.println("No hay alumnos en ese curso.");
                 } else {
-                    System.out.printf("Edad media: %.2f años%n", media);
+                    System.out.printf("Edad media del curso: %.2f años%n", edadMediaCalculada);
                 }
             }
         }
     }
 
-    // Contamos los aprobados (nota >= 5) y los suspensos (nota < 5).
-    private static void aprobadosSuspensos(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 9. Mostrar aprobados y suspensos de una asignatura.
+    private static void mostrarAprobadosYSuspensos(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String nombreAsignatura = sc.nextLine();
 
-        // CASE cuenta las notas que cumplen cada condición.
-        String sql = "SELECT "
-                + "SUM(CASE WHEN nota >= 5 THEN 1 ELSE 0 END) AS aprobados, "
-                + "SUM(CASE WHEN nota < 5 THEN 1 ELSE 0 END) AS suspensos "
+        String consultaSQL = "SELECT "
+                + "SUM(CASE WHEN nota >= 5 THEN 1 ELSE 0 END) AS totalAprobados, "
+                + "SUM(CASE WHEN nota < 5 THEN 1 ELSE 0 END) AS totalSuspensos "
                 + "FROM notas WHERE asignatura = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            ps.setString(1, asignatura);
+            sentenciaPreparadaSQL.setString(1, nombreAsignatura);
 
-            // ResultSet contiene el número de aprobados y suspensos.
-            try (ResultSet rs = ps.executeQuery()) {
-                rs.next();
+            try (ResultSet resultadoConsultaSQL = sentenciaPreparadaSQL.executeQuery()) {
 
-                int aprobados = rs.getInt("aprobados");
-                int suspensos = rs.getInt("suspensos");
+                resultadoConsultaSQL.next();
+                int numeroAlumnosAprobados = resultadoConsultaSQL.getInt("totalAprobados");
+                int numeroAlumnosSuspensos = resultadoConsultaSQL.getInt("totalSuspensos");
 
-                System.out.println("Aprobados: " + aprobados);
-                System.out.println("Suspensos: " + suspensos);
+                System.out.println("Número de aprobados: " + numeroAlumnosAprobados);
+                System.out.println("Número de suspensos: " + numeroAlumnosSuspensos);
             }
         }
     }
 
-    // Mostramos los alumnos cuya media supera la media global de todas las notas.
-    private static void alumnosSobreMediaGlobal(Connection c)
-            throws SQLException {
+    // ! 10. Mostrar alumnos cuya media supera la media global.
+    private static void mostrarAlumnosSobreMediaGlobal(
+            Connection conexionBaseDatos) throws SQLException {
 
-        String sql = "SELECT a.id, a.nombre, AVG(n.nota) AS media "
-                + "FROM alumnos a JOIN notas n ON a.id = n.alumno_id "
-                + "GROUP BY a.id, a.nombre "
-                + "HAVING AVG(n.nota) > (SELECT AVG(nota) FROM notas)";
+        String consultaSQL = "SELECT alumnos.id, alumnos.nombre, " + "AVG(notas.nota) AS notaMediaCalculada "
+                + "FROM alumnos " + "JOIN notas ON alumnos.id = notas.alumno_id "
+                + "GROUP BY alumnos.id, alumnos.nombre " + "HAVING AVG(notas.nota) > "
+                + "(SELECT AVG(nota) FROM notas)";
 
-        // La consulta calcula la media de cada alumno y la compara con la global.
-        try (Statement s = c.createStatement();
-                ResultSet rs = s.executeQuery(sql)) {
+        try (Statement sentenciaSQL = conexionBaseDatos.createStatement();
+                ResultSet resultadoConsultaSQL = sentenciaSQL.executeQuery(consultaSQL)) {
 
-            boolean hayAlumnos = false;
+            boolean existenAlumnosSobreMedia = false;
 
-            // Recorremos los alumnos que superan la media global.
-            while (rs.next()) {
-                hayAlumnos = true;
+            while (resultadoConsultaSQL.next()) {
+                existenAlumnosSobreMedia = true;
 
-                System.out.printf("%d, %s - Media: %.2f%n",
-                        rs.getInt("id"),
-                        rs.getString("nombre"),
-                        rs.getDouble("media"));
+                System.out.printf("ID: %d | Nombre: %s | Media: %.2f%n",
+                        resultadoConsultaSQL.getInt("id"),
+                        resultadoConsultaSQL.getString("nombre"),
+                        resultadoConsultaSQL.getDouble("notaMediaCalculada"));
             }
 
-            if (!hayAlumnos) {
+            if (!existenAlumnosSobreMedia) {
                 System.out.println("Ningún alumno supera la media global.");
             }
         }
     }
 
-    // Eliminamos el alumno indicado por su ID y también sus notas relacionadas.
-    private static void eliminarAlumno(Connection c, Scanner teclado)
-            throws SQLException {
+    // ! 11. Eliminar un alumno por su identificador.
+    private static void eliminarAlumnoPorIdentificador(Connection conexionBaseDatos, Scanner sc) throws SQLException {
 
         System.out.print("ID del alumno que quieres eliminar: ");
-        int id = leerEntero(teclado);
+        int identificadorAlumno = sc.nextInt();
+        sc.nextLine();
 
-        String sql = "DELETE FROM alumnos WHERE id = ?";
+        String consultaSQL = "DELETE FROM alumnos WHERE id = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement sentenciaPreparadaSQL = conexionBaseDatos.prepareStatement(consultaSQL)) {
 
-            // Indicamos el ID del alumno que queremos eliminar.
-            ps.setInt(1, id);
+            sentenciaPreparadaSQL.setInt(1, identificadorAlumno);
+            int numeroFilasEliminadas = sentenciaPreparadaSQL.executeUpdate();
 
-            // executeUpdate() ejecuta el DELETE y devuelve las filas eliminadas.
-            int filas = ps.executeUpdate();
-
-            if (filas > 0) {
+            if (numeroFilasEliminadas > 0) {
                 System.out.println("Alumno eliminado correctamente.");
             } else {
                 System.out.println("No existe ningún alumno con ese ID.");
             }
         }
-    }
-
-    // Leemos un número entero y consumimos el salto de línea pendiente.
-    private static int leerEntero(Scanner teclado) {
-        int numero = teclado.nextInt();
-        teclado.nextLine();
-        return numero;
-    }
-
-    // Leemos una nota decimal y permitimos utilizar coma o punto decimal.
-    private static double leerDouble(Scanner teclado) {
-        return Double.parseDouble(teclado.nextLine().replace(',', '.'));
     }
 }
