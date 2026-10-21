@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class App {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String urlConnection = "jdbc:mysql://3.85.42.109:3306/ejercicioCincoJavi";
