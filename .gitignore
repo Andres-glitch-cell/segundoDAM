@@ -1,14 +1,19 @@
+
+# Configuración local del editor
+.vscode/settings.json
+**/.vscode/settings.json
+
+# Archivos generados por Java y Gradle
+.gradle/
 **/.gradle/
 **/build/
+**/bin/
+**/buildOutputCleanup.lock
+**/cache.properties
+**/problems-report.html
 
-# JDK
-jdkJava/
-**/build/
-**/.gradle/
+# Configuración local de Android Studio
+**/local.properties
 
-
-# JDK
-jdkJava/
-**/build/
-**/.gradle/
-
+# JDK local; no subirlo al repositorio
+/jdkJava/
