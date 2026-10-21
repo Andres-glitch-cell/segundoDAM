@@ -10,9 +10,29 @@ import java.util.Scanner;
 
 public class App {
 
+        private static void crearTablas(Connection conexion) throws SQLException {
+
+        String sentenciaCrearTablaAlumnos = "CREATE TABLE IF NOT EXISTS alumnos ("
+                + "id INT PRIMARY KEY AUTO_INCREMENT, "
+                + "nombre VARCHAR(100) NOT NULL, "
+                + "edad INT NOT NULL, "
+                + "curso VARCHAR(50) NOT NULL)";
+
+        String sentenciaCrearTablaNotas = "CREATE TABLE IF NOT EXISTS notas ("
+                + "id INT PRIMARY KEY AUTO_INCREMENT, "
+                + "alumno_id INT NOT NULL, "
+                + "asignatura VARCHAR(100) NOT NULL, "
+                + "nota DECIMAL(4,2) NOT NULL, "
+                + "FOREIGN KEY (alumno_id) REFERENCES alumnos(id) "
+                + "ON DELETE CASCADE)";
+
+        try (Statement s = conexion.createStatement()) {
+            s.executeUpdate(sentenciaCrearTablaAlumnos);
+            s.executeUpdate(sentenciaCrearTablaNotas);
+        }
+    }
     public static void main(String[] args) {
 
-        // Datos necesarios para conectarnos a la base de datos MySQL.
         String url = "jdbc:mysql://54.242.112.251:3306/ejercicioCincoJavi";
         String user = "admin_completo";
         String password = "R00tR00t*12345";
@@ -22,12 +42,10 @@ public class App {
 
             System.out.println("Conexión realizada correctamente.");
 
-            // Creamos las tablas necesarias si todavía no existen.
             crearTablas(conexion);
 
             int opcion = 0;
 
-            // El menú se repite hasta que el usuario elija la opción 12.
             while (opcion != 12) {
 
                 System.out.println("\n--- MENÚ DE ALUMNOS Y NOTAS ---");
@@ -118,47 +136,25 @@ public class App {
         }
     }
 
-    // Creamos las tablas de alumnos y notas relacionadas mediante el ID.
-    private static void crearTablas(Connection c) throws SQLException {
 
-        String sqlAlumnos = "CREATE TABLE IF NOT EXISTS alumnos ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                + "nombre VARCHAR(100) NOT NULL, "
-                + "edad INT NOT NULL, "
-                + "curso VARCHAR(50) NOT NULL)";
-
-        String sqlNotas = "CREATE TABLE IF NOT EXISTS notas ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT, "
-                + "alumno_id INT NOT NULL, "
-                + "asignatura VARCHAR(100) NOT NULL, "
-                + "nota DECIMAL(4,2) NOT NULL, "
-                + "FOREIGN KEY (alumno_id) REFERENCES alumnos(id) "
-                + "ON DELETE CASCADE)";
-
-        // Statement permite ejecutar las instrucciones SQL que crean las tablas.
-        try (Statement s = c.createStatement()) {
-            s.executeUpdate(sqlAlumnos);
-            s.executeUpdate(sqlNotas);
-        }
-    }
 
     // Insertamos un alumno nuevo; MySQL genera automáticamente su ID.
-    private static void insertarAlumno(Connection c, Scanner teclado)
+    private static void insertarAlumno(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("Nombre: ");
-        String nombre = teclado.nextLine();
+        String nombre = sc.nextLine();
 
         System.out.print("Edad: ");
-        int edad = leerEntero(teclado);
+        int edad = leerEntero(sc);
 
         System.out.print("Curso: ");
-        String curso = teclado.nextLine();
+        String curso = sc.nextLine();
 
         // Preparamos el INSERT para guardar los datos del alumno.
         String sql = "INSERT INTO alumnos (nombre, edad, curso) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             // Asignamos los datos a los parámetros de la consulta.
             ps.setString(1, nombre);
@@ -172,14 +168,13 @@ public class App {
         }
     }
 
-    // Consultamos y mostramos todos los alumnos registrados.
-    private static void listarAlumnos(Connection c) throws SQLException {
+    private static void listarAlumnos(Connection conexion) throws SQLException {
 
         String sql = "SELECT * FROM alumnos ORDER BY id";
 
         // ResultSet guarda las filas obtenidas al ejecutar el SELECT.
-        try (Statement s = c.createStatement();
-                ResultSet rs = s.executeQuery(sql)) {
+        try (Statement statement = conexion.createStatement();
+                ResultSet rs = statement.executeQuery(sql)) {
 
             boolean hayAlumnos = false;
 
@@ -202,17 +197,17 @@ public class App {
     }
 
     // Registramos una nota asociada al ID de un alumno y a una asignatura.
-    private static void registrarNota(Connection c, Scanner teclado)
+    private static void registrarNota(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int alumnoId = leerEntero(teclado);
+        int alumnoId = leerEntero(sc);
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String asignatura = sc.nextLine();
 
         System.out.print("Nota (0-10): ");
-        double nota = leerDouble(teclado);
+        double nota = leerDouble(sc);
 
         // Comprobamos que la nota esté dentro del rango permitido.
         if (nota < 0 || nota > 10) {
@@ -223,7 +218,7 @@ public class App {
         // Preparamos el INSERT para guardar la nota del alumno.
         String sql = "INSERT INTO notas (alumno_id, asignatura, nota) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             // Asignamos el alumno, la asignatura y la nota.
             ps.setInt(1, alumnoId);
@@ -238,16 +233,16 @@ public class App {
     }
 
     // Mostramos todas las notas y asignaturas de un alumno concreto.
-    private static void mostrarNotasAlumno(Connection c, Scanner teclado)
+    private static void mostrarNotasAlumno(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int id = leerEntero(teclado);
+        int id = leerEntero(sc);
 
         String sql = "SELECT asignatura, nota FROM notas "
                 + "WHERE alumno_id = ? ORDER BY asignatura";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             // Indicamos el ID del alumno que queremos consultar.
             ps.setInt(1, id);
@@ -273,15 +268,15 @@ public class App {
     }
 
     // Calculamos la media de todas las notas de un alumno.
-    private static void mediaAlumno(Connection c, Scanner teclado)
+    private static void mediaAlumno(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("ID del alumno: ");
-        int id = leerEntero(teclado);
+        int id = leerEntero(sc);
 
         String sql = "SELECT AVG(nota) AS media FROM notas WHERE alumno_id = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             ps.setInt(1, id);
 
@@ -302,13 +297,13 @@ public class App {
     }
 
     // Calculamos la nota media de cada asignatura.
-    private static void mediaAsignaturas(Connection c) throws SQLException {
+    private static void mediaAsignaturas(Connection conexion) throws SQLException {
 
         String sql = "SELECT asignatura, AVG(nota) AS media "
                 + "FROM notas GROUP BY asignatura ORDER BY asignatura";
 
         // GROUP BY agrupa las notas por asignatura y AVG() calcula su media.
-        try (Statement s = c.createStatement();
+        try (Statement s = conexion.createStatement();
                 ResultSet rs = s.executeQuery(sql)) {
 
             // Recorremos los resultados para mostrar la media de cada asignatura.
@@ -321,18 +316,18 @@ public class App {
     }
 
     // Buscamos la nota máxima y mínima de una asignatura e indicamos los alumnos.
-    private static void maximaYMinima(Connection c, Scanner teclado)
+    private static void maximaYMinima(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String asignatura = sc.nextLine();
 
         // JOIN relaciona las notas con los alumnos para obtener sus nombres.
         String sql = "SELECT a.nombre, n.nota FROM notas n "
                 + "JOIN alumnos a ON n.alumno_id = a.id "
                 + "WHERE n.asignatura = ? ORDER BY n.nota DESC";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             ps.setString(1, asignatura);
 
@@ -371,15 +366,15 @@ public class App {
     }
 
     // Calculamos la edad media de los alumnos de un curso.
-    private static void edadMediaCurso(Connection c, Scanner teclado)
+    private static void edadMediaCurso(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("Curso: ");
-        String curso = teclado.nextLine();
+        String curso = sc.nextLine();
 
         String sql = "SELECT AVG(edad) AS media FROM alumnos WHERE curso = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             ps.setString(1, curso);
 
@@ -400,11 +395,11 @@ public class App {
     }
 
     // Contamos los aprobados (nota >= 5) y los suspensos (nota < 5).
-    private static void aprobadosSuspensos(Connection c, Scanner teclado)
+    private static void aprobadosSuspensos(Connection conexion, Scanner sc)
             throws SQLException {
 
         System.out.print("Asignatura: ");
-        String asignatura = teclado.nextLine();
+        String asignatura = sc.nextLine();
 
         // CASE cuenta las notas que cumplen cada condición.
         String sql = "SELECT "
@@ -412,7 +407,7 @@ public class App {
                 + "SUM(CASE WHEN nota < 5 THEN 1 ELSE 0 END) AS suspensos "
                 + "FROM notas WHERE asignatura = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             ps.setString(1, asignatura);
 
@@ -430,7 +425,7 @@ public class App {
     }
 
     // Mostramos los alumnos cuya media supera la media global de todas las notas.
-    private static void alumnosSobreMediaGlobal(Connection c)
+    private static void alumnosSobreMediaGlobal(Connection conexion)
             throws SQLException {
 
         String sql = "SELECT a.id, a.nombre, AVG(n.nota) AS media "
@@ -439,7 +434,7 @@ public class App {
                 + "HAVING AVG(n.nota) > (SELECT AVG(nota) FROM notas)";
 
         // La consulta calcula la media de cada alumno y la compara con la global.
-        try (Statement s = c.createStatement();
+        try (Statement s = conexion.createStatement();
                 ResultSet rs = s.executeQuery(sql)) {
 
             boolean hayAlumnos = false;
@@ -461,15 +456,14 @@ public class App {
     }
 
     // Eliminamos el alumno indicado por su ID y también sus notas relacionadas.
-    private static void eliminarAlumno(Connection c, Scanner teclado)
-            throws SQLException {
+    private static void eliminarAlumno(Connection conexion, Scanner sc) throws SQLException {
 
         System.out.print("ID del alumno que quieres eliminar: ");
-        int id = leerEntero(teclado);
+        int id = leerEntero(sc);
 
         String sql = "DELETE FROM alumnos WHERE id = ?";
 
-        try (PreparedStatement ps = c.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             // Indicamos el ID del alumno que queremos eliminar.
             ps.setInt(1, id);
@@ -486,14 +480,14 @@ public class App {
     }
 
     // Leemos un número entero y consumimos el salto de línea pendiente.
-    private static int leerEntero(Scanner teclado) {
-        int numero = teclado.nextInt();
-        teclado.nextLine();
+    private static int leerEntero(Scanner sc) {
+        int numero = sc.nextInt();
+        sc.nextLine();
         return numero;
     }
 
     // Leemos una nota decimal y permitimos utilizar coma o punto decimal.
-    private static double leerDouble(Scanner teclado) {
-        return Double.parseDouble(teclado.nextLine().replace(',', '.'));
+    private static double leerDouble(Scanner sc) {
+        return Double.parseDouble(sc.nextLine().replace(',', '.'));
     }
 }
