@@ -1,4 +1,3 @@
--- Active: 1791209848862@@3.85.42.109@3306
 package org.example;
 
 import java.sql.Connection;
@@ -40,7 +39,8 @@ public class App {
                         // [IMPORTANT]: Hacer SELECT * FROM alumnos:
                         case 1:
                             ResultSet hacerSelectTodosAlumnos = s.executeQuery("SELECT * FROM alumnos");
-                            ResultSet hacerSelectPorEdadEspecifica = s.executeQuery("SELECT * FROM alumnos WHERE edad > ???");
+                            ResultSet hacerSelectPorEdadEspecifica = s
+                                    .executeQuery("SELECT * FROM alumnos WHERE edad > ???");
                             while (hacerSelectTodosAlumnos.next()) {
                                 int id = hacerSelectTodosAlumnos.getInt(1);
                                 String nombre = hacerSelectTodosAlumnos.getString(2);
@@ -54,9 +54,12 @@ public class App {
 
                         // [IMPORTANT]: Hacer SELECT * FROM alumnos por CURSOS (DAM/DAW):
                         case 2:
-                            ResultSet hacerSelectPorCursoDAM = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAM\";");
-                            ResultSet hacerSelectPorCursoDAW = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAW\";");
-                            ResultSet hacerSelectPorCursoProfesorado = s.executeQuery("SELECT * FROM alumnos WHERE curso = \"Profesorado\";");
+                            ResultSet hacerSelectPorCursoDAM = s
+                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAM\";");
+                            ResultSet hacerSelectPorCursoDAW = s
+                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Segundo de DAW\";");
+                            ResultSet hacerSelectPorCursoProfesorado = s
+                                    .executeQuery("SELECT * FROM alumnos WHERE curso = \"Profesorado\";");
 
                             System.out.println("\n¿Hay 2 cursos y 1 profesorado cual quieres elegir?");
                             System.out.println("Cursos: \n- Segundo de DAM \n- Segundo de DAW \n - Profesorado");
@@ -108,12 +111,12 @@ public class App {
                             do {
                                 System.out.println(
                                         "\n\u001B[31mError has elegido una opción incorrecta. (Has elegido la opción incorrecta "
-                                        + contador + " vez)" + "\u001B[0m");
+                                                + contador + " vez)" + "\u001B[0m");
                                 contador++;
                                 if (contador >= 1) {
                                     System.out.println(
                                             "\n\u001B[31mError has elegido una opción incorrecta. (Has elegido la opción incorrecta "
-                                            + contador + " veces)" + "\u001B[0m");
+                                                    + contador + " veces)" + "\u001B[0m");
                                     contador++;
                                 }
                             } while (contador == 1);
