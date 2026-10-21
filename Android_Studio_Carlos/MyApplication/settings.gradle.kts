@@ -22,5 +22,11 @@ dependencyResolutionManagement {
     }
 }
 
+<<<<<<< HEAD
 rootProject.name = "My Application"
 include(":app")
+=======
+rootProject.name = "myApplication"
+include(":app")
+ 
+>>>>>>> Andres

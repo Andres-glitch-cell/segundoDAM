@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
+<<<<<<< HEAD
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.gms.google.services)
+=======
+>>>>>>> Andres
 }
 
 android {
@@ -23,7 +26,12 @@ android {
     buildTypes {
         release {
             optimization {
+<<<<<<< HEAD
                 enable = false
+=======
+                enable = true
+                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+>>>>>>> Andres
             }
         }
     }
@@ -31,6 +39,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+<<<<<<< HEAD
     buildFeatures {
         compose = true
     }
@@ -54,4 +63,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+=======
+}
+
+dependencies {
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.ext.junit)
+>>>>>>> Andres
 }

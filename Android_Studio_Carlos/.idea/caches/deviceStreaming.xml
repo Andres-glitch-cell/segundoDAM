@@ -196,6 +196,7 @@
           <option name="screenY" value="1612" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+<<<<<<< HEAD
           <option name="api" value="31" />
           <option name="brand" value="TECNO" />
           <option name="codename" value="TECNO-BF7" />
@@ -208,6 +209,8 @@
           <option name="screenY" value="1612" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+=======
+>>>>>>> Andres
           <option name="api" value="33" />
           <option name="brand" value="TECNO" />
           <option name="codename" value="TECNO-BG6" />
@@ -808,6 +811,21 @@
           <option name="screenY" value="2640" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+<<<<<<< HEAD
+=======
+          <option name="api" value="37" />
+          <option name="brand" value="samsung" />
+          <option name="codename" value="b8q" />
+          <option name="id" value="b8q" />
+          <option name="labId" value="google" />
+          <option name="manufacturer" value="Samsung" />
+          <option name="name" value="Galaxy Z Flip8" />
+          <option name="screenDensity" value="480" />
+          <option name="screenX" value="1080" />
+          <option name="screenY" value="2520" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
+>>>>>>> Andres
           <option name="api" value="36" />
           <option name="brand" value="google" />
           <option name="codename" value="blazer" />
@@ -1531,6 +1549,21 @@
           <option name="screenY" value="1600" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+<<<<<<< HEAD
+=======
+          <option name="api" value="37" />
+          <option name="brand" value="samsung" />
+          <option name="codename" value="h8q" />
+          <option name="id" value="h8q" />
+          <option name="labId" value="google" />
+          <option name="manufacturer" value="Samsung" />
+          <option name="name" value="Galaxy Z Fold8" />
+          <option name="screenDensity" value="420" />
+          <option name="screenX" value="2448" />
+          <option name="screenY" value="1848" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
+>>>>>>> Andres
           <option name="api" value="35" />
           <option name="brand" value="Xiaomi" />
           <option name="codename" value="houji" />

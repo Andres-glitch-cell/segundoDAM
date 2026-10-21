@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">My Application</string>
     <string name="action_go">Go</string>
     <string name="baking_title">Baking with Gemini</string>
@@ -8,4 +9,7 @@
     <string name="image2_description">Cookies</string>
     <string name="image3_description">Cake</string>
     <string name="results_placeholder">(Results will appear here)</string>
+=======
+    <string name="app_name">myApplication</string>
+>>>>>>> Andres
 </resources>
