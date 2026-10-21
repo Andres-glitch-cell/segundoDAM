@@ -1,4 +1,3 @@
--- Active: 1791209848862@@3.85.42.109@3306
 package org.example;
 
 import java.sql.Connection;
@@ -11,8 +10,8 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String urlConnection = "jdbc:mysql://3.85.42.109:3306/ejercicioCincoJavi";
-        String user = "administrador";
+        String urlConnection = "jdbc:mysql://100.24.30.150:3306/ejercicioCincoJavi";
+        String user = "admin";
         String password = "R00tR00t*12345";
 
         try {
