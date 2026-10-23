@@ -1,254 +1,203 @@
 <div align="center">
 
-# 🎓 Segundo DAM — Desarrollo de Aplicaciones Multiplataforma
+# 🚀 Segundo DAM — Desarrollo de Aplicaciones Multiplataforma
 
-### Cuaderno de Bitácora y Repositorio Oficial del Curso
+### *Cuaderno de Bitácora, Prácticas y Proyectos Oficiales del Curso*
 
-*Colección completa de prácticas, proyectos, aplicaciones móviles, ejercicios de concurrencia, bases de datos y sistemas de gestión empresarial.*
-
-<br>
-
-![Curso](https://img.shields.io/badge/Curso-2º_DAM-2563eb?style=for-the-badge&logo=bookstack&logoColor=white)
-![Estado](https://img.shields.io/badge/Estado-En_progreso-22c55e?style=for-the-badge)
-![Licencia](https://img.shields.io/badge/Licencia-MIT-eab308?style=for-the-badge)
-![Commits](https://img.shields.io/github/commit-activity/t/Andres-glitch-cell/segundoDAM?style=for-the-badge&logo=git&logoColor=white&color=f05032)
+[![GitHub Status](https://img.shields.io/badge/Status-Activo_%26_Sincronizado-22c55e?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Andres-glitch-cell/segundoDAM)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-eab308?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
+[![Commit Activity](https://img.shields.io/github/commit-activity/t/Andres-glitch-cell/segundoDAM?style=for-the-badge&logo=github&color=f05032)](https://github.com/Andres-glitch-cell/segundoDAM/commits/main)
 
 <br>
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![IntelliJ](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
+<img src="https://skillicons.dev/icons?i=java,kotlin,android,gradle,mysql,git,vscode,idea,bash,linux,windows" alt="Tecnologías principales"/>
 
 <br>
 
-[📚 Asignaturas](#-asignaturas-y-contenido-detallado) •
-[🌳 Árbol del Repositorio](#-árbol-completo-del-repositorio) •
-[🌿 Ramas y Git](#-gestión-de-ramas-y-flujo-de-trabajo) •
-[🚀 Empezar](#-empezar) •
-[👤 Autor](#-autor)
+[📚 Asignaturas](#-asignaturas-y-módulos) •
+[📱 Android Studio](#-android-studio--multimedia) •
+[🌳 Árbol Estructural](#-árbol-estructural-del-proyecto) •
+[🌿 Git & Ramas](#-gestión-de-ramas--git-workflow) •
+[🚀 Guía Rápida](#-guía-de-inicio-rápido) •
+[👤 Autor](#-autor--contacto)
 
 </div>
 
 ---
 
-## 📖 Tabla de contenidos
-
-1. [Sobre este repositorio](#-sobre-este-repositorio)
-2. [Asignaturas y contenido detallado](#-asignaturas-y-contenido-detallado)
-   - [Acceso a Datos (`Acceso_A_Datos_Javi`)](#1-accs-acceso-a-datos)
-   - [Programación Multimedia y Dispositivos Móviles (`Android_Studio_Carlos`)](#2-android-studio-carlos)
-   - [Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)](#3-diseño-de-interfaces)
-   - [Programación de Servicios y Procesos (`ProgramacionDeServiciosYPorcesos_Jesus`)](#4-programación-de-servicios-y-procesos)
-   - [Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)](#5-sistemas-de-gestión-empresarial)
-   - [Prácticas Extra y Ejercicios Sueltos](#6-ejercicios-extra-y-prácticas)
-3. [Árbol completo del repositorio (`Tree`)](#-árbol-completo-del-repositorio)
-4. [Gestión de ramas y flujo de trabajo (Git)](#-gestión-de-ramas-y-flujo-de-trabajo)
-5. [Tecnologías y herramientas](#️-tecnologías-y-herramientas)
-6. [Guía de ejecución y resolución de incidencias](#-guía-de-ejecución-y-resolución-de-incidencias)
-7. [Autor](#-autor)
+> [!NOTE]
+> 💡 **Bienvenido al repositorio central de 2º de DAM.** Aquí se agrupa todo el código fuente, prácticas de programación multimedia, servicios y procesos, acceso a datos y gestión empresarial desarrollado durante el curso académico.
 
 ---
 
-## 🎯 Sobre este repositorio
+## 📊 Resumen del Repositorio
 
-Este repositorio centraliza **todo el aprendizaje, código fuente, entregables y proyectos** del segundo curso del ciclo formativo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**. Cada carpeta representa un módulo del ciclo con su propio enfoque tecnológico y práctico.
-
----
-
-## 📚 Asignaturas y contenido detallado
-
-### 1. 🗄️ Acceso a Datos (`Acceso_A_Datos_Javi`)
-Profundización en los mecanismos de persistencia de información en aplicaciones Java.
-- **Contenido:**
-  - Ejercicios prácticos de bases de datos relacionales (`ejercicioCinco`, `ejercicioSeis`).
-  - Simulacros de exámenes y conexiones con servidores remotos.
-
-### 2. 📱 Programación Multimedia y Dispositivos Móviles (`Android_Studio_Carlos`)
-Desarrollo de aplicaciones móviles para Android utilizando tanto Kotlin/Jetpack Compose como Java tradicional con Vistas XML.
-- **Estructura Multi-módulo:**
-  - [`:actividadUno`](./Android_Studio_Carlos/actividadUno): App basada en **Kotlin y Jetpack Compose** con temas Material 3.
-  - [`:actividadDos`](./Android_Studio_Carlos/actividadDos): App desarrollada en **Java** nativo con `ConstraintLayout` y vistas XML tradicionales.
-  - [`documentos/`](./Android_Studio_Carlos/documentos): Apuntes, guías y entregas en formato PDF y ODT.
-
-### 3. 🎨 Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)
-Diseño de experiencias de usuario (UX/UI), maquetación y prototipado visual.
-- **Contenido:**
-  - Bocetos y prototipos gráficos (`boceto_para_diseño.png`, `boceto_para_diseño.xcf`).
-  - Recursos vectoriales e iconos (`iconoApple.svg`).
-  - Documentación de ideas para el diseño de apps móviles (`ideaParaCrearAppMovil.txt`).
-
-### 4. ⚙️ Programación de Servicios y Procesos (`ProgramacionDeServiciosYPorcesos_Jesus`)
-Concurrencia, sincronización de hilos, multiprocesamiento, seguridad y comunicación en red mediante sockets.
-- **Contenido:**
-  - `ejerciciosMultihilo/`: Ejercicios de la unidad (`ejercicioUno.java`, `ejercicioDos.java`, etc.).
-  - `maquinaTragaperras/`: Práctica interactiva en Java (`tragaPerras.java`).
-  - `waitNotifyAll/`: Ejemplos avanzados de sincronización y coordinación de hilos (`ejemploUno.java`).
-  - Documentación teórica en PDF: planificación de procesos, multiproceso en C, programación multihilo, sockets y programación segura.
-
-### 5. 🏢 Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)
-Implantación, parametrización y uso de sistemas de planificación de recursos empresariales (ERP) y gestión de relaciones con clientes (CRM).
-- **Contenido:**
-  - `capturasTrabajoCRM/`: Capturas de pantalla documentando la configuración y flujos en Zoho CRM (gestión de contactos, tareas, plantillas de correo, importación de clientes en CSV/ODS).
-
-### 6. ☕ Ejercicios Extra y Prácticas
-- `practicarJavaVSCode/`: Pruebas y algoritmos en Java (`ejercicioUno.java`, `menuConMetodos.java`).
-- `EjercicioCarlos/`: Proyecto Gradle adicional de práctica en Android.
+| Métrica / Categoría | Detalle Tecnológico |
+| :--- | :--- |
+| **Módulos Principales** | 6 Asignaturas / Bloques de Especialización |
+| **Desarrollo Móvil** | Android Studio (Kotlin, Jetpack Compose & Java Views) |
+| **Persistencia & Servidores** | Bases de datos relacionales, Sockets TCP/IP, Concurrencia |
+| **Control de Versiones** | Git / GitHub (`main`, `Andres`, `publicar-ejercicios`, etc.) |
+| **Entornos de Desarrollo** | Android Studio Iguana+, IntelliJ IDEA Ultimate, VS Code |
 
 ---
 
-## 🌳 Árbol completo del repositorio (`Tree`)
+## 📚 Asignaturas y Módulos
+
+<details open>
+<summary><b>📱 1. Programación Multimedia y Dispositivos Móviles (`Android_Studio_Carlos`)</b></summary>
+
+<br>
+
+Desarrollo avanzado de aplicaciones Android estructuradas en un entorno multi-módulo con Gradle:
+- **`:actividadUno`**: Aplicación moderna desarrollada en **Kotlin** utilizando **Jetpack Compose** y temas dinámicos Material 3.
+- **`:actividadDos`**: Aplicación nativa en **Java** utilizando layouts tradicionales con `ConstraintLayout` y `AppCompat`.
+- **`documentos/`**: Apuntes oficiales, guías teóricas y entregas en formato PDF y ODT (`trabajoCarlosUno`, unidades UD01 y UD03).
+
+</details>
+
+<details>
+<summary><b>🗄️ 2. Acceso a Datos (`Acceso_A_Datos_Javi`)</b></summary>
+
+<br>
+
+Mecanismos de persistencia y conexión a bases de datos:
+- Ejercicios prácticos con SQL y conectividad (`ejercicioCinco`, `ejercicioSeis`).
+- Simulacros de examen y configuración de entornos de servidor remoto.
+
+</details>
+
+<details>
+<summary><b>⚙️ 3. Programación de Servicios y Procesos (`ProgramacionDeServiciosYPorcesos_Jesus`)</b></summary>
+
+<br>
+
+Concurrencia, hilos, procesos y redes:
+- **`ejerciciosMultihilo/`**: Creación y gestión de hilos en Java (`ejercicioUno.java`, `ejercicioDos.java`).
+- **`maquinaTragaperras/`**: Simulación interactiva de tragaperras concurrente.
+- **`waitNotifyAll/`**: Patrones avanzados de sincronización y exclusión mutua.
+- **Teoría en PDF**: Apuntes completos sobre planificación de procesos, sockets, multiproceso en C y programación segura.
+
+</details>
+
+<details>
+<summary><b>🏢 4. Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)</b></summary>
+
+<br>
+
+Implantación y parametrización de ERPs y CRMs:
+- **`capturasTrabajoCRM/`**: Documentación gráfica paso a paso del despliegue y gestión en **Zoho CRM** (gestión de contactos, tareas, plantillas de correo, importación masiva CSV/ODS).
+
+</details>
+
+<details>
+<summary><b>🎨 5. Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)</b></summary>
+
+<br>
+
+Diseño UX/UI y prototipado:
+- Bocetos gráficos (`boceto_para_diseño.png`), iconos vectoriales (`iconoApple.svg`) y guías de ideación de aplicaciones.
+
+</details>
+
+<details>
+<summary><b>☕ 6. Prácticas y Ejercicios Extra (`practicarJavaVSCode` & `EjercicioCarlos`)</b></summary>
+
+<br>
+
+- Pruebas rápidas de algoritmos en Java y proyectos Gradle auxiliares para consolidación de conceptos.
+
+</details>
+
+---
+
+## 🌳 Árbol Estructural del Proyecto
 
 ```text
 segundoDAM/
-│
 ├── 📂 Acceso_A_Datos_Javi/
-│   ├── 📁 BaseDatos/
-│   │   ├── 📁 ejercicioCinco/
-│   │   ├── 📁 ejercicioSeis/
-│   │   └── 📁 simulacroExamen/
-│   └── 🔑 [Clave PEM excluida por seguridad]
+│   ├── 📁 BaseDatos/ (ejercicioCinco, ejercicioSeis, simulacroExamen)
+│   └── 🔑 [Claves PEM excluidas por seguridad en .gitignore]
 │
-├── 📂 Android_Studio_Carlos/
-│   ├── 📁 actividadDos/                    # App Java + XML Views
-│   │   ├── 📁 src/
-│   │   └── 📄 build.gradle.kts
-│   ├── 📁 actividadUno/                    # App Kotlin + Jetpack Compose
-│   │   ├── 📁 src/
-│   │   └── 📄 build.gradle.kts
-│   ├── 📁 documentos/                      # Apuntes y entregables (PDF / ODT)
-│   │   ├── 📄 trabajoCarlosUno.odt / .pdf
-│   │   ├── 📄 UD01_A01_AndresFernandez.pdf
-│   │   ├── 📄 UD01_A02_AndresFernandez.pdf
-│   │   └── 📄 UD03_P01.odt
-│   ├── 📁 gradle/                          # Gradle wrapper y Version Catalogs
-│   ├── 📄 build.gradle.kts
-│   ├── 📄 settings.gradle.kts              # Inclusión multi-módulo (:actividadUno, :actividadDos)
-│   └── 📄 gradle.properties                # Configuración global Android
+├── 📂 Android_Studio_Carlos/                    # Proyecto Android Multi-módulo
+│   ├── 📁 actividadDos/                         # App nativa en Java + XML Views
+│   ├── 📁 actividadUno/                         # App nativa en Kotlin + Jetpack Compose
+│   ├── 📁 documentos/                           # PDFs y ODTs teóricos del curso
+│   ├── 📁 gradle/                               # Gradle Wrapper y Version Catalogs
+│   ├── 📄 build.gradle.kts                      # Configuración raíz
+│   ├── 📄 settings.gradle.kts                   # Inclusión de módulos (:actividadUno, :actividadDos)
+│   └── 📄 gradle.properties                     # Parámetros (overridePathCheck=true)
 │
-├── 📂 Diseño_Interfaces_Alex/
-│   ├── 🖼️ boceto_para_diseño.png
-│   ├── 🎨 boceto_para_diseño.xcf
-│   ├── ✒️ iconoApple.svg
-│   └── 📄 ideaParaCrearAppMovil.txt
+├── 📂 Diseño_Interfaces_Alex/                   # Bocetos UX/UI, SVG y maquetación
+├── 📂 EjercicioCarlos/                          # Práctica extra Android Gradle
+├── 📂 practicarJavaVSCode/                      # Algoritmos y lógica en Java
+├── 📂 ProgramacionDeServiciosYPorcesos_Jesus/   # Concurrencia, hilos, sockets y PDFs teóricos
+├── 📂 Sistemas_de_Gestion_Empresarial_Alexis/   # Capturas de Zoho CRM, CSV y ODS
 │
-├── 📂 EjercicioCarlos/                     # Proyecto Android adicional de práctica
-│   ├── 📁 app/
-│   └── 📄 settings.gradle.kts
-│
-├── 📂 practicarJavaVSCode/                 # Ejercicios sueltos de Java (VS Code)
-│   ├── ☕ ejercicioUno.java
-│   └── ☕ menuConMetodos.java
-│
-├── 📂 ProgramacionDeServiciosYPorcesos_Jesus/
-│   ├── 📁 ejerciciosMultihilo/
-│   │   ├── ☕ ejercicioUno.java
-│   │   └── ☕ ejercicioDos.java
-│   ├── 📁 maquinaTragaperras/              # Práctica de máquina tragaperras en Java
-│   │   └── ☕ tragaPerras.java
-│   ├── 📁 waitNotifyAll/                   # Sincronización avanzada de hilos
-│   │   └── ☕ ejemploUno.java
-│   └── 📚 [PDFs teóricos: sockets, hilos, multiproceso, planificación]
-│
-├── 📂 Sistemas_de_Gestion_Empresarial_Alexis/
-│   ├── 📁 capturasTrabajoCRM/              # Capturas de configuración Zoho CRM + CSV / ODS
-│   └── 🖼️ datos.png
-│
-├── 📜 EJECUTARGRADLE_JAVI.sh               # Script de ejecución para Gradle
-├── 🕒 horario.png                          # Horario lectivo del curso
-├── 🚫 .gitignore
-├── ⚖️ LICENSE                              # Licencia MIT
-└── 📘 README.md                            # Documentación principal (Estás aquí)
+├── 📜 EJECUTARGRADLE_JAVI.sh                    # Script auxiliar para Gradle
+├── 🕒 horario.png                               # Horario oficial del curso
+├── 🚫 .gitignore                                # Exclusiones globales (builds, .pem, .gradle)
+├── ⚖️ LICENSE                                   # Licencia MIT
+└── 📘 README.md                                 # Documentación principal
 ```
 
 ---
 
-## 🌿 Gestión de ramas y flujo de trabajo
+## 🌿 Gestión de Ramas & Git Workflow
 
-El repositorio utiliza una estrategia de ramificación orientada a desarrollo modular y pruebas seguras antes de integrar cambios en producción:
+El desarrollo se organiza mediante un flujo de ramas especializado para garantizar la estabilidad de los proyectos:
 
-| Rama | Propósito / Estado |
-|---|---|
-| `main` | **Rama principal de producción.** Contiene la última versión estable, organizada y compilada de todos los proyectos. |
-| `Andres` | **Rama de desarrollo personal.** Sincronizada automáticamente con `main`, utilizada para pruebas locales y commits diarios. |
-| `publicar-ejercicios` | Rama de integración para subida de ejercicios de bases de datos y persistencia. |
-| `prueba-integracion` | Rama de pruebas para simulacros de examen y validación de layouts Android. |
-| `integrar-recetas-en-main` | Rama histórica de fusión de proyectos Android. |
-
-### 🔀 Comandos útiles de Git para este repo
-
-```bash
-# Sincronizar tu rama local con main y el servidor remoto
-git pull origin main
-
-# Cambiar a la rama de desarrollo personal
-git checkout Andres
-
-# Forzar sincronización de Andres con main (si fuera necesario)
-git push origin main:Andres --force
+```mermaid
+gitGraph
+    commit id: "Init"
+    branch Andres
+    checkout Andres
+    commit id: "Desarrollo Actividad 1"
+    commit id: "Ajustes Concurrencia"
+    checkout main
+    merge Andres id: "Merge a Prod"
+    commit id: "Release Estable"
 ```
 
----
-
-## 🛠️ Tecnologías y herramientas
-
-<table>
-<tr>
-<td><b>Lenguajes</b></td>
-<td>Java · Kotlin · SQL · Bash</td>
-</tr>
-<tr>
-<td><b>Desarrollo Móvil</b></td>
-<td>Android SDK · Jetpack Compose · Vistas XML</td>
-</tr>
-<tr>
-<td><b>Sistemas & Servidores</b></td>
-<td>Bases de datos relacionales · Sockets TCP/IP · Concurrencia (Hilos/Procesos) · Zoho CRM (ERP/CRM)</td>
-</tr>
-<tr>
-<td><b>Entornos (IDE)</b></td>
-<td>Android Studio · IntelliJ IDEA · Visual Studio Code</td>
-</tr>
-<tr>
-<td><b>Control de Versiones</b></td>
-<td>Git · GitHub (Ramas sincronizadas: `main`, `Andres`, etc.)</td>
-</tr>
-</table>
+| Rama | Estado / Propósito |
+| :--- | :--- |
+| **`main`** | Versión de producción estable y limpia de todos los módulos. |
+| **`Andres`** | Rama de trabajo personal para commits diarios y pruebas locales. |
+| **`publicar-ejercicios`** | Integración de prácticas de bases de datos. |
+| **`prueba-integracion`** | Validación de simulacros de examen y layouts. |
 
 ---
 
-## 🚀 Guía de ejecución y resolución de incidencias
+## 🚀 Guía de Inicio Rápido
 
-### 1. Clonar el repositorio
 ```bash
+# 1. Clonar el repositorio completo
 git clone https://github.com/Andres-glitch-cell/segundoDAM.git
+
+# 2. Entrar al directorio raíz
 cd segundoDAM
+
+# 3. Abrir la asignatura deseada en tu IDE (Android Studio, IntelliJ IDEA o VS Code)
 ```
 
-### 2. Solución de rutas con caracteres especiales en Windows (Android Studio)
-Si trabajas en Windows y la ruta contiene acentos (como `C:\Users\Andrés\...`), Android Studio / AGP puede arrojar un error de caracteres no ASCII. El repositorio ya incluye la solución aplicada en [`gradle.properties`](./Android_Studio_Carlos/gradle.properties):
-```properties
-android.overridePathCheck=true
-```
+> [!TIP]
+> ⚠️ **Nota para usuarios de Windows con rutas acentuadas:** Si Android Studio muestra advertencias sobre caracteres non-ASCII en la ruta, el parámetro `android.overridePathCheck=true` ya se encuentra configurado globalmente en los proyectos Gradle.
 
 ---
 
-## 👤 Autor
+## 👤 Autor & Contacto
 
 <div align="center">
 
 <a href="https://github.com/Andres-glitch-cell">
-  <img src="https://github.com/Andres-glitch-cell.png" width="100" style="border-radius:50%" alt="Andrés">
+  <img src="https://github.com/Andres-glitch-cell.png" width="120" style="border-radius:50%" alt="Andrés Fernández"/>
 </a>
 
-**Andrés Fernández**
-Estudiante de 2º DAM (Desarrollo de Aplicaciones Multiplataforma)
+### **Andrés Fernández**
+*Estudiante de 2º de Desarrollo de Aplicaciones Multiplataforma (DAM)*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Andres--glitch--cell-181717?style=for-the-badge&logo=github)](https://github.com/Andres-glitch-cell)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-Andres--glitch--cell-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Andres-glitch-cell)
+[![Email](https://img.shields.io/badge/Contacto-GitHub_Issues-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Andres-glitch-cell/segundoDAM/issues)
 
 </div>
 
@@ -256,14 +205,12 @@ Estudiante de 2º DAM (Desarrollo de Aplicaciones Multiplataforma)
 
 ## 📄 Licencia
 
-Este proyecto está bajo la licencia **MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
-
----
+Este proyecto se distribuye bajo los términos de la **Licencia MIT**. Consulta el archivo [LICENSE](./LICENSE) para más información.
 
 <div align="center">
 
-**⭐ Si te ha servido de algo, dale una estrella al repositorio ⭐**
+**⭐ Si este repositorio te ha resultado útil, no olvides dejar una estrella ⭐**
 
-*Hecho con ☕ y dedicación en 2º DAM.*
+*Hecho con ☕, código y dedicación en 2º de DAM.*
 
 </div>
