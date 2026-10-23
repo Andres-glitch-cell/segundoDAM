@@ -7,15 +7,17 @@
 [![GitHub Status](https://img.shields.io/badge/Status-Activo_%26_Sincronizado-22c55e?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Andres-glitch-cell/segundoDAM)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-eab308?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 [![Commit Activity](https://img.shields.io/github/commit-activity/t/Andres-glitch-cell/segundoDAM?style=for-the-badge&logo=github&color=f05032)](https://github.com/Andres-glitch-cell/segundoDAM/commits/main)
+[![Apple Design](https://img.shields.io/badge/Apple_UX-000000?style=for-the-badge&logo=apple&logoColor=white)](./Dise%C3%B1o_Interfaces_Alex/)
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=java,kotlin,android,gradle,mysql,git,vscode,idea,bash,linux,windows" alt="Tecnologías principales"/>
+<img src="https://skillicons.dev/icons?i=java,kotlin,android,gradle,mysql,git,vscode,idea,bash,linux,windows,apple" alt="Tecnologías principales"/>
 
 <br>
 
 [📚 Asignaturas](#-asignaturas-y-módulos) •
 [📱 Android Studio](#-android-studio--multimedia) •
+[🎨 Diseño UX](#-desarrollo-de-interfaces) •
 [🌳 Árbol Estructural](#-árbol-estructural-del-proyecto) •
 [🌿 Git & Ramas](#-gestión-de-ramas--git-workflow) •
 [🚀 Guía Rápida](#-guía-de-inicio-rápido) •
@@ -26,7 +28,7 @@
 ---
 
 > [!NOTE]
-> 💡 **Bienvenido al repositorio central de 2º de DAM.** Aquí se agrupa todo el código fuente, prácticas de programación multimedia, servicios y procesos, acceso a datos y gestión empresarial desarrollado durante el curso académico.
+> 💡 **Bienvenido al repositorio central de 2º de DAM.** Aquí se agrupa todo el código fuente, prácticas de programación multimedia, servicios y procesos, acceso a datos, diseño de interfaces y gestión empresarial desarrollado durante el curso académico.
 
 ---
 
@@ -35,7 +37,7 @@
 | Métrica / Categoría | Detalle Tecnológico |
 | :--- | :--- |
 | **Módulos Principales** | 6 Asignaturas / Bloques de Especialización |
-| **Desarrollo Móvil** | Android Studio (Kotlin, Jetpack Compose & Java Views) |
+| **Desarrollo Móvil & UX** | Android Studio (Kotlin, Compose, Java) & Apple Design (`iconoApple.svg`) |
 | **Persistencia & Servidores** | Bases de datos relacionales, Sockets TCP/IP, Concurrencia |
 | **Control de Versiones** | Git / GitHub (`main`, `Andres`, `publicar-ejercicios`, etc.) |
 | **Entornos de Desarrollo** | Android Studio Iguana+, IntelliJ IDEA Ultimate, VS Code |
@@ -57,7 +59,19 @@ Desarrollo avanzado de aplicaciones Android estructuradas en un entorno multi-m�
 </details>
 
 <details>
-<summary><b>🗄️ 2. Acceso a Datos (`Acceso_A_Datos_Javi`)</b></summary>
+<summary><b>🎨 2. Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)</b></summary>
+
+<br>
+
+Diseño UX/UI, maquetación visual e iconografía multiplataforma:
+- **`iconoApple.svg`**: Diseño y vectorización de recursos con identidad visual de Apple.
+- **`boceto_para_diseño.png` / `.xcf`**: Prototipos visuales y wireframes de interfaces.
+- **`ideaParaCrearAppMovil.txt`**: Documentación conceptual y tormenta de ideas para el diseño de apps móviles.
+
+</details>
+
+<details>
+<summary><b>🗄️ 3. Acceso a Datos (`Acceso_A_Datos_Javi`)</b></summary>
 
 <br>
 
@@ -68,7 +82,7 @@ Mecanismos de persistencia y conexión a bases de datos:
 </details>
 
 <details>
-<summary><b>⚙️ 3. Programación de Servicios y Procesos (`ProgramacionDeServiciosYPorcesos_Jesus`)</b></summary>
+<summary><b>⚙️ 4. Programación de Servicios y Procesos (`ProgramacionDeServiciosYPorcesos_Jesus`)</b></summary>
 
 <br>
 
@@ -81,22 +95,12 @@ Concurrencia, hilos, procesos y redes:
 </details>
 
 <details>
-<summary><b>🏢 4. Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)</b></summary>
+<summary><b>🏢 5. Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)</b></summary>
 
 <br>
 
 Implantación y parametrización de ERPs y CRMs:
 - **`capturasTrabajoCRM/`**: Documentación gráfica paso a paso del despliegue y gestión en **Zoho CRM** (gestión de contactos, tareas, plantillas de correo, importación masiva CSV/ODS).
-
-</details>
-
-<details>
-<summary><b>🎨 5. Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)</b></summary>
-
-<br>
-
-Diseño UX/UI y prototipado:
-- Bocetos gráficos (`boceto_para_diseño.png`), iconos vectoriales (`iconoApple.svg`) y guías de ideación de aplicaciones.
 
 </details>
 
@@ -128,7 +132,7 @@ segundoDAM/
 │   ├── 📄 settings.gradle.kts                   # Inclusión de módulos (:actividadUno, :actividadDos)
 │   └── 📄 gradle.properties                     # Parámetros (overridePathCheck=true)
 │
-├── 📂 Diseño_Interfaces_Alex/                   # Bocetos UX/UI, SVG y maquetación
+├── 📂 Diseño_Interfaces_Alex/                   # Bocetos UX/UI, XCF, ideas y vector Apple (iconoApple.svg)
 ├── 📂 EjercicioCarlos/                          # Práctica extra Android Gradle
 ├── 📂 practicarJavaVSCode/                      # Algoritmos y lógica en Java
 ├── 📂 ProgramacionDeServiciosYPorcesos_Jesus/   # Concurrencia, hilos, sockets y PDFs teóricos
@@ -153,7 +157,7 @@ gitGraph
     branch Andres
     checkout Andres
     commit id: "Desarrollo Actividad 1"
-    commit id: "Ajustes Concurrencia"
+    commit id: "Ajustes Concurrencia & Apple UX"
     checkout main
     merge Andres id: "Merge a Prod"
     commit id: "Release Estable"
@@ -197,6 +201,7 @@ cd segundoDAM
 *Estudiante de 2º de Desarrollo de Aplicaciones Multiplataforma (DAM)*
 
 [![GitHub Profile](https://img.shields.io/badge/GitHub-Andres--glitch--cell-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Andres-glitch-cell)
+[![Apple UX](https://img.shields.io/badge/Apple_Design-000000?style=for-the-badge&logo=apple&logoColor=white)](./Dise%C3%B1o_Interfaces_Alex/)
 [![Email](https://img.shields.io/badge/Contacto-GitHub_Issues-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Andres-glitch-cell/segundoDAM/issues)
 
 </div>
