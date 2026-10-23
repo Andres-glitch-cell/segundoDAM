@@ -11,7 +11,7 @@
 
 <br>
 
-<img src="https://skillicons.dev/icons?i=java,kotlin,android,gradle,mysql,git,vscode,idea,bash,linux,windows,apple" alt="Tecnologías principales"/>
+<img src="https://skillicons.dev/icons?i=java,kotlin,gradle,mysql,git,vscode,idea,bash,linux,windows,apple" alt="Tecnologías principales"/>
 
 <br>
 
