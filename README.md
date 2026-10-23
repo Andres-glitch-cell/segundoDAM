@@ -28,9 +28,7 @@
 
 [📚 Asignaturas](#-asignaturas-y-contenido-detallado) •
 [🌳 Árbol del Repositorio](#-árbol-completo-del-repositorio) •
-[📱 Proyectos Android](#-proyectos-android-destacados) •
-[⚙️ Servicios y Procesos](#️-programación-de-servicios-y-procesos) •
-[🗄️ Acceso a Datos](#-acceso-a-datos) •
+[🌿 Ramas y Git](#-gestión-de-ramas-y-flujo-de-trabajo) •
 [🚀 Empezar](#-empezar) •
 [👤 Autor](#-autor)
 
@@ -49,9 +47,10 @@
    - [Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)](#5-sistemas-de-gestión-empresarial)
    - [Prácticas Extra y Ejercicios Sueltos](#6-ejercicios-extra-y-prácticas)
 3. [Árbol completo del repositorio (`Tree`)](#-árbol-completo-del-repositorio)
-4. [Tecnologías y herramientas](#️-tecnologías-y-herramientas)
-5. [Guía de ejecución](#-guía-de-ejecución)
-6. [Autor](#-autor)
+4. [Gestión de ramas y flujo de trabajo (Git)](#-gestión-de-ramas-y-flujo-de-trabajo)
+5. [Tecnologías y herramientas](#️-tecnologías-y-herramientas)
+6. [Guía de ejecución y resolución de incidencias](#-guía-de-ejecución-y-resolución-de-incidencias)
+7. [Autor](#-autor)
 
 ---
 
@@ -173,6 +172,33 @@ segundoDAM/
 
 ---
 
+## 🌿 Gestión de ramas y flujo de trabajo
+
+El repositorio utiliza una estrategia de ramificación orientada a desarrollo modular y pruebas seguras antes de integrar cambios en producción:
+
+| Rama | Propósito / Estado |
+|---|---|
+| `main` | **Rama principal de producción.** Contiene la última versión estable, organizada y compilada de todos los proyectos. |
+| `Andres` | **Rama de desarrollo personal.** Sincronizada automáticamente con `main`, utilizada para pruebas locales y commits diarios. |
+| `publicar-ejercicios` | Rama de integración para subida de ejercicios de bases de datos y persistencia. |
+| `prueba-integracion` | Rama de pruebas para simulacros de examen y validación de layouts Android. |
+| `integrar-recetas-en-main` | Rama específica utilizada para fusionar el módulo de recetas y Firebase AI (`actividadTres`). |
+
+### 🔀 Comandos útiles de Git para este repo
+
+```bash
+# Sincronizar tu rama local con main y el servidor remoto
+git pull origin main
+
+# Cambiar a la rama de desarrollo personal
+git checkout Andres
+
+# Forzar sincronización de Andres con main (si fuera necesario)
+git push origin main:Andres --force
+```
+
+---
+
 ## 🛠️ Tecnologías y herramientas
 
 <table>
@@ -200,16 +226,18 @@ segundoDAM/
 
 ---
 
-## 🚀 Guía de ejecución
+## 🚀 Guía de ejecución y resolución de incidencias
 
+### 1. Clonar el repositorio
 ```bash
-# 1. Clonar el repositorio
 git clone https://github.com/Andres-glitch-cell/segundoDAM.git
-
-# 2. Entrar al directorio
 cd segundoDAM
+```
 
-# 3. Abrir la carpeta de la asignatura correspondiente en tu IDE (Android Studio para móviles, IntelliJ para Java)
+### 2. Solución de rutas con caracteres especiales en Windows (Android Studio)
+Si trabajas en Windows y la ruta contiene acentos (como `C:\Users\Andrés\...`), Android Studio / AGP puede arrojar un error de caracteres no ASCII. El repositorio ya incluye la solución aplicada en [`gradle.properties`](./Android_Studio_Carlos/gradle.properties):
+```properties
+android.overridePathCheck=true
 ```
 
 ---
