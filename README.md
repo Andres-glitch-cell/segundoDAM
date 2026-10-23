@@ -66,14 +66,13 @@ Este repositorio centraliza **todo el aprendizaje, código fuente, entregables y
 Profundización en los mecanismos de persistencia de información en aplicaciones Java.
 - **Contenido:**
   - Ejercicios prácticos de bases de datos relacionales (`ejercicioCinco`, `ejercicioSeis`).
-  - Simulacros de exámenes y conexiones con servidores remotos (`claveDelServidorUbuntuJavi.pem`).
+  - Simulacros de exámenes y conexiones con servidores remotos.
 
 ### 2. 📱 Programación Multimedia y Dispositivos Móviles (`Android_Studio_Carlos`)
-Desarrollo avanzado de aplicaciones móviles para Android utilizando tanto Kotlin/Jetpack Compose como Java tradicional con Vistas XML.
+Desarrollo de aplicaciones móviles para Android utilizando tanto Kotlin/Jetpack Compose como Java tradicional con Vistas XML.
 - **Estructura Multi-módulo:**
   - [`:actividadUno`](./Android_Studio_Carlos/actividadUno): App basada en **Kotlin y Jetpack Compose** con temas Material 3.
   - [`:actividadDos`](./Android_Studio_Carlos/actividadDos): App desarrollada en **Java** nativo con `ConstraintLayout` y vistas XML tradicionales.
-  - [`:actividadTres`](./Android_Studio_Carlos/actividadTres): App de recetas (**Baking App**) con Compose, ViewModels y Firebase AI.
   - [`documentos/`](./Android_Studio_Carlos/documentos): Apuntes, guías y entregas en formato PDF y ODT.
 
 ### 3. 🎨 Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)
@@ -112,15 +111,11 @@ segundoDAM/
 │   │   ├── 📁 ejercicioCinco/
 │   │   ├── 📁 ejercicioSeis/
 │   │   └── 📁 simulacroExamen/
-│   └── 🔑 claveDelServidorUbuntuJavi.pem
+│   └── 🔑 [Clave PEM excluida por seguridad]
 │
 ├── 📂 Android_Studio_Carlos/
 │   ├── 📁 actividadDos/                    # App Java + XML Views
 │   │   ├── 📁 src/
-│   │   └── 📄 build.gradle.kts
-│   ├── 📁 actividadTres/                   # App Compose + Firebase AI (Baking)
-│   │   ├── 📁 src/
-│   │   ├── 📄 google-services.json
 │   │   └── 📄 build.gradle.kts
 │   ├── 📁 actividadUno/                    # App Kotlin + Jetpack Compose
 │   │   ├── 📁 src/
@@ -132,7 +127,7 @@ segundoDAM/
 │   │   └── 📄 UD03_P01.odt
 │   ├── 📁 gradle/                          # Gradle wrapper y Version Catalogs
 │   ├── 📄 build.gradle.kts
-│   ├── 📄 settings.gradle.kts              # Inclusión multi-módulo (:actividadUno, :actividadDos, :actividadTres)
+│   ├── 📄 settings.gradle.kts              # Inclusión multi-módulo (:actividadUno, :actividadDos)
 │   └── 📄 gradle.properties                # Configuración global Android
 │
 ├── 📂 Diseño_Interfaces_Alex/
@@ -182,7 +177,7 @@ El repositorio utiliza una estrategia de ramificación orientada a desarrollo mo
 | `Andres` | **Rama de desarrollo personal.** Sincronizada automáticamente con `main`, utilizada para pruebas locales y commits diarios. |
 | `publicar-ejercicios` | Rama de integración para subida de ejercicios de bases de datos y persistencia. |
 | `prueba-integracion` | Rama de pruebas para simulacros de examen y validación de layouts Android. |
-| `integrar-recetas-en-main` | Rama específica utilizada para fusionar el módulo de recetas y Firebase AI (`actividadTres`). |
+| `integrar-recetas-en-main` | Rama histórica de fusión de proyectos Android. |
 
 ### 🔀 Comandos útiles de Git para este repo
 
@@ -208,7 +203,7 @@ git push origin main:Andres --force
 </tr>
 <tr>
 <td><b>Desarrollo Móvil</b></td>
-<td>Android SDK · Jetpack Compose · Vistas XML · Firebase AI</td>
+<td>Android SDK · Jetpack Compose · Vistas XML</td>
 </tr>
 <tr>
 <td><b>Sistemas & Servidores</b></td>

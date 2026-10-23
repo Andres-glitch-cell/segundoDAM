@@ -25,4 +25,3 @@ dependencyResolutionManagement {
 rootProject.name = "Android Studio Carlos"
 include(":actividadUno")
 include(":actividadDos")
-include(":actividadTres")
