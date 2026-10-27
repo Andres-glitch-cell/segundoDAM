@@ -1,4 +1,3 @@
-
 # Configuración local del editor
 .vscode/settings.json
 **/.vscode/settings.json
@@ -17,3 +16,9 @@
 
 # JDK local; no subirlo al repositorio
 /jdkJava/
+
+# Claves privadas y certificados sensibles
+*.pem
+*.key
+*.p12
+*.jks
