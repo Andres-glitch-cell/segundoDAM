@@ -13,12 +13,13 @@ public class App {
         String password = "R00tR00t*12345";
 
         try {
-            // [TODO]: Prueba conectarse a la Base de Datos
-            Connection c = DriverManager.getConnection(urlConnection, user, password);
+            // Nos conectamos a la base de datos.
+            Connection conexion = DriverManager.getConnection(urlConnection, user, password);
 
-            // [TODO]: Creamos objeto para hacer sentencias SQL
-            Statement s = c.createStatement();
+            // Creamos un objeto para ejecutar sentencias SQL.
+            Statement s = conexion.createStatement();
 
+            // ! Guarda la sentencia SQL dentro de un objeto ResultSet, que es el que nos permite recorrer los resultados.
             ResultSet rs = s.executeQuery("SELECT * FROM alumnos");
 
             // [LOG]: Recorremos mientras haya algo en la siguiente linea y mostramos
@@ -33,7 +34,7 @@ public class App {
             }
 
             s.close();
-            c.close();
+            conexion.close();
 
         } catch (Exception e) {
             // [INFO]: Mostramos error si ocurren algunos

@@ -2,12 +2,12 @@
 public class ejercicioUno {
 
     public static void main(String[] args) {
-        miPrimerHilo ayshacomeandreses = new miPrimerHilo();
+        miPrimerHiloUno ayshacomeandreses = new miPrimerHiloUno();
         ayshacomeandreses.start();
     }
 }
 
-class miPrimerHilo extends Thread {
+class miPrimerHiloUno extends Thread {
 
     @Override
     public void run() {
@@ -15,6 +15,6 @@ class miPrimerHilo extends Thread {
     }
 }
 
-class miSegundoHilo extends Thread {
+class miSegundoHiloUno extends Thread {
 
 }
