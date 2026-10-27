@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UD02 Layouts y TextView</string>
+    <string name="texto_xml_ej1">Texto 1: Configurado totalmente desde el XML con formato y estilo.</string>
+    <string name="texto_xml_ej3_parte1">Texto 3 (Parte XML): Configurado desde el XML. </string>
+</resources>

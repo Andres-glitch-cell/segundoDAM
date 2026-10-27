@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UD03 Hola Mundo e Intents</string>
+    <string name="hello_world">¡Hola mundo!, de Android</string>
+    <string name="second_activity_text">¡Bienvenido a la Segunda Actividad (SecondActivity)!</string>
+    <string name="btn_open_second">Abrir Segunda Pantalla</string>
+    <string name="btn_open_web">Abrir Navegador Web</string>
+</resources>

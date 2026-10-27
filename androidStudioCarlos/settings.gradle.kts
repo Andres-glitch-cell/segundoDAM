@@ -23,5 +23,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android Studio Carlos"
-include(":actividadUno")
-include(":actividadDos")
+include(":UD02_Layouts_y_TextView")
+include(":UD03_HolaMundo_y_Intents")
