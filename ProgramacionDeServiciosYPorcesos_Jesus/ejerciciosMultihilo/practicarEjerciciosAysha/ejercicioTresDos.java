@@ -25,7 +25,6 @@ class HiloTresTres extends Thread {
 
 public class ejercicioTresDos {
     public static void main(String[] args) {
-        // Crear dos instancias del hilo
         HiloTresUno hilo1 = new HiloTresUno();
         HiloTresTres hilo2 = new HiloTresTres();
 

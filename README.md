@@ -47,7 +47,7 @@
 ## 📚 Asignaturas y Módulos
 
 <details open>
-<summary><b>📱 1. Programación Multimedia y Dispositivos Móviles (`Android_Studio_Carlos`)</b></summary>
+<summary><b>📱 1. Programación Multimedia y Dispositivos Móviles (`androidStudioCarlos`)</b></summary>
 
 <br>
 
@@ -59,7 +59,7 @@ Desarrollo avanzado de aplicaciones Android estructuradas en un entorno multi-m�
 </details>
 
 <details>
-<summary><b>🎨 2. Desarrollo de Interfaces (`Diseño_Interfaces_Alex`)</b></summary>
+<summary><b>🎨 2. Desarrollo de Interfaces (`disenoInterfacesAlex`)</b></summary>
 
 <br>
 
@@ -71,7 +71,7 @@ Diseño UX/UI, maquetación visual e iconografía multiplataforma:
 </details>
 
 <details>
-<summary><b>🗄️ 3. Acceso a Datos (`Acceso_A_Datos_Javi`)</b></summary>
+<summary><b>🗄️ 3. Acceso a Datos (`accesoADatosJavi`)</b></summary>
 
 <br>
 
@@ -95,7 +95,7 @@ Concurrencia, hilos, procesos y redes:
 </details>
 
 <details>
-<summary><b>🏢 5. Sistemas de Gestión Empresarial (`Sistemas_de_Gestion_Empresarial_Alexis`)</b></summary>
+<summary><b>🏢 5. Sistemas de Gestión Empresarial (`sistemasDeGestionEmpresarialAlexis`)</b></summary>
 
 <br>
 
@@ -105,7 +105,7 @@ Implantación y parametrización de ERPs y CRMs:
 </details>
 
 <details>
-<summary><b>☕ 6. Prácticas y Ejercicios Extra (`practicarJavaVSCode` & `EjercicioCarlos`)</b></summary>
+<summary><b>☕ 6. Prácticas y Ejercicios Extra (`practicarJavaVSCode` & `ejercicioCarlos`)</b></summary>
 
 <br>
 
@@ -119,11 +119,11 @@ Implantación y parametrización de ERPs y CRMs:
 
 ```text
 segundoDAM/
-├── 📂 Acceso_A_Datos_Javi/
+├── 📂 accesoADatosJavi/
 │   ├── 📁 BaseDatos/ (ejercicioCinco, ejercicioSeis, simulacroExamen)
 │   └── 🔑 [Claves PEM excluidas por seguridad en .gitignore]
 │
-├── 📂 Android_Studio_Carlos/                    # Proyecto Android Multi-módulo
+├── 📂 androidStudioCarlos/                       # Proyecto Android Multi-módulo
 │   ├── 📁 actividadDos/                         # App nativa en Java + XML Views
 │   ├── 📁 actividadUno/                         # App nativa en Kotlin + Jetpack Compose
 │   ├── 📁 documentos/                           # PDFs y ODTs teóricos del curso
@@ -132,11 +132,11 @@ segundoDAM/
 │   ├── 📄 settings.gradle.kts                   # Inclusión de módulos (:actividadUno, :actividadDos)
 │   └── 📄 gradle.properties                     # Parámetros (overridePathCheck=true)
 │
-├── 📂 Diseño_Interfaces_Alex/                   # Bocetos UX/UI, XCF, ideas y vector Apple (iconoApple.svg)
-├── 📂 EjercicioCarlos/                          # Práctica extra Android Gradle
+├── 📂 disenoInterfacesAlex/                      # Bocetos UX/UI, XCF, ideas y vector Apple (iconoApple.svg)
+├── 📂 ejercicioCarlos/                           # Práctica extra Android Gradle
 ├── 📂 practicarJavaVSCode/                      # Algoritmos y lógica en Java
 ├── 📂 ProgramacionDeServiciosYPorcesos_Jesus/   # Concurrencia, hilos, sockets y PDFs teóricos
-├── 📂 Sistemas_de_Gestion_Empresarial_Alexis/   # Capturas de Zoho CRM, CSV y ODS
+├── 📂 sistemasDeGestionEmpresarialAlexis/         # Capturas de Zoho CRM, CSV y ODS
 │
 ├── 📜 EJECUTARGRADLE_JAVI.sh                    # Script auxiliar para Gradle
 ├── 🕒 horario.png                               # Horario oficial del curso
