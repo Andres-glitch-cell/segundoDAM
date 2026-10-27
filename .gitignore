@@ -7,12 +7,28 @@
 **/.gradle/
 **/build/
 **/bin/
+**/out/
+*.class
+*.log
+*.hprof
 **/buildOutputCleanup.lock
 **/cache.properties
 **/problems-report.html
 
+# Metadatos locales de IntelliJ IDEA y Android Studio
+**/.idea/
+*.iml
+
 # Configuración local de Android Studio
 **/local.properties
+**/google-services.json
+*.apk
+*.aab
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
 
 # JDK local; no subirlo al repositorio
 /jdkJava/
