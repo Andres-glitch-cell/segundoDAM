@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UD02_EditText</string>
+    <string name="escribe_un_texto_aqu">Escribe un texto aquí...</string>
 </resources>

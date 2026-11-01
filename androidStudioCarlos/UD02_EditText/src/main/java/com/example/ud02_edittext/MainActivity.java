@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText etInput;
     private Button btnSubmit;
     private TextView tvOutput;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

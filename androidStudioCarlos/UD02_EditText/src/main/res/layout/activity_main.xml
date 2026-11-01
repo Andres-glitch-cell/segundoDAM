@@ -12,7 +12,7 @@
         android:id="@+id/etInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Escribe un texto aquí..."
+        android:hint="@string/escribe_un_texto_aqu"
         android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@id/btnSubmit"
