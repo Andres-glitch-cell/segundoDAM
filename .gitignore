@@ -1,5 +1,30 @@
+
+# SDK
 SDK_AndroidStudio/
 SDK_Java/
+
+# Gradle
 .gradle/
+**/build/
+
+# IDEs
 .idea/
-build/
+.vscode/
+.settings/
+
+# Android Studio
+local.properties
+.cxx/
+.externalNativeBuild/
+
+# Java compilado
+*.class
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Claves privadas
+*.pem
+*.key
+*.keystore
