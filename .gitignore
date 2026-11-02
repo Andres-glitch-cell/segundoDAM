@@ -38,3 +38,8 @@ Desktop.ini
 *.key
 *.p12
 *.jks
+cmdline-tools/
+build-tools/
+platform-tools/
+platforms/
+licenses/
