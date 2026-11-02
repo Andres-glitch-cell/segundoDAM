@@ -16,8 +16,7 @@ public class App {
         try (InputStream archivo = App.class.getResourceAsStream("/biblioteca.xml")) {
 
             if (archivo == null) {
-                throw new IllegalStateException(
-                        "No se encuentra biblioteca.xml en resources");
+                throw new IllegalStateException("No se encuentra biblioteca.xml en resources");
             }
 
             LibroListWrapper biblioteca = (LibroListWrapper) unmarshaller.unmarshal(archivo);
