@@ -51,37 +51,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pulsar(String tecla) {
-        switch (tecla) {
-            case "C":
+        if (tecla.equals("C")) {
+            expresion = "";
+            tieneResultado = false;
+        } else if (tecla.equals("⌫")) {
+            if (tieneResultado) {
                 expresion = "";
                 tieneResultado = false;
-                break;
-            case "⌫":
-                if (tieneResultado) {
-                    expresion = "";
-                    tieneResultado = false;
-                } else if (!expresion.isEmpty()) {
-                    expresion = expresion.substring(0, expresion.length() - 1);
-                }
-                break;
-            case "=":
-                calcularFinal();
-                return;
-            case ".":
-                anadirPunto();
-                break;
-            case "%":
-                anadirPorcentaje();
-                break;
-            case "+":
-            case "−":
-            case "×":
-            case "÷":
-                anadirOperador(tecla.charAt(0));
-                break;
-            default:
-                anadirDigito(tecla);
-                break;
+            } else if (!expresion.isEmpty()) {
+                expresion = expresion.substring(0, expresion.length() - 1);
+            }
+        } else if (tecla.equals("=")) {
+            calcularFinal();
+            return;
+        } else if (tecla.equals(".")) {
+            anadirPunto();
+        } else if (tecla.equals("%")) {
+            anadirPorcentaje();
+        } else if (OPERADORES.contains(tecla)) {
+            anadirOperador(tecla.charAt(0));
+        } else {
+            anadirDigito(tecla);
         }
         actualizarPantalla();
     }
