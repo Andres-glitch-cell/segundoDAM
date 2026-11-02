@@ -144,6 +144,7 @@ public class App {
 
                 }
             } while (opcion != 2);
+            sc.close();
         } catch (Exception e) {
             System.out.println(e);
         }
