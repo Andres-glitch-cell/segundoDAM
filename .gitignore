@@ -1,45 +1,5 @@
-# Configuración local del editor
-.vscode/settings.json
-**/.vscode/settings.json
-
-# Archivos generados por Java y Gradle
+SDK_AndroidStudio/
+SDK_Java/
 .gradle/
-**/.gradle/
-**/build/
-**/bin/
-**/out/
-*.class
-*.log
-*.hprof
-**/buildOutputCleanup.lock
-**/cache.properties
-**/problems-report.html
-
-# Metadatos locales de IntelliJ IDEA y Android Studio
-**/.idea/
-*.iml
-
-# Configuración local de Android Studio
-**/local.properties
-**/google-services.json
-*.apk
-*.aab
-
-# Archivos generados por el sistema operativo
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-# JDK local; no subirlo al repositorio
-/jdkJava/
-
-# Claves privadas y certificados sensibles
-*.pem
-*.key
-*.p12
-*.jks
-cmdline-tools/
-build-tools/
-platform-tools/
-platforms/
-licenses/
+.idea/
+build/
