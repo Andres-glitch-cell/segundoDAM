@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Pantalla -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvExpresion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="2"
+            android:textColor="#888888"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeMaxTextSize="56sp"
+            android:autoSizeMinTextSize="24sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="0"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Línea entre pantalla y teclado -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55888888" />
+
+    <!-- Teclado -->
+    <LinearLayout
+        android:id="@+id/teclado"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <!-- Fila 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="C" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="⌫" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="%" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="÷" android:textSize="26sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#55888888" />
+
+        <!-- Fila 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="7" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="8" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="9" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="×" android:textSize="26sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#55888888" />
+
+        <!-- Fila 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="4" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="5" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="6" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="−" android:textSize="26sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#55888888" />
+
+        <!-- Fila 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="1" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="2" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="3" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="+" android:textSize="26sp" />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#55888888" />
+
+        <!-- Fila 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="0" android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="." android:textSize="26sp" />
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#55888888" />
+            <Button android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" style="?attr/borderlessButtonStyle" android:textColor="?android:attr/textColorPrimary" android:text="=" android:textSize="26sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

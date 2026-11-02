@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B86B45"
+    android:padding="1dp">
+
+    <!-- ZONA 1 - Arriba izquierda (azul claro) -->
+    <View
+        android:id="@+id/arribaIzquierda"
+        android:layout_width="100dp"
+        android:layout_height="95dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="1dp"
+        android:background="#E6F0F6" />
+
+    <!-- ZONA 2 - Arriba derecha (amarillo) -->
+    <View
+        android:id="@+id/arribaDerecha"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="1dp"
+        android:background="#FFE09A" />
+
+    <!-- ZONA 3 - Arriba centro (naranja) -->
+    <View
+        android:id="@+id/arribaCentro"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="1dp"
+        android:layout_toLeftOf="@id/arribaDerecha"
+        android:layout_toRightOf="@id/arribaIzquierda"
+        android:background="#F4A98A" />
+
+    <!-- ZONA 4 - Centro (verde) -->
+    <View
+        android:id="@+id/zonaVerde"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/arribaCentro"
+        android:layout_margin="1dp"
+        android:background="#B9DDA5" />
+
+    <!-- ZONA 5 - Abajo izquierda (azul) -->
+    <View
+        android:id="@+id/abajoIzquierda"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/zonaVerde"
+        android:layout_margin="1dp"
+        android:background="#8FA8CC" />
+
+    <!-- ZONA 6 - Abajo derecha (amarillo) -->
+    <View
+        android:id="@+id/abajoDerecha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/abajoIzquierda"
+        android:layout_margin="1dp"
+        android:layout_toRightOf="@id/abajoIzquierda"
+        android:background="#FFE09A" />
+
+</RelativeLayout>

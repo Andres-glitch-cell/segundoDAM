@@ -123,6 +123,10 @@ segundoDAM/
 │   ├── 📁 BaseDatos/ (ejercicioCinco, ejercicioSeis, simulacroExamen)
 │   └── 🔑 [Claves PEM excluidas por seguridad en .gitignore]
 │
+├── 📂 documentos/
+│   ├── 📁 entregas/                            # Entregas generales en PDF y ODT
+│   └── 📁 recursos/                            # Enlaces y recursos de referencia
+│
 ├── 📂 androidStudioCarlos/                       # Proyecto Android Multi-módulo
 │   ├── 📁 actividadDos/                         # App nativa en Java + XML Views
 │   ├── 📁 actividadUno/                         # App nativa en Kotlin + Jetpack Compose
