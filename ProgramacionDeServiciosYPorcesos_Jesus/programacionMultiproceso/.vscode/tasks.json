@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar y Ejecutar C",
+            "type": "shell",
+            "command": "gcc-bin ${fileBasename} && ./binarios/${fileBasenameNoExtension}",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "group": "none"
+        }
+    ]
+}
