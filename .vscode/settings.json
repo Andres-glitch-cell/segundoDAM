@@ -2,7 +2,7 @@
   // ============================================================
   // 🎨 APARIENCIA GENERAL
   // ============================================================
-  "workbench.colorTheme": "Dracula Theme",
+  "workbench.colorTheme": "Palenight Operator",
   "workbench.iconTheme": "symbols",
   "workbench.productIconTheme": "Default",
   "workbench.sideBar.location": "left",
@@ -763,5 +763,9 @@
   "java.import.gradle.java.home": "/usr/lib/jvm/jdk-24.0.2-oracle-x64",
   "explorer.confirmPasteNative": false,
   "chat.disableAIFeatures": true,
-  "java.jdt.ls.java.home": ""
+  "java.jdt.ls.java.home": "",
+  "java.compile.nullAnalysis.mode": "disabled",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  }
 }
