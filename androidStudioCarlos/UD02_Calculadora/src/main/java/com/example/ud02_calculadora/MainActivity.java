@@ -2,146 +2,135 @@ package com.example.ud02_calculadora;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtOperacion, txtResultado;
-    String numero = "0";
-    String operador = "";
-    double primero = 0;
-    boolean nuevo = true;
+    private TextView visorOperacion, visorResultado;
+    private String entradaActual = "0";
+    private String operadorSeleccionado = "";
+    private double primerOperando = 0;
+    private boolean esNuevoNumero = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtOperacion = findViewById(R.id.txtOperacion);
-        txtResultado = findViewById(R.id.txtResultado);
+        visorOperacion = findViewById(R.id.txtOperacion);
+        visorResultado = findViewById(R.id.txtResultado);
+
+        // Busca automáticamente todos los botones del XML y los activa
+        conectarTodosLosBotones(findViewById(android.R.id.content));
     }
 
-    public void onButtonClick(View v) {
-        if (!(v instanceof Button)) return;
-        String tecla = ((Button) v).getText().toString();
+    // Este método recorre tu diseño XML y les asigna la función del clic a los botones
+    private void conectarTodosLosBotones(View vista) {
+        if (vista instanceof Button) {
+            vista.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onButtonClick(v); // Aquí ya se usa explícitamente el método
+                }
+            });
+        } else if (vista instanceof ViewGroup) {
+            ViewGroup grupo = (ViewGroup) vista;
+            for (int i = 0; i < grupo.getChildCount(); i++) {
+                conectarTodosLosBotones(grupo.getChildAt(i));
+            }
+        }
+    }
 
-        switch (tecla) {
+    public void onButtonClick(View view) {
+        if (!(view instanceof Button)) return;
+        String botonPresionado = ((Button) view).getText().toString();
+
+        switch (botonPresionado) {
             case "C":
-                numero = "0";
-                operador = "";
-                primero = 0;
-                nuevo = true;
-                txtOperacion.setText("");
-                txtResultado.setText("");
+                entradaActual = "0";
+                operadorSeleccionado = "";
+                primerOperando = 0;
+                esNuevoNumero = true;
+                visorOperacion.setText("");
+                visorResultado.setText("0");
                 break;
 
             case "⌫":
-                if (numero.length() > 1) {
-                    numero = numero.substring(0, numero.length() - 1);
+                if (entradaActual.length() > 1) {
+                    entradaActual = entradaActual.substring(0, entradaActual.length() - 1);
                 } else {
-                    numero = "0";
+                    entradaActual = "0";
                 }
-                mostrar();
+                visorResultado.setText(entradaActual);
                 break;
 
             case ".":
-                if (nuevo) {
-                    numero = "0.";
-                    nuevo = false;
-                } else if (!numero.contains(".")) {
-                    numero += ".";
+                if (esNuevoNumero) {
+                    entradaActual = "0.";
+                    esNuevoNumero = false;
+                } else if (!entradaActual.contains(".")) {
+                    entradaActual += ".";
                 }
-                mostrar();
+                visorResultado.setText(entradaActual);
                 break;
 
             case "+":
             case "-":
             case "×":
             case "/":
-                try {
-                    primero = Double.parseDouble(numero);
-                } catch (NumberFormatException e) {
-                    primero = 0;
-                }
-                operador = tecla;
-                txtOperacion.setText(formato(primero) + " " + operador);
-                txtResultado.setText("");
-                nuevo = true;
+                primerOperando = Double.parseDouble(entradaActual);
+                operadorSeleccionado = botonPresionado;
+                esNuevoNumero = true;
+                visorOperacion.setText(entradaActual + " " + operadorSeleccionado);
                 break;
 
             case "=":
-                if (!operador.isEmpty() && !nuevo) {
-                    double segundo;
-                    try {
-                        segundo = Double.parseDouble(numero);
-                    } catch (NumberFormatException e) {
-                        return;
-                    }
-                    double total = 0;
-                    boolean error = false;
+                if (!operadorSeleccionado.isEmpty()) {
+                    double segundoOperando = Double.parseDouble(entradaActual);
+                    double resultado = 0;
 
-                    switch (operador) {
-                        case "+":
-                            total = primero + segundo;
-                            break;
-                        case "-":
-                            total = primero - segundo;
-                            break;
-                        case "×":
-                            total = primero * segundo;
-                            break;
+                    switch (operadorSeleccionado) {
+                        case "+": resultado = primerOperando + segundoOperando; break;
+                        case "-": resultado = primerOperando - segundoOperando; break;
+                        case "×": resultado = primerOperando * segundoOperando; break;
                         case "/":
-                            if (segundo == 0) {
-                                txtResultado.setText("Error");
-                                error = true;
-                            } else {
-                                total = primero / segundo;
+                            if (segundoOperando == 0) {
+                                visorResultado.setText("Error");
+                                entradaActual = "0";
+                                operadorSeleccionado = "";
+                                esNuevoNumero = true;
+                                return;
                             }
+                            resultado = primerOperando / segundoOperando;
                             break;
                     }
 
-                    if (!error) {
-                        txtOperacion.setText(formato(primero) + " " + operador + " " + formato(segundo) + " =");
-                        numero = formato(total);
-                        txtResultado.setText(numero);
-                    }
+                    visorOperacion.append(" " + entradaActual + " =");
 
-                    operador = "";
-                    nuevo = true;
-                }
-                break;
-
-            default: // dígitos 0-9
-                if (nuevo) {
-                    numero = tecla;
-                    nuevo = false;
-                } else {
-                    if (numero.equals("0")) {
-                        numero = tecla;
+                    if (resultado % 1 == 0) {
+                        entradaActual = String.valueOf((int) resultado);
                     } else {
-                        numero += tecla;
+                        entradaActual = String.valueOf(resultado);
                     }
+
+                    visorResultado.setText(entradaActual);
+                    operadorSeleccionado = "";
+                    esNuevoNumero = true;
                 }
-                mostrar();
+                break;
+
+            default:
+                if (esNuevoNumero || entradaActual.equals("0")) {
+                    entradaActual = botonPresionado;
+                    esNuevoNumero = false;
+                } else {
+                    entradaActual += botonPresionado;
+                }
+                visorResultado.setText(entradaActual);
                 break;
         }
-    }
-
-    private void mostrar() {
-        if (operador.isEmpty()) {
-            txtOperacion.setText(numero);
-        } else {
-            txtOperacion.setText(formato(primero) + " " + operador + " " + numero);
-        }
-    }
-
-    private String formato(double n) {
-        if (n == (long) n) {
-            return String.valueOf((long) n);
-        }
-        return String.valueOf(n);
     }
 }
