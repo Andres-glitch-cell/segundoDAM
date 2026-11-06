@@ -2,7 +2,6 @@ package org.example;
 
 import java.io.InputStream;
 
-// Cambia javax por jakarta
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Unmarshaller;
 

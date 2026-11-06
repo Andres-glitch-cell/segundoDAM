@@ -1,0 +1,44 @@
+/*
+ * Configuración del proyecto Java con Gradle.
+ */
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Pruebas unitarias con JUnit
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Guava
+    implementation libs.guava
+
+    // Conector MySQL
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // JAXB: conversión entre objetos Java y XML (Actualizado para Java 21)
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+    runtimeOnly 'com.sun.xml.bind:jaxb-impl:4.0.0'
+}
+
+// Configuración de Java 21
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Clase principal del programa
+application {
+    mainClass = 'org.example.App'
+}
+
+// Configuración de las pruebas
+tasks.named('test') {
+    useJUnitPlatform()
+}
