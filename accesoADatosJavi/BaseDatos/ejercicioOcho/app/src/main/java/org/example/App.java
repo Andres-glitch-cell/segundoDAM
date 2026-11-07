@@ -1,3 +1,4 @@
+
 package org.example;
 
 import java.sql.Connection;
@@ -11,21 +12,16 @@ public class App {
 
     public static void main(String[] args) {
 
-        // Guardamos los datos necesarios para conectarnos a la base de datos MySQL.
-        String urlConnection = "jdbc:mysql://51.48.4.228:3306/basededatos_DAM";
-        String user = "alumno";
-        String password = "123456";
+        String url = "jdbc:mysql://35.153.139.129:3306/ejercicioCincoJavi";
+        String usuario = "administrador";
+        String clave = "R00tR00t*12345";
 
-        try {
-            // DriverManager establece la conexión y Connection la guarda en c.
-            Connection c = DriverManager.getConnection(urlConnection, user, password);
+        Scanner sc = new Scanner(System.in);
+
+        try (Connection conexion = DriverManager.getConnection(url, usuario, clave)) {
 
             System.out.println("Conexión realizada correctamente.");
 
-            // Statement permite ejecutar instrucciones SQL utilizando la conexión.
-            Statement s = c.createStatement();
-
-            // Guardamos la consulta SQL para crear la tabla Series si todavía no existe.
             String crearTabla = "CREATE TABLE IF NOT EXISTS Series ("
                     + "id INT PRIMARY KEY AUTO_INCREMENT, "
                     + "titulo VARCHAR(100), "
@@ -34,247 +30,216 @@ public class App {
                     + "finalizada BOOLEAN"
                     + ")";
 
-            // executeUpdate() ejecuta la instrucción SQL que crea la tabla.
-            s.executeUpdate(crearTabla);
-
-            // Scanner permite leer los datos que el usuario introduce por consola.
-            Scanner teclado = new Scanner(System.in);
+            try (Statement sentencia = conexion.createStatement()) {
+                sentencia.executeUpdate(crearTabla);
+            }
 
             int opcion = 0;
 
-            // Repetimos el menú mientras el usuario no elija la opción 7.
             while (opcion != 7) {
 
-                System.out.println();
-                System.out.println("--- MENÚ ---");
+                System.out.println("\n========== MENÚ DE SERIES ==========");
                 System.out.println("1. Insertar una nueva serie");
                 System.out.println("2. Listar todas las series");
                 System.out.println("3. Buscar series por género");
                 System.out.println("4. Mostrar series en emisión");
-                System.out.println("5. Actualizar número de temporadas de una serie");
+                System.out.println("5. Actualizar número de temporadas");
                 System.out.println("6. Eliminar una serie por id");
                 System.out.println("7. Salir");
-                System.out.print("Elige una opción: ");
+                System.out.print("Selecciona una opción: ");
 
-                // Guardamos el número de la opción seleccionada.
-                opcion = teclado.nextInt();
+                try {
+                    opcion = Integer.parseInt(sc.nextLine());
 
-                // Ejecutamos las instrucciones correspondientes a la opción elegida.
-                switch (opcion) {
+                    switch (opcion) {
 
-                    case 1:
-                        // Pedimos los datos de la serie que queremos guardar en la tabla.
-                        System.out.print("Introduce el título: ");
-                        String titulo = teclado.next();
+                        case 1: {
 
-                        System.out.print("Introduce el género: ");
-                        String genero = teclado.next();
+                            // Pedimos los datos de la nueva serie.
+                            System.out.print("Introduce el título: ");
+                            String tituloNuevo = sc.nextLine();
 
-                        System.out.print("Introduce el número de temporadas: ");
-                        int numTemporadas = teclado.nextInt();
+                            System.out.print("Introduce el género: ");
+                            String generoNuevo = sc.nextLine();
 
-                        System.out.print("¿La serie está finalizada? (true/false): ");
-                        boolean finalizada = teclado.nextBoolean();
+                            System.out.print("Número de temporadas: ");
+                            int temporadasNuevas = Integer.parseInt(sc.nextLine());
 
-                        // Preparamos la consulta INSERT para guardar los datos de la serie.
-                        // Los signos ? se sustituyen por los valores que introduzca el usuario.
-                        String sqlInsertar = "INSERT INTO Series "
-                                + "(titulo, genero, num_temporadas, finalizada) "
-                                + "VALUES (?, ?, ?, ?)";
+                            System.out.print("¿Está finalizada? (true/false): ");
+                            boolean serieTerminada = Boolean.parseBoolean(sc.nextLine());
 
-                        PreparedStatement psInsertar = c.prepareStatement(sqlInsertar);
+                            String insertar = "INSERT INTO Series "
+                                    + "(titulo, genero, num_temporadas, finalizada) "
+                                    + "VALUES (?, ?, ?, ?)";
 
-                        // Asignamos los datos a los parámetros de la consulta, en el mismo orden.
-                        psInsertar.setString(1, titulo);
-                        psInsertar.setString(2, genero);
-                        psInsertar.setInt(3, numTemporadas);
-                        psInsertar.setBoolean(4, finalizada);
+                            try (PreparedStatement insertarSerie = conexion.prepareStatement(insertar)) {
 
-                        // executeUpdate() ejecuta el INSERT y guarda la serie en MySQL.
-                        psInsertar.executeUpdate();
+                                insertarSerie.setString(1, tituloNuevo);
+                                insertarSerie.setString(2, generoNuevo);
+                                insertarSerie.setInt(3, temporadasNuevas);
+                                insertarSerie.setBoolean(4, serieTerminada);
 
-                        System.out.println("Serie insertada correctamente.");
+                                insertarSerie.executeUpdate();
 
-                        // Cerramos el PreparedStatement cuando terminamos de insertar.
-                        psInsertar.close();
+                                System.out.println("Serie añadida correctamente.");
+                            }
 
-                        break;
-
-                    case 2:
-                        // Guardamos la consulta SQL para obtener todas las series.
-                        String sqlMostrar = "SELECT * FROM Series";
-
-                        // Preparamos y ejecutamos el SELECT; ResultSet guarda las filas obtenidas.
-                        PreparedStatement psMostrar = c.prepareStatement(sqlMostrar);
-                        ResultSet rs = psMostrar.executeQuery();
-
-                        // rs.next() avanza por las filas mientras queden series por mostrar.
-                        while (rs.next()) {
-
-                            // Obtenemos los datos de la serie de la fila actual.
-                            int id = rs.getInt("id");
-                            String tituloSerie = rs.getString("titulo");
-                            String generoSerie = rs.getString("genero");
-                            int temporadas = rs.getInt("num_temporadas");
-                            boolean serieFinalizada = rs.getBoolean("finalizada");
-
-                            // Mostramos los datos de la serie por consola.
-                            System.out.println(id + ", " + tituloSerie + ", "
-                                    + generoSerie + ", " + temporadas
-                                    + " temporadas, Finalizada: " + serieFinalizada);
+                            break;
                         }
 
-                        // Cerramos los resultados y el objeto que ejecutó la consulta.
-                        rs.close();
-                        psMostrar.close();
+                        case 2: {
 
-                        break;
+                            String consulta = "SELECT * FROM Series";
 
-                    case 3:
-                        // Pedimos el género por el que queremos buscar las series.
-                        System.out.print("Introduce el género: ");
-                        String generoBuscar = teclado.next();
+                            try (PreparedStatement buscarTodas = conexion.prepareStatement(consulta);
+                                    ResultSet resultados = buscarTodas.executeQuery()) {
 
-                        // Preparamos el SELECT para obtener las series del género indicado.
-                        String sqlGenero = "SELECT * FROM Series WHERE genero = ?";
-                        PreparedStatement psGenero = c.prepareStatement(sqlGenero);
+                                System.out.println("\n--- LISTADO DE SERIES ---");
 
-                        // Sustituimos el signo ? por el género introducido por el usuario.
-                        psGenero.setString(1, generoBuscar);
+                                mostrarSeries(resultados);
+                            }
 
-                        // executeQuery() ejecuta el SELECT y devuelve los resultados en un ResultSet.
-                        ResultSet rsGenero = psGenero.executeQuery();
-
-                        // Recorremos las filas devueltas por la consulta.
-                        while (rsGenero.next()) {
-
-                            // Obtenemos los datos de la serie de la fila actual.
-                            int id = rsGenero.getInt("id");
-                            String tituloGenero = rsGenero.getString("titulo");
-                            String generoSerie = rsGenero.getString("genero");
-                            int temporadasGenero = rsGenero.getInt("num_temporadas");
-                            boolean finalizadaGenero = rsGenero.getBoolean("finalizada");
-
-                            // Mostramos los datos de la serie encontrada.
-                            System.out.println(id + ", " + tituloGenero + ", "
-                                    + generoSerie + ", " + temporadasGenero
-                                    + " temporadas, Finalizada: " + finalizadaGenero);
+                            break;
                         }
 
-                        // Cerramos el ResultSet y el PreparedStatement de la búsqueda.
-                        rsGenero.close();
-                        psGenero.close();
+                        case 3: {
 
-                        break;
+                            System.out.print("Introduce el género que quieres buscar: ");
+                            String generoElegido = sc.nextLine();
 
-                    case 4:
-                        // Guardamos el SELECT para obtener las series que no han finalizado.
-                        String sqlEmision = "SELECT * FROM Series WHERE finalizada = false";
+                            String consultaGenero = "SELECT * FROM Series WHERE genero = ?";
 
-                        // Preparamos y ejecutamos la consulta; ResultSet almacena las filas obtenidas.
-                        PreparedStatement psEmision = c.prepareStatement(sqlEmision);
-                        ResultSet rsEmision = psEmision.executeQuery();
+                            try (PreparedStatement buscarGenero = conexion.prepareStatement(consultaGenero)) {
 
-                        // Recorremos las series que todavía están en emisión.
-                        while (rsEmision.next()) {
+                                buscarGenero.setString(1, generoElegido);
 
-                            // Obtenemos los datos de la serie de la fila actual.
-                            int id = rsEmision.getInt("id");
-                            String tituloEmision = rsEmision.getString("titulo");
-                            String generoEmision = rsEmision.getString("genero");
-                            int temporadasEmision = rsEmision.getInt("num_temporadas");
-                            boolean finalizadaEmision = rsEmision.getBoolean("finalizada");
+                                try (ResultSet resultados = buscarGenero.executeQuery()) {
 
-                            // Mostramos los datos de la serie por consola.
-                            System.out.println(id + ", " + tituloEmision + ", "
-                                    + generoEmision + ", " + temporadasEmision
-                                    + " temporadas, Finalizada: " + finalizadaEmision);
+                                    System.out.println("\n--- SERIES DEL GÉNERO " + generoElegido + " ---");
+
+                                    mostrarSeries(resultados);
+                                }
+                            }
+
+                            break;
                         }
 
-                        // Cerramos el ResultSet y el PreparedStatement utilizados.
-                        rsEmision.close();
-                        psEmision.close();
+                        case 4: {
 
-                        break;
+                            String consultaEmision = "SELECT * FROM Series WHERE finalizada = false";
 
-                    case 5:
-                        // Pedimos el id de la serie que queremos modificar.
-                        System.out.print("Introduce el id de la serie: ");
-                        int idActualizar = teclado.nextInt();
+                            try (PreparedStatement buscarEmision = conexion.prepareStatement(consultaEmision);
+                                    ResultSet resultados = buscarEmision.executeQuery()) {
 
-                        // Pedimos el nuevo número de temporadas.
-                        System.out.print("Introduce el nuevo número de temporadas: ");
-                        int nuevasTemporadas = teclado.nextInt();
+                                System.out.println("\n--- SERIES EN EMISIÓN ---");
 
-                        // Preparamos la consulta UPDATE para modificar las temporadas de una serie.
-                        String sqlActualizar = "UPDATE Series SET num_temporadas = ? WHERE id = ?";
-                        PreparedStatement psActualizar = c.prepareStatement(sqlActualizar);
+                                mostrarSeries(resultados);
+                            }
 
-                        // Asignamos el nuevo número de temporadas y el id de la serie.
-                        psActualizar.setInt(1, nuevasTemporadas);
-                        psActualizar.setInt(2, idActualizar);
-
-                        // executeUpdate() ejecuta el UPDATE y devuelve el número de filas modificadas.
-                        int filasActualizadas = psActualizar.executeUpdate();
-
-                        if (filasActualizadas > 0) {
-                            System.out.println("Número de temporadas actualizado correctamente.");
-                        } else {
-                            System.out.println("No existe ninguna serie con ese id.");
+                            break;
                         }
 
-                        // Cerramos el PreparedStatement después de actualizar los datos.
-                        psActualizar.close();
+                        case 5: {
 
-                        break;
+                            System.out.print("Introduce el id de la serie: ");
+                            int idSerie = Integer.parseInt(sc.nextLine());
 
-                    case 6:
-                        // Pedimos el id de la serie que queremos eliminar.
-                        System.out.print("Introduce el id de la serie: ");
-                        int idEliminar = teclado.nextInt();
+                            System.out.print("Introduce el nuevo número de temporadas: ");
+                            int nuevasTemporadas = Integer.parseInt(sc.nextLine());
 
-                        // Preparamos la consulta DELETE para eliminar la serie con el id indicado.
-                        String sqlEliminar = "DELETE FROM Series WHERE id = ?";
-                        PreparedStatement psEliminar = c.prepareStatement(sqlEliminar);
+                            String actualizar = "UPDATE Series SET num_temporadas = ? WHERE id = ?";
 
-                        // Sustituimos el signo ? por el id introducido por el usuario.
-                        psEliminar.setInt(1, idEliminar);
+                            try (PreparedStatement modificarSerie = conexion.prepareStatement(actualizar)) {
 
-                        // executeUpdate() ejecuta el DELETE y devuelve el número de filas eliminadas.
-                        int filasEliminadas = psEliminar.executeUpdate();
+                                modificarSerie.setInt(1, nuevasTemporadas);
+                                modificarSerie.setInt(2, idSerie);
 
-                        if (filasEliminadas > 0) {
-                            System.out.println("Serie eliminada correctamente.");
-                        } else {
-                            System.out.println("No existe ninguna serie con ese id.");
+                                int filasModificadas = modificarSerie.executeUpdate();
+
+                                if (filasModificadas > 0) {
+                                    System.out.println("Temporadas actualizadas correctamente.");
+                                } else {
+                                    System.out.println("No existe ninguna serie con ese id.");
+                                }
+                            }
+
+                            break;
                         }
 
-                        // Cerramos el PreparedStatement después de eliminar la serie.
-                        psEliminar.close();
+                        case 6: {
 
-                        break;
+                            System.out.print("Introduce el id de la serie que quieres eliminar: ");
+                            int idEliminar = Integer.parseInt(sc.nextLine());
 
-                    case 7:
-                        // Mostramos el mensaje de salida; el menú terminará al comprobar la opción.
-                        System.out.println("Programa finalizado.");
-                        break;
+                            String eliminar = "DELETE FROM Series WHERE id = ?";
 
-                    default:
-                        // Avisamos si el usuario introduce una opción que no aparece en el menú.
-                        System.out.println("Opción no válida.");
-                        break;
+                            try (PreparedStatement borrarSerie = conexion.prepareStatement(eliminar)) {
+
+                                borrarSerie.setInt(1, idEliminar);
+
+                                int filasBorradas = borrarSerie.executeUpdate();
+
+                                if (filasBorradas > 0) {
+                                    System.out.println("Serie eliminada correctamente.");
+                                } else {
+                                    System.out.println("No se ha encontrado ninguna serie con ese id.");
+                                }
+                            }
+
+                            break;
+                        }
+
+                        case 7:
+
+                            System.out.println("Programa finalizado. ¡Hasta pronto!");
+                            break;
+
+                        default:
+
+                            System.out.println("Opción no válida. Inténtalo de nuevo.");
+                            break;
+                    }
+
+                } catch (NumberFormatException e) {
+
+                    System.out.println("Debes introducir un número válido.");
                 }
             }
 
-            // Cerramos el Scanner, el Statement y la conexión para liberar los recursos.
-            teclado.close();
-            s.close();
-            c.close();
-
         } catch (Exception e) {
-            // Mostramos un mensaje y el detalle del error si falla alguna operación.
+
             System.out.println("Error al conectar o trabajar con la base de datos.");
-            System.err.println(e);
+            System.err.println("Detalles: " + e.getMessage());
+
+        } finally {
+
+            sc.close();
+        }
+    }
+
+    public static void mostrarSeries(ResultSet datos) throws Exception {
+
+        boolean haySeries = false;
+
+        while (datos.next()) {
+
+            int identificador = datos.getInt("id");
+            String tituloSerie = datos.getString("titulo");
+            String generoSerie = datos.getString("genero");
+            int temporadas = datos.getInt("num_temporadas");
+            boolean finalizada = datos.getBoolean("finalizada");
+
+            System.out.println("ID: " + identificador
+                    + " | Título: " + tituloSerie
+                    + " | Género: " + generoSerie
+                    + " | Temporadas: " + temporadas
+                    + " | Finalizada: " + finalizada);
+
+            haySeries = true;
+        }
+
+        if (!haySeries) {
+            System.out.println("No se han encontrado series.");
         }
     }
 }

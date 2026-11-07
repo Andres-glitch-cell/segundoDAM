@@ -1,3 +1,4 @@
+
 package org.example;
 
 import java.sql.Connection;
@@ -11,127 +12,122 @@ public class App {
 
     public static void main(String[] args) {
 
-        // Guardamos los datos necesarios para conectarnos a la base de datos MySQL.
-        String urlConnection = "jdbc:mysql://51.48.4.228:3306/basededatos_DAM";
-        String user = "alumno";
-        String password = "123456";
+        String url = "jdbc:mysql://35.153.139.129:3306/ejercicioCincoJavi";
+        String usuario = "administrador";
+        String clave = "R00tR00t*12345";
 
-        try {
-            // DriverManager establece la conexión y Connection la guarda en c.
-            Connection c = DriverManager.getConnection(urlConnection, user, password);
+        Scanner sc = new Scanner(System.in);
+
+        try (Connection conexion = DriverManager.getConnection(url, usuario, clave)) {
 
             System.out.println("Conexión realizada correctamente.");
 
-            // Statement permite ejecutar instrucciones SQL utilizando la conexión.
-            Statement s = c.createStatement();
-
-            // Guardamos la consulta SQL para crear la tabla Animales si todavía no existe.
-            String crearTabla = "CREATE TABLE IF NOT EXISTS Animales (" + "id INT PRIMARY KEY AUTO_INCREMENT, "
+            String sqlTabla = "CREATE TABLE IF NOT EXISTS Animales (" + "id INT PRIMARY KEY AUTO_INCREMENT, "
                     + "nombre VARCHAR(100), " + "especie VARCHAR(100), " + "edad INT" + ")";
 
-            // executeUpdate() ejecuta la instrucción SQL que crea la tabla.
-            s.executeUpdate(crearTabla);
-
-            // Scanner permite leer los datos que el usuario introduce por consola.
-            Scanner teclado = new Scanner(System.in);
+            try (Statement sentencia = conexion.createStatement()) {
+                sentencia.executeUpdate(sqlTabla);
+            }
 
             int opcion = 0;
 
-            // Repetimos el menú mientras el usuario no elija la opción 3.
             while (opcion != 3) {
 
-                System.out.println();
-                System.out.println("--- MENÚ ---");
+                System.out.println("\n========== MENÚ DE ANIMALES ==========");
                 System.out.println("1. Añadir animal");
                 System.out.println("2. Mostrar todos los animales");
                 System.out.println("3. Salir");
-                System.out.print("Elige una opción: ");
+                System.out.print("Selecciona una opción: ");
 
-                // Guardamos el número de la opción seleccionada.
-                opcion = teclado.nextInt();
+                try {
+                    opcion = Integer.parseInt(sc.nextLine());
 
-                // Ejecutamos las instrucciones correspondientes a la opción elegida.
-                switch (opcion) {
+                    switch (opcion) {
 
-                    case 1:
-                        // Pedimos los datos del animal que queremos guardar en la tabla.
-                        System.out.print("Introduce el nombre: ");
-                        String nombre = teclado.next();
+                        case 1:
 
-                        System.out.print("Introduce la especie: ");
-                        String especie = teclado.next();
+                            System.out.print("Nombre del animal: ");
+                            String nombreNuevo = sc.nextLine();
 
-                        System.out.print("Introduce la edad: ");
-                        int edad = teclado.nextInt();
+                            System.out.print("Especie del animal: ");
+                            String especieNueva = sc.nextLine();
 
-                        // Preparamos la consulta INSERT para guardar los datos del animal.
-                        // Los signos ? se sustituyen por los valores que introduzca el usuario.
-                        String sentenciaSQL_Insert = "INSERT INTO Animales (nombre, especie, edad) VALUES (?, ?, ?)";
-                        PreparedStatement ps = c.prepareStatement(sentenciaSQL_Insert);
+                            System.out.print("Edad del animal: ");
+                            int edadNueva = Integer.parseInt(sc.nextLine());
 
-                        // Asignamos los datos a los parámetros de la consulta, en el mismo orden.
-                        ps.setString(1, nombre);
-                        ps.setString(2, especie);
-                        ps.setInt(3, edad);
+                            String insertar = "INSERT INTO Animales (nombre, especie, edad) VALUES (?, ?, ?)";
 
-                        // executeUpdate() ejecuta el INSERT y guarda el animal en MySQL.
-                        ps.executeUpdate();
+                            try (PreparedStatement insertarAnimal = conexion.prepareStatement(insertar)) {
 
-                        System.out.println("Animal añadido correctamente.");
+                                insertarAnimal.setString(1, nombreNuevo);
+                                insertarAnimal.setString(2, especieNueva);
+                                insertarAnimal.setInt(3, edadNueva);
 
-                        // Cerramos el PreparedStatement cuando terminamos de insertar.
-                        ps.close();
+                                insertarAnimal.executeUpdate();
 
-                        break;
+                                System.out.println("Animal guardado correctamente.");
+                            }
 
-                    case 2:
-                        // Guardamos la consulta SQL para obtener todos los animales.
-                        String sqlMostrar = "SELECT * FROM Animales";
+                            break;
 
-                        // Preparamos y ejecutamos el SELECT; ResultSet guarda las filas obtenidas.
-                        PreparedStatement psMostrar = c.prepareStatement(sqlMostrar);
-                        ResultSet rs = psMostrar.executeQuery();
+                        case 2:
 
-                        // rs.next() avanza por las filas mientras queden animales por mostrar.
-                        while (rs.next()) {
+                            String consulta = "SELECT * FROM Animales";
 
-                            // Obtenemos los datos del animal de la fila actual.
-                            int id = rs.getInt("id");
-                            String nombreAnimal = rs.getString("nombre");
-                            String especieAnimal = rs.getString("especie");
-                            int edadAnimal = rs.getInt("edad");
+                            try (PreparedStatement buscarAnimales = conexion.prepareStatement(consulta);
+                                    ResultSet resultados = buscarAnimales.executeQuery()) {
 
-                            // Mostramos los datos del animal por consola.
-                            System.out.println(id + ", " + nombreAnimal + ", " + especieAnimal + ", " + edadAnimal);
-                        }
+                                System.out.println("\n--- LISTADO DE ANIMALES ---");
 
-                        // Cerramos los resultados y el objeto que ejecutó la consulta.
-                        rs.close();
-                        psMostrar.close();
+                                boolean hayAnimales = false;
 
-                        break;
+                                while (resultados.next()) {
 
-                    case 3:
-                        // Mostramos el mensaje de salida; el bucle terminará al comprobar la opción.
-                        System.out.println("Programa finalizado.");
-                        break;
+                                    int codigo = resultados.getInt("id");
+                                    String nombre = resultados.getString("nombre");
+                                    String especie = resultados.getString("especie");
+                                    int edad = resultados.getInt("edad");
 
-                    default:
-                        // Avisamos si el usuario introduce una opción que no aparece en el menú.
-                        System.out.println("Opción no válida.");
-                        break;
+                                    System.out.println("ID: " + codigo
+                                            + " | Nombre: " + nombre
+                                            + " | Especie: " + especie
+                                            + " | Edad: " + edad);
+
+                                    hayAnimales = true;
+                                }
+
+                                if (!hayAnimales) {
+                                    System.out.println("Todavía no hay animales registrados.");
+                                }
+                            }
+
+                            break;
+
+                        case 3:
+
+                            System.out.println("Programa finalizado. ¡Hasta pronto!");
+                            break;
+
+                        default:
+
+                            System.out.println("Opción no válida. Inténtalo de nuevo.");
+                            break;
+                    }
+
+                } catch (NumberFormatException e) {
+
+                    System.out.println("Debes introducir un número válido.");
                 }
             }
 
-            // Cerramos el Scanner, el Statement y la conexión para liberar los recursos.
-            teclado.close();
-            s.close();
-            c.close();
-
         } catch (Exception e) {
-            // Mostramos un mensaje y el detalle del error si falla alguna operación.
+
             System.out.println("Error al conectar o trabajar con la base de datos.");
-            System.err.println(e);
+            System.err.println("Detalles: " + e.getMessage());
+
+        } finally {
+
+            sc.close();
         }
     }
 }

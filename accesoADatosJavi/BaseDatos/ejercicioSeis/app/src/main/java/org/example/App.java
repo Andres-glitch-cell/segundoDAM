@@ -1,185 +1,147 @@
-
 package org.example;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
 public class App {
+
     public static void main(String[] args) {
 
-        // Creamos el Scanner para leer los datos que introduce el usuario.
-        Scanner sc = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
 
-        // Datos necesarios para conectarse a la base de datos MySQL.
-        String urlConnection = "jdbc:mysql://100.24.30.150:3306/ejercicioCincoJavi";
-        String user = "admin";
-        String password = "PON_AQUI_TU_CONTRASEÑA";
+        String url = "jdbc:mysql://35.153.139.129:3306/ejercicioCincoJavi";
+        String usuario = "administrador";
+        String clave = "R00tR00t*12345";
 
-        try (Connection conexion = DriverManager.getConnection(urlConnection, user, password)) {
+        try (Connection conexionBD = DriverManager.getConnection(url, usuario, clave)) {
 
-            System.out.println("\n\u001B[32mConexión realizada correctamente.\u001B[0m");
+            System.out.println("\n\u001B[32mConectado correctamente a la base de datos.\u001B[0m");
 
-            // Creamos el objeto Statement para ejecutar sentencias SQL.
-            Statement stmnt = conexion.createStatement();
+            int seleccion;
 
-            // Variable que guarda la opción elegida por el usuario.
-            int opcion = 0;
-
-            // El menú se repite mientras el usuario no elija salir.
             do {
+                System.out.println("\n========== MENÚ DE ALUMNOS ==========");
+                System.out.println("1. Mostrar todos los alumnos");
+                System.out.println("2. Mostrar alumnos por curso");
+                System.out.println("3. Mostrar alumnos mayores de una edad");
+                System.out.println("4. Salir");
+                System.out.print("Selecciona una opción: ");
+
                 try {
-                    System.out.println("\n1. Mostrar todos los alumnos");
-                    System.out.println("2. Mostrar alumnos por curso");
-                    System.out.println("3. Mostrar alumnos mayores de una edad");
-                    System.out.println("4. Salir");
-                    System.out.print("Elija una opción: ");
+                    seleccion = Integer.parseInt(teclado.nextLine());
 
-                    opcion = sc.nextInt();
+                    switch (seleccion) {
 
-                    // Limpiamos el salto de línea que deja nextInt().
-                    sc.nextLine();
-
-                    switch (opcion) {
-
-                        // Opción 1: mostrar todos los alumnos.
                         case 1:
 
-                            // Ejecutamos una consulta para obtener todos los alumnos.
-                            ResultSet hacerSelectTodosAlumnos = stmnt.executeQuery("SELECT * FROM alumnos");
+                            Statement consulta = conexionBD.createStatement();
+                            ResultSet resultado = consulta.executeQuery("SELECT * FROM alumnos");
+                            System.out.println("\n--- LISTADO DE ALUMNOS ---");
 
-                            // Recorremos los resultados de la consulta.
-                            while (hacerSelectTodosAlumnos.next()) {
-
-                                // Obtenemos los datos de cada alumno.
-                                int id = hacerSelectTodosAlumnos.getInt(1);
-                                String nombre = hacerSelectTodosAlumnos.getString(2);
-                                int edad = hacerSelectTodosAlumnos.getInt(3);
-                                String curso = hacerSelectTodosAlumnos.getString(4);
-
-                                // Mostramos los datos por pantalla.
-                                System.out.println(id + ", " + nombre + ", " + edad + ", " + curso);
-                            }
-
-                            // Cerramos el ResultSet cuando terminamos de utilizarlo.
-                            hacerSelectTodosAlumnos.close();
+                            mostrarResultados(resultado);
+                            resultado.close();
+                            consulta.close();
 
                             break;
 
-                        // Opción 2: mostrar alumnos de un curso concreto.
                         case 2:
-                            System.out.println("¿Qué curso quieres elegir?");
-                            System.out.println("- Segundo de DAM");
-                            System.out.println("- Segundo de DAW");
-                            System.out.println("- Profesorado");
 
-                            String opcionUsuarioCurso = sc.nextLine();
+                            System.out.print("Introduce el nombre del curso: ");
+                            String cursoElegido = teclado.nextLine();
 
-                            ResultSet hacerSelectPorCurso = stmnt
-                                    .executeQuery("SELECT * FROM alumnos WHERE curso = '" + opcionUsuarioCurso + "'");
+                            String sqlCurso = "SELECT * FROM alumnos WHERE curso = ?";
 
-                            // Variable para comprobar si hay alumnos.
-                            boolean hayAlumnos = false;
+                            PreparedStatement buscarCurso = conexionBD.prepareStatement(sqlCurso);
 
-                            // Recorremos los alumnos encontrados.
-                            while (hacerSelectPorCurso.next()) {
+                            buscarCurso.setString(1, cursoElegido);
 
-                                hayAlumnos = true;
+                            ResultSet alumnosCurso = buscarCurso.executeQuery();
 
-                                int id = hacerSelectPorCurso.getInt(1);
-                                String nombre = hacerSelectPorCurso.getString(2);
-                                int edad = hacerSelectPorCurso.getInt(3);
-                                String curso = hacerSelectPorCurso.getString(4);
+                            System.out.println("\n--- ALUMNOS DEL CURSO ---");
 
-                                // Mostramos los datos del alumno.
-                                System.out.println(id + ", " + nombre + ", " + edad + ", " + curso);
+                            if (!alumnosCurso.isBeforeFirst()) {
+                                System.out.println("No se han encontrado alumnos en ese curso.");
+                            } else {
+                                mostrarResultados(alumnosCurso);
                             }
 
-                            // Si no se encuentra ningún alumno, mostramos un mensaje.
-                            if (!hayAlumnos) {
-                                System.out.println("No hay alumnos registrados en ese curso.");
-                            }
-
-                            // Cerramos el resultado de la consulta.
-                            hacerSelectPorCurso.close();
+                            alumnosCurso.close();
+                            buscarCurso.close();
 
                             break;
 
-                        // Opción 3: mostrar alumnos mayores de una edad.
                         case 3:
+                            System.out.print("Indica una edad: ");
+                            int edadMinima = Integer.parseInt(teclado.nextLine());
 
-                            // Pedimos la edad a partir de la cual queremos buscar alumnos.
-                            System.out.print("Introduce la edad: ");
-                            int edadElegida = sc.nextInt();
+                            String sqlEdad = "SELECT * FROM alumnos WHERE edad > ?";
 
-                            // Limpiamos el salto de línea pendiente.
-                            sc.nextLine();
+                            PreparedStatement buscarEdad = conexionBD.prepareStatement(sqlEdad);
 
-                            // Consultamos los alumnos cuya edad sea superior a la indicada.
-                            ResultSet hacerSelectPorEdadEspecifica = stmnt.executeQuery(
-                                    "SELECT * FROM alumnos WHERE edad > " + edadElegida);
+                            buscarEdad.setInt(1, edadMinima);
 
-                            // Variable para comprobar si existen resultados.
-                            boolean hayAlumnosMayores = false;
+                            ResultSet alumnosEdad = buscarEdad.executeQuery();
 
-                            // Recorremos y mostramos los alumnos encontrados.
-                            while (hacerSelectPorEdadEspecifica.next()) {
+                            System.out.println("\n--- ALUMNOS MAYORES DE " + edadMinima + " AÑOS ---");
 
-                                hayAlumnosMayores = true;
-
-                                int id = hacerSelectPorEdadEspecifica.getInt(1);
-                                String nombre = hacerSelectPorEdadEspecifica.getString(2);
-                                int edad = hacerSelectPorEdadEspecifica.getInt(3);
-                                String curso = hacerSelectPorEdadEspecifica.getString(4);
-
-                                System.out.println(id + ", " + nombre + ", " + edad + ", " + curso);
+                            if (!alumnosEdad.isBeforeFirst()) {
+                                System.out.println("No hay alumnos que cumplan esa condición.");
+                            } else {
+                                mostrarResultados(alumnosEdad);
                             }
 
-                            // Si no hay resultados, mostramos un mensaje.
-                            if (!hayAlumnosMayores) {
-                                System.out.println("No hay alumnos mayores de esa edad.");
-                            }
-
-                            // Cerramos el resultado de la consulta.
-                            hacerSelectPorEdadEspecifica.close();
+                            alumnosEdad.close();
+                            buscarEdad.close();
 
                             break;
 
-                        // Opción 4: salir del programa.
                         case 4:
 
-                            System.out.println("Gracias por usar el menú.");
+                            System.out.println("\nSaliendo del programa. ¡Hasta pronto!");
 
                             break;
 
-                        // Si el usuario introduce una opción que no existe.
                         default:
 
-                            System.out.println("\n\u001B[31mError: has elegido una opción incorrecta.\u001B[0m");
+                            System.out.println("\n\u001B[31mOpción no válida. Prueba otra vez.\u001B[0m");
 
                             break;
                     }
 
-                } catch (Exception e) {
+                } catch (NumberFormatException e) {
 
-                    // Mostramos cualquier otro error producido durante la ejecución.
-                    System.err.println("Error producido: " + e);
+                    System.out.println("\nDebes introducir un número válido.");
+                    seleccion = 0;
                 }
 
-            } while (opcion != 4);
-
-            // Cerramos los recursos al terminar el menú.
-            stmnt.close();
-            conexion.close();
-            sc.close();
+            } while (seleccion != 4);
 
         } catch (Exception e) {
 
-            // Mostramos el error si no se puede establecer la conexión.
-            System.err.println(e);
-            System.out.println("\n\u001B[31mError al conectar con la base de datos.\u001B[0m");
+            System.err.println("No se pudo conectar con la base de datos.");
+            System.err.println("Detalles del error: " + e.getMessage());
+
+        }
+
+        teclado.close();
+    }
+
+    // !! Método encargado de mostrar los datos obtenidos de la consulta.
+    public static void mostrarResultados(ResultSet datos) throws Exception {
+
+        while (datos.next()) {
+
+            int identificador = datos.getInt("id");
+            String nombreAlumno = datos.getString("nombre");
+            int edadAlumno = datos.getInt("edad");
+            String cursoAlumno = datos.getString("curso");
+
+            System.out.println("ID: " + identificador + " | Nombre: " + nombreAlumno + " | Edad: " + edadAlumno
+                    + " | Curso: " + cursoAlumno);
         }
     }
 }
