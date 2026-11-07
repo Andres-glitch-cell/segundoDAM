@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_dias"
+        android:title="@string/d_as_de_la_semana">
+        <menu>
+            <item android:id="@+id/dia_lunes" android:title="@string/lunes" />
+            <item android:id="@+id/dia_martes" android:title="@string/martes" />
+            <item android:id="@+id/dia_miercoles" android:title="@string/mi_rcoles" />
+            <item android:id="@+id/dia_jueves" android:title="@string/jueves" />
+            <item android:id="@+id/dia_viernes" android:title="@string/viernes" />
+            <item android:id="@+id/dia_sabado" android:title="@string/s_bado" />
+            <item android:id="@+id/dia_domingo" android:title="@string/domingo" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_meses"
+        android:title="Meses del año">
+        <menu>
+            <item android:id="@+id/mes_enero" android:title="@string/enero" />
+            <item android:id="@+id/mes_febrero" android:title="Febrero" />
+            <item android:id="@+id/mes_marzo" android:title="Marzo" />
+            <item android:id="@+id/mes_abril" android:title="Abril" />
+            <item android:id="@+id/mes_mayo" android:title="Mayo" />
+            <item android:id="@+id/mes_junio" android:title="Junio" />
+            <item android:id="@+id/mes_julio" android:title="Julio" />
+            <item android:id="@+id/mes_agosto" android:title="Agosto" />
+            <item android:id="@+id/mes_septiembre" android:title="Septiembre" />
+            <item android:id="@+id/mes_octubre" android:title="Octubre" />
+            <item android:id="@+id/mes_noviembre" android:title="Noviembre" />
+            <item android:id="@+id/mes_diciembre" android:title="Diciembre" />
+        </menu>
+    </item>
+
+</menu>

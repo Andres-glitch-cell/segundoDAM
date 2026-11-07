@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">UD02_A06_Menus_EjTres</string>
+    <string name="abre_el_men_y_elige_una_opci_n">Abre el menú y elige una opción</string>
+    <string name="martes">Martes</string>
+    <string name="lunes">Lunes</string>
+    <string name="mi_rcoles">Miércoles</string>
+    <string name="domingo">Domingo</string>
+    <string name="s_bado">Sábado</string>
+    <string name="viernes">Viernes</string>
+    <string name="jueves">Jueves</string>
+    <string name="enero">Enero</string>
+    <string name="d_as_de_la_semana">Días de la semana</string>
+</resources>
