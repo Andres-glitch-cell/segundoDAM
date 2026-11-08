@@ -7,7 +7,6 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Producto")
 @XmlAccessorType(XmlAccessType.FIELD)
-
 public class Producto {
     @XmlAttribute(name = "id")
     private int id;
@@ -19,14 +18,12 @@ public class Producto {
     private double precio;
 
     public Producto() {
-
     }
 
     public Producto(int id, String nombre, double precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
-
     }
 
     public double getPrecio() {
