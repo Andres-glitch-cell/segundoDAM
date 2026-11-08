@@ -1,20 +1,10 @@
 package org.example;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name = "Producto")
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Producto {
-    @XmlAttribute(name = "id")
     private int id;
 
-    @XmlAttribute(name = "nombre")
     private String nombre;
 
-    @XmlAttribute(name = "precio")
     private double precio;
 
     public Producto() {
