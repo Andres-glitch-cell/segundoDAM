@@ -2,6 +2,8 @@
 # SDK
 SDK_AndroidStudio/
 SDK_Java/
+SDK_Java_Windows/
+SDK_Java_Linux/
 
 # Gradle
 .gradle/
@@ -11,6 +13,7 @@ SDK_Java/
 .idea/
 .vscode/
 .settings/
+**/.metadata/
 
 # Android Studio
 local.properties

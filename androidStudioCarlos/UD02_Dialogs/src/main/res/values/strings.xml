@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UD02_Dialogs</string>
+    <string name="titulo_ejercicio1">Ejercicio 1: Diálogos (Botones y Listado)</string>
+    <string name="titulo_ejercicio2">Ejercicio 2: Fecha y Hora</string>
+    <string name="btn_ejercicio1">Ir a Ejercicio 1 (Diálogos)</string>
+    <string name="btn_ejercicio2">Ir a Ejercicio 2 (Fecha y Hora)</string>
+    <string name="btn_dialogo_botones">Diálogo con Botones</string>
+    <string name="btn_dialogo_lista">Diálogo con Listado</string>
+    <string name="btn_dialogo_fecha">Seleccionar Fecha</string>
+    <string name="btn_dialogo_hora">Seleccionar Hora</string>
+</resources>

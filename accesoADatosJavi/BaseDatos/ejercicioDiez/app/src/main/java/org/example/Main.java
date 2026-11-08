@@ -6,14 +6,23 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://51.48.4.228:3306/basededatos_DAM";
-        String usuario = "alumno";
-        String clave = "123456";
+        String url = System.getenv("DB_URL");
+        String usuario = System.getenv("DB_USER");
+        String clave = System.getenv("DB_PASSWORD");
+
+        if (url == null || url.isBlank()
+                || usuario == null || usuario.isBlank()
+                || clave == null || clave.isBlank()) {
+            System.err.println("Configura las variables DB_URL, DB_USER y DB_PASSWORD.");
+            return;
+        }
 
         try (Connection conexion = DriverManager.getConnection(url, usuario, clave)) {
 
@@ -27,17 +36,24 @@ public class Main {
 
                 System.out.println("COCHES ENTRE 2005 Y 2010:");
 
-                for (Coche coche : arrayCoches) {
+                int cochesEnRango = 0;
+                for (int i = 0; i < arrayCoches.length; i++) {
+                    Coche coche = arrayCoches[i];
 
-                    if (coche.getAño() > 2005 && coche.getAño() < 2010) {
+                    if (coche.getAño() >= 2005 && coche.getAño() <= 2010) {
+                        cochesEnRango++;
 
                         System.out.println(
-                        coche.getMarca() + " "
-                            + coche.getModelo()
-                            + " - Año: " + coche.getAño()
-                            + " - Precio: " + coche.getPrecio()
-                            + " - Kilómetros: " + coche.getKilometros());
+                                coche.getMarca() + " "
+                                        + coche.getModelo()
+                                        + " - Año: " + coche.getAño()
+                                        + " - Precio: " + coche.getPrecio()
+                                        + " - Kilómetros: " + coche.getKilometros());
                     }
+                }
+
+                if (cochesEnRango == 0) {
+                    System.out.println("No hay coches entre 2005 y 2010.");
                 }
 
                 double totalPrecios = 0;
@@ -45,7 +61,8 @@ public class Main {
                 Coche cocheCaro = arrayCoches[0];
                 Coche cocheBarato = arrayCoches[0];
 
-                for (Coche coche : arrayCoches) {
+                for (int i = 0; i < arrayCoches.length; i++) {
+                    Coche coche = arrayCoches[i];
 
                     totalPrecios += coche.getPrecio();
 
@@ -85,39 +102,23 @@ public class Main {
 
     public static Coche[] obtenerCoches(Connection conexion) throws SQLException {
 
-        String consulta = "SELECT id, marca, modelo, anyo, precio, kilometros FROM Coches";
+        String consulta = "SELECT id, marca, modelo, anyo, precio, kilometros FROM Coches ORDER BY id";
+        List<Coche> coches = new ArrayList<>();
 
-        try (PreparedStatement sentencia = conexion.prepareStatement(
-                consulta,
-                ResultSet.TYPE_SCROLL_INSENSITIVE,
-                ResultSet.CONCUR_READ_ONLY);
-
+        try (PreparedStatement sentencia = conexion.prepareStatement(consulta);
                 ResultSet resultado = sentencia.executeQuery()) {
 
-            int cantidadCoches = 0;
-
             while (resultado.next()) {
-                cantidadCoches++;
-            }
-
-            Coche[] arrayCoches = new Coche[cantidadCoches];
-
-            resultado.beforeFirst();
-
-            for (int i = 0; i < arrayCoches.length; i++) {
-
-                resultado.next();
-
-                arrayCoches[i] = new Coche(
+                coches.add(new Coche(
                         resultado.getInt("id"),
                         resultado.getString("marca"),
                         resultado.getString("modelo"),
                         resultado.getInt("anyo"),
                         resultado.getDouble("precio"),
-                        resultado.getInt("kilometros"));
+                        resultado.getInt("kilometros")));
             }
-
-            return arrayCoches;
         }
+
+        return coches.toArray(new Coche[0]);
     }
 }

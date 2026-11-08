@@ -188,6 +188,16 @@ cd segundoDAM
 # 3. Abrir la asignatura deseada en tu IDE (Android Studio, IntelliJ IDEA o VS Code)
 ```
 
+### Java en Linux
+
+Para descargar e instalar Eclipse Temurin JDK 25 localmente (x86_64 o ARM64), ejecuta desde la raíz:
+
+```bash
+bash ./instalar_sdk_java_linux.sh
+```
+
+El SDK se instala en `SDK_Java_Linux/`, que está excluido de Git. Al terminar, el script muestra cómo configurar `JAVA_HOME` para la terminal actual.
+
 > [!TIP]
 > ⚠️ **Nota para usuarios de Windows con rutas acentuadas:** Si Android Studio muestra advertencias sobre caracteres non-ASCII en la ruta, el parámetro `android.overridePathCheck=true` ya se encuentra configurado globalmente en los proyectos Gradle.
 
