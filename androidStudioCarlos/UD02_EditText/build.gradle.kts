@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.ud02_edittext"
-    compileSdk = 34
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.ud02_edittext"
