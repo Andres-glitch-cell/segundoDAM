@@ -1,6 +1,6 @@
 package practicarEjerciciosAysha;
 
-class HiloTresUno extends Thread {
+class HiloTresUnoDos extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -14,20 +14,20 @@ class HiloTresUno extends Thread {
     }
 }
 
-class HiloTresTres extends Thread {
+class HiloTresDosDos extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println("Buenas noches");
+            System.out.println("Buenos días");
         }
     }
 }
 
-public class ejercicioTresDos {
+public class EjercicioTresDos02 {
     public static void main(String[] args) {
         // Crear dos instancias del hilo
-        HiloTresUno hilo1 = new HiloTresUno();
-        HiloTresTres hilo2 = new HiloTresTres();
+        HiloTresUnoDos hilo1 = new HiloTresUnoDos();
+        HiloTresDosDos hilo2 = new HiloTresDosDos();
 
         hilo1.start();
         hilo2.start();
