@@ -76,8 +76,7 @@ public class Main {
             }
 
         } catch (SQLException e) {
-            System.out.println("Error al conectar o consultar la base de datos.");
-            e.printStackTrace();
+            System.err.println("Error al conectar o consultar la base de datos: " + e.getMessage());
         }
     }
 
