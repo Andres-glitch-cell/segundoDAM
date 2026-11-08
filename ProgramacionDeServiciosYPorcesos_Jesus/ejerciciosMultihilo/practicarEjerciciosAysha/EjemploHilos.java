@@ -1,13 +1,19 @@
 package practicarEjerciciosAysha;
 
 class HiloEjemplo extends Thread {
+    private static void esperarUnSegundo() throws InterruptedException {
+        Thread.sleep(1000);
+    }
+
+    @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
             System.out.println(getName() + ": Iteración " + i);
             try {
-                Thread.sleep(1000); // Dormir durante 1 segundo
+                esperarUnSegundo();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                return;
             }
         }
     }

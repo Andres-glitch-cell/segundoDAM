@@ -11,13 +11,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
-
         String url = "jdbc:mysql://35.153.139.129:3306/ejercicioCincoJavi";
         String usuario = "administrador";
         String clave = "R00tR00t*12345";
 
-        try (Connection conexionBD = DriverManager.getConnection(url, usuario, clave)) {
+        try (Scanner teclado = new Scanner(System.in);
+            Connection conexionBD = DriverManager.getConnection(url, usuario, clave)) {
 
             System.out.println("\n\u001B[32mConectado correctamente a la base de datos.\u001B[0m");
 
@@ -36,80 +35,71 @@ public class App {
 
                     switch (seleccion) {
 
-                        case 1:
+                        case 1 -> {
 
-                            Statement consulta = conexionBD.createStatement();
-                            ResultSet resultado = consulta.executeQuery("SELECT * FROM alumnos");
-                            System.out.println("\n--- LISTADO DE ALUMNOS ---");
+                            try (Statement consulta = conexionBD.createStatement();
+                                    ResultSet resultado = consulta.executeQuery("SELECT * FROM alumnos")) {
+                                System.out.println("\n--- LISTADO DE ALUMNOS ---");
+                                mostrarResultados(resultado);
+                            }
 
-                            mostrarResultados(resultado);
-                            resultado.close();
-                            consulta.close();
+                        }
 
-                            break;
-
-                        case 2:
+                        case 2 -> {
 
                             System.out.print("Introduce el nombre del curso: ");
                             String cursoElegido = teclado.nextLine();
 
                             String sqlCurso = "SELECT * FROM alumnos WHERE curso = ?";
 
-                            PreparedStatement buscarCurso = conexionBD.prepareStatement(sqlCurso);
+                            try (PreparedStatement buscarCurso = conexionBD.prepareStatement(sqlCurso)) {
+                                buscarCurso.setString(1, cursoElegido);
 
-                            buscarCurso.setString(1, cursoElegido);
+                                try (ResultSet alumnosCurso = buscarCurso.executeQuery()) {
+                                    System.out.println("\n--- ALUMNOS DEL CURSO ---");
 
-                            ResultSet alumnosCurso = buscarCurso.executeQuery();
-
-                            System.out.println("\n--- ALUMNOS DEL CURSO ---");
-
-                            if (!alumnosCurso.isBeforeFirst()) {
-                                System.out.println("No se han encontrado alumnos en ese curso.");
-                            } else {
-                                mostrarResultados(alumnosCurso);
+                                    if (!alumnosCurso.isBeforeFirst()) {
+                                        System.out.println("No se han encontrado alumnos en ese curso.");
+                                    } else {
+                                        mostrarResultados(alumnosCurso);
+                                    }
+                                }
                             }
 
-                            alumnosCurso.close();
-                            buscarCurso.close();
+                        }
 
-                            break;
-
-                        case 3:
+                        case 3 -> {
                             System.out.print("Indica una edad: ");
                             int edadMinima = Integer.parseInt(teclado.nextLine());
 
                             String sqlEdad = "SELECT * FROM alumnos WHERE edad > ?";
 
-                            PreparedStatement buscarEdad = conexionBD.prepareStatement(sqlEdad);
+                            try (PreparedStatement buscarEdad = conexionBD.prepareStatement(sqlEdad)) {
+                                buscarEdad.setInt(1, edadMinima);
 
-                            buscarEdad.setInt(1, edadMinima);
+                                try (ResultSet alumnosEdad = buscarEdad.executeQuery()) {
+                                    System.out.println("\n--- ALUMNOS MAYORES DE " + edadMinima + " AÑOS ---");
 
-                            ResultSet alumnosEdad = buscarEdad.executeQuery();
-
-                            System.out.println("\n--- ALUMNOS MAYORES DE " + edadMinima + " AÑOS ---");
-
-                            if (!alumnosEdad.isBeforeFirst()) {
-                                System.out.println("No hay alumnos que cumplan esa condición.");
-                            } else {
-                                mostrarResultados(alumnosEdad);
+                                    if (!alumnosEdad.isBeforeFirst()) {
+                                        System.out.println("No hay alumnos que cumplan esa condición.");
+                                    } else {
+                                        mostrarResultados(alumnosEdad);
+                                    }
+                                }
                             }
 
-                            alumnosEdad.close();
-                            buscarEdad.close();
+                        }
 
-                            break;
-
-                        case 4:
+                        case 4 -> {
 
                             System.out.println("\nSaliendo del programa. ¡Hasta pronto!");
 
-                            break;
+                        }
 
-                        default:
+                        default -> {
 
                             System.out.println("\n\u001B[31mOpción no válida. Prueba otra vez.\u001B[0m");
-
-                            break;
+                        }
                     }
 
                 } catch (NumberFormatException e) {
@@ -127,7 +117,6 @@ public class App {
 
         }
 
-        teclado.close();
     }
 
     // !! Método encargado de mostrar los datos obtenidos de la consulta.

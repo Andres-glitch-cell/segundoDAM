@@ -1,48 +1,25 @@
 
 // [INFO] Coloca los elementos de la ventana en zonas, como el centro y la parte inferior.
 import java.awt.BorderLayout;
-// [INFO] Permite elegir colores para el fondo y los bordes.
 import java.awt.Color;
-// [INFO] Define el ancho y alto de la ventana y de los rodillos.
 import java.awt.Dimension;
-// [INFO] Define el tipo, tamaño y estilo de la letra.
 import java.awt.Font;
-// [INFO] Proporciona las herramientas básicas para dibujar.
 import java.awt.Graphics;
-// [INFO] Permite dibujar imágenes y formas con más opciones.
 import java.awt.Graphics2D;
-// [INFO] Organiza elementos en filas y columnas.
 import java.awt.GridLayout;
-// [INFO] Representa las imágenes que se muestran en los rodillos.
 import java.awt.Image;
-// [INFO] Ajusta cómo se suavizan los dibujos y las imágenes.
 import java.awt.RenderingHints;
-// [INFO] Contiene los datos de una acción, como pulsar un botón.
-import java.awt.event.ActionEvent;
-// [INFO] Permite responder a acciones de botones y temporizadores.
-import java.awt.event.ActionListener;
-// [INFO] Permite comprobar si existe un archivo de imagen.
 import java.io.File;
-// [INFO] Elige al azar la fruta final de cada rodillo.
 import java.util.Random;
 
-// [INFO] Carga archivos PNG como imágenes para dibujarlos.
 import javax.swing.ImageIcon;
-// [INFO] Crea el botón GIRAR.
 import javax.swing.JButton;
-// [INFO] Crea la ventana principal del juego.
 import javax.swing.JFrame;
-// [INFO] Muestra textos, como la cantidad de créditos.
 import javax.swing.JLabel;
-// [INFO] Muestra ventanas de aviso y mensajes.
 import javax.swing.JOptionPane;
-// [INFO] Agrupa elementos y sirve de base para dibujar cada rodillo.
 import javax.swing.JPanel;
-// [INFO] Alinea textos y otros elementos de Swing.
 import javax.swing.SwingConstants;
-// [INFO] Ejecuta acciones relacionadas con la ventana de Swing.
 import javax.swing.SwingUtilities;
-// [INFO] Repite una acción con pausas para animar los rodillos.
 import javax.swing.Timer;
 
 public class tragaPerras extends JFrame {
@@ -97,12 +74,9 @@ public class tragaPerras extends JFrame {
         JPanel pnlControl = new JPanel(new GridLayout(2, 1, 5, 5));
         lblCreditos.setFont(new Font("Arial", Font.BOLD, 18));
         // [INFO] Este método se ejecuta al pulsar GIRAR y empieza el giro.
-        btnGirar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // [INFO] Al pulsar el botón, comienza una ronda nueva.
-                iniciarGiro();
-            }
+        btnGirar.addActionListener(e -> {
+            // [INFO] Al pulsar el botón, comienza una ronda nueva.
+            iniciarGiro();
         });
         pnlControl.add(lblCreditos);
         pnlControl.add(btnGirar);
@@ -126,12 +100,9 @@ public class tragaPerras extends JFrame {
         // [INFO] El temporizador llama a actualizarGiro unas 60 veces por segundo.
         // [INFO] Así la animación avanza poco a poco mientras la ventana sigue
         // respondiendo.
-        timer = new Timer(1000 / 60, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // [INFO] Cada aviso del temporizador avanza un paso de la ronda.
-                actualizarGiro();
-            }
+        timer = new Timer(1000 / 60, e -> {
+            // [INFO] Cada aviso del temporizador avanza un paso de la ronda.
+            actualizarGiro();
         });
         timer.start();
     }
@@ -209,8 +180,7 @@ public class tragaPerras extends JFrame {
                     "ProgramacionDeServiciosYPorcesos_Jesus/maquinaTragaperras/" + nombre
             };
 
-            for (int i = 0; i < rutas.length; i++) {
-                String ruta = rutas[i];
+            for (String ruta : rutas) {
                 if (new File(ruta).isFile()) {
                     return new ImageIcon(ruta).getImage();
                 }
@@ -299,12 +269,9 @@ public class tragaPerras extends JFrame {
     public static void main(String[] args) {
         // [INFO] Pide a Swing que cree la ventana cuando el sistema gráfico esté
         // [INFO] preparado.
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                // [INFO] Crea el juego y hace visible su ventana.
-                new tragaPerras().setVisible(true);
-            }
+        SwingUtilities.invokeLater(() -> {
+            // [INFO] Crea el juego y hace visible su ventana.
+            new tragaPerras().setVisible(true);
         });
     }
 }

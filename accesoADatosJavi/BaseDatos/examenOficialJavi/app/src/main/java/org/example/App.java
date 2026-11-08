@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class App {
@@ -25,7 +26,7 @@ public class App {
             PreparedStatement preparedStatementSelect = conexion.prepareStatement(sentenciaSQLBuscarUsuario);
 
             String nombreUsuario = "";
-            int opcion = 0;
+            int opcion;
 
             do {
                 System.out.println("1. Preguntar nombre de usuario si existe");
@@ -96,7 +97,7 @@ public class App {
                         break;
 
                     case 3:
-                        int opcionMenuDos = 0;
+                        int opcionMenuDos;
                         do {
                             System.out.println("\n\n1. Opción 1");
                             System.out.println("2. Opción 2");
@@ -145,8 +146,8 @@ public class App {
                 }
             } while (opcion != 2);
             sc.close();
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (SQLException e) {
+            System.err.println("Error de base de datos: " + e.getMessage());
         }
 
     }

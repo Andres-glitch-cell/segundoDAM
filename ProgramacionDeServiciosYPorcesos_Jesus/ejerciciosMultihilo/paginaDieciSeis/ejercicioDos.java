@@ -18,21 +18,24 @@ public class ejercicioDos {
         try {
             objetoMiPrimeroHilo.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            return;
         }
         miSegundoHilo objetoMiSegundoHilo = new miSegundoHilo();
         objetoMiSegundoHilo.start();
         try {
             objetoMiSegundoHilo.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            return;
         }
         miTercerHilo objetoMiTercerHilo = new miTercerHilo();
         objetoMiTercerHilo.start();
         try {
             objetoMiTercerHilo.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            return;
         }
         System.out.println("Fin de la ejecución de los tres hilos");
     }

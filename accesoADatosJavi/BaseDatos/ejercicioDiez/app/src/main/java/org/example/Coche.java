@@ -1,28 +1,24 @@
 
 package org.example;
 
-// Clase que representa un coche
 public class Coche {
 
-    private int id;
-    private String marca;
-    private String modelo;
-    private int anyo;
-    private double precio;
-    private int kilometros;
+    private final int id;
+    private final String marca;
+    private final String modelo;
+    private final int año;
+    private final double precio;
+    private final int kilometros;
 
-    // Constructor para crear un coche con todos sus datos
-    public Coche(int id, String marca, String modelo, int anyo,
-            double precio, int kilometros) {
+    public Coche(int id, String marca, String modelo, int año, double precio, int kilometros) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
-        this.anyo = anyo;
+        this.año = año;
         this.precio = precio;
         this.kilometros = kilometros;
     }
 
-    // Getters para obtener los datos del coche
     public int getId() {
         return id;
     }
@@ -35,8 +31,8 @@ public class Coche {
         return modelo;
     }
 
-    public int getAnyo() {
-        return anyo;
+    public int getAño() {
+        return año;
     }
 
     public double getPrecio() {

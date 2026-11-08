@@ -73,63 +73,19 @@ public class App {
                 try {
                     switch (opcionSeleccionadaMenu) {
 
-                        case 1:
-                            insertarNuevoAlumno(conexionBaseDatos, sc);
-                            break;
-
-                        case 2:
-                            listarTodosLosAlumnos(conexionBaseDatos);
-                            break;
-
-                        case 3:
-                            registrarNotaAlumno(conexionBaseDatos, sc);
-                            break;
-
-                        case 4:
-                            mostrarTodasLasNotasAlumno(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 5:
-                            calcularNotaMediaAlumno(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 6:
-                            calcularNotaMediaPorAsignatura(conexionBaseDatos);
-                            break;
-
-                        case 7:
-                            mostrarNotaMaximaYMinima(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 8:
-                            calcularEdadMediaCurso(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 9:
-                            mostrarAprobadosYSuspensos(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 10:
-                            mostrarAlumnosSobreMediaGlobal(conexionBaseDatos);
-                            break;
-
-                        case 11:
-                            eliminarAlumnoPorIdentificador(
-                                    conexionBaseDatos, sc);
-                            break;
-
-                        case 12:
-                            System.out.println("Programa finalizado.");
-                            break;
-
-                        default:
-                            System.out.println("Opción no válida.");
-                            break;
+                        case 1 -> insertarNuevoAlumno(conexionBaseDatos, sc);
+                        case 2 -> listarTodosLosAlumnos(conexionBaseDatos);
+                        case 3 -> registrarNotaAlumno(conexionBaseDatos, sc);
+                        case 4 -> mostrarTodasLasNotasAlumno(conexionBaseDatos, sc);
+                        case 5 -> calcularNotaMediaAlumno(conexionBaseDatos, sc);
+                        case 6 -> calcularNotaMediaPorAsignatura(conexionBaseDatos);
+                        case 7 -> mostrarNotaMaximaYMinima(conexionBaseDatos, sc);
+                        case 8 -> calcularEdadMediaCurso(conexionBaseDatos, sc);
+                        case 9 -> mostrarAprobadosYSuspensos(conexionBaseDatos, sc);
+                        case 10 -> mostrarAlumnosSobreMediaGlobal(conexionBaseDatos);
+                        case 11 -> eliminarAlumnoPorIdentificador(conexionBaseDatos, sc);
+                        case 12 -> System.out.println("Programa finalizado.");
+                        default -> System.out.println("Opción no válida.");
                     }
 
                 } catch (SQLException excepcionBaseDatos) {
@@ -211,9 +167,10 @@ public class App {
         // [IMPORTANT]: COMPROBAR
         System.out.print("Nota (0-10): ");
         String textoCalificacionAlumno = sc.nextLine().replace(',', '.');
-        Scanner lectorNota = new Scanner(textoCalificacionAlumno);
-        double calificacionAlumno = lectorNota.nextDouble();
-        lectorNota.close();
+        double calificacionAlumno;
+        try (Scanner lectorNota = new Scanner(textoCalificacionAlumno)) {
+            calificacionAlumno = lectorNota.nextDouble();
+        }
 
         if (calificacionAlumno < 0 || calificacionAlumno > 10) {
             System.out.println("La nota debe estar entre 0 y 10.");

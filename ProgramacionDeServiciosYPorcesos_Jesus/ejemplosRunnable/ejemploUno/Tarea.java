@@ -1,5 +1,5 @@
 public class Tarea implements Runnable {
-    private int numero;
+    private final int numero;
 
     public Tarea(int numero) {
         this.numero = numero;

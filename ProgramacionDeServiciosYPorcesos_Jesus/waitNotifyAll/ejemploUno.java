@@ -16,6 +16,7 @@ public class ejemploUno {
             System.out.println("\n" + nombre.toUpperCase() + "-: Buenos días mi amado jefe.");
 
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             System.err.println("Ha salido un error " + e);
         }
     }
@@ -28,14 +29,14 @@ public class ejemploUno {
 
         System.out.println("\n****** " + nombre + "-: Buenos días mis queridos empleados !! .******");
 
-        // Transcurridos 5 segundos, el jefe despierta a sus empleados
+        // wait libera el monitor para que los empleados puedan continuar.
         try {
-            Thread.sleep(5000);
+            wait(5000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        } finally {
+            notifyAll();
         }
-
-        notifyAll();
     }
 
     // MÉTODO PRINCIPAL

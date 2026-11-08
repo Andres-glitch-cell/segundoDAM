@@ -7,8 +7,8 @@ public class ejercicioUno {
         // ! guardar archivos que hay en la ruta destinada dentro de una array
         File[] arrayDeArchivosDescargas = rutaDescargas.listFiles();
         // ! bucle para recorrer los archivos y mostrar el nombre
-        for (int i = 0; i < arrayDeArchivosDescargas.length; i++) {
-            System.out.println(arrayDeArchivosDescargas[i].getName());
+        for (File archivo : arrayDeArchivosDescargas) {
+            System.out.println(archivo.getName());
         }
 
     }

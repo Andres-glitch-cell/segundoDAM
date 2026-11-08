@@ -4,13 +4,13 @@ package org.example;
 // Clase que representa un videojuego
 public class Videojuego {
 
-    private int id;
-    private String titulo;
-    private String plataforma;
-    private String genero;
-    private int anyo;
-    private double precio;
-    private double valoracion;
+    private final int id;
+    private final String titulo;
+    private final String plataforma;
+    private final String genero;
+    private final int anyo;
+    private final double precio;
+    private final double valoracion;
 
     // Constructor para crear un videojuego con todos sus datos
     public Videojuego(int id, String titulo, String plataforma, String genero,
