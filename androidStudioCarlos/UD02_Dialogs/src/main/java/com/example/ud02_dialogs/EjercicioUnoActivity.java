@@ -9,16 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EjercicioUnoActivity extends AppCompatActivity {
 
-    private Button btnDialogoBotones;
-    private Button btnDialogoLista;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejercicio1);
 
-        btnDialogoBotones = findViewById(R.id.btnDialogoBotones);
-        btnDialogoLista = findViewById(R.id.btnDialogoLista);
+        Button btnDialogoBotones = findViewById(R.id.btnDialogoBotones);
+        Button btnDialogoLista = findViewById(R.id.btnDialogoLista);
 
         btnDialogoBotones.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(EjercicioUnoActivity.this);
