@@ -4,13 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.ud02_dialogs"
-    compileSdk = 34
-    buildToolsVersion = "36.0.0"
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.ud02_dialogs"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
