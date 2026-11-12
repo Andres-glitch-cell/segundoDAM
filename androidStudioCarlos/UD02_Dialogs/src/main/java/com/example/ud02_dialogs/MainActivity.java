@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnIrEjercicio2.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Ejercicio2Activity.class);
+            Intent intent = new Intent(MainActivity.this, EjercicioDosActivitiy.class);
             startActivity(intent);
         });
     }

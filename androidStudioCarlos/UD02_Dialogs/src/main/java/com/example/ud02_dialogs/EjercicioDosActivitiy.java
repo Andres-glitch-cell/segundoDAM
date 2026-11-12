@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class Ejercicio2Activity extends AppCompatActivity {
+public class EjercicioDosActivitiy extends AppCompatActivity {
 
     private Button btnDialogoFecha;
     private Button btnDialogoHora;
@@ -18,7 +18,7 @@ public class Ejercicio2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ejercicio2);
+        setContentView(R.layout.activityejerciciodos);
 
         btnDialogoFecha = findViewById(R.id.btnDialogoFecha);
         btnDialogoHora = findViewById(R.id.btnDialogoHora);
@@ -30,10 +30,10 @@ public class Ejercicio2Activity extends AppCompatActivity {
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(
-                Ejercicio2Activity.this,
+                EjercicioDosActivitiy.this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
                     String fechaStr = String.format("%02d/%02d/%d", selectedDay, (selectedMonth + 1), selectedYear);
-                    Toast.makeText(Ejercicio2Activity.this, "Fecha seleccionada: " + fechaStr, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EjercicioDosActivitiy.this, "Fecha seleccionada: " + fechaStr, Toast.LENGTH_SHORT).show();
                 },
                 year, month, day
             );
@@ -46,10 +46,10 @@ public class Ejercicio2Activity extends AppCompatActivity {
             int minute = calendar.get(Calendar.MINUTE);
 
             TimePickerDialog timePickerDialog = new TimePickerDialog(
-                Ejercicio2Activity.this,
+                EjercicioDosActivitiy.this,
                 (view, selectedHour, selectedMinute) -> {
                     String horaStr = String.format("%02d:%02d", selectedHour, selectedMinute);
-                    Toast.makeText(Ejercicio2Activity.this, "Hora seleccionada: " + horaStr, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EjercicioDosActivitiy.this, "Hora seleccionada: " + horaStr, Toast.LENGTH_SHORT).show();
                 },
                 hour, minute, true
             );

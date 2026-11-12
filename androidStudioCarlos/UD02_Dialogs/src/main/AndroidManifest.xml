@@ -24,7 +24,7 @@
             android:label="@string/titulo_ejercicio1" />
 
         <activity
-            android:name=".Ejercicio2Activity"
+            android:name=".EjercicioDosActivitiy"
             android:exported="false"
             android:label="@string/titulo_ejercicio2" />
 
