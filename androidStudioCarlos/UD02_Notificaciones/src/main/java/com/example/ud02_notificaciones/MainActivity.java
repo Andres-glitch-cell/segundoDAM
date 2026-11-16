@@ -1,11 +1,9 @@
 package com.example.ud02_notificaciones;
 
-import android.Manifest;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,7 +11,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.graphics.Insets;
@@ -22,8 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String CHANNEL_ID = "canal_noticias_id";
-    private static final int NOTIFICATION_ID = 1;
+    private static final String CHANNEL_ID = "canal_ies_joan_coromines";
+    private static final int NOTIFICATION_ID = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +33,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // 1. Crear el canal de notificación (necesario para Android 8.0 o superior)
         crearCanalNotificacion();
 
+        // 2. Configurar el botón para lanzar la notificación
         Button btnLanzar = findViewById(R.id.btnLanzarNotificacion);
         btnLanzar.setOnClickListener(v -> lanzarNotificacion());
     }
 
     private void crearCanalNotificacion() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Canal Notificaciones IES";
-            String description = "Canal para notificaciones de la web del centro";
+            CharSequence name = "Notificaciones IES";
+            String description = "Canal para notificaciones de la web del IES Joan Coromines";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
+
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
 
@@ -58,17 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void lanzarNotificacion() {
-        // Pedir permiso en Android 13+ (API 33+) si es necesario
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 100);
-                Toast.makeText(this, "Por favor, concede el permiso de notificaciones", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
-
-        // Intent implícito para abrir la página web del IES Joan Coromines
+        // 3. Crear el Intent implícito para abrir la página web del IES Joan Coromines
         Intent intentWeb = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.iesjoancoromines.org"));
+
+        // 4. Envolver el Intent en un PendingIntent para que se ejecute al pulsar la notificación
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 this,
                 0,
@@ -76,22 +69,23 @@ public class MainActivity extends AppCompatActivity {
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
         );
 
-        // Construir la notificación
+        // 5. Construir la notificación con NotificationCompat
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_menu_info_details)
-                .setContentTitle("Visita la Web del Centro")
-                .setContentText("Pulsa aquí para abrir la web del IES Joan Coromines")
+                .setContentTitle("IES Joan Coromines")
+                .setContentText("Pulsa aquí para abrir la web oficial del centro")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
-                .setAutoCancel(true);
+                .setAutoCancel(true); // Se borra automáticamente al pulsarla
 
-        // Lanzar la notificación
+        // 6. Lanzar la notificación usando NotificationManagerCompat
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
         try {
             notificationManager.notify(NOTIFICATION_ID, builder.build());
-            Toast.makeText(this, "¡Notificación lanzada con éxito!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "¡Notificación enviada correctamente!", Toast.LENGTH_SHORT).show();
         } catch (SecurityException e) {
-            Toast.makeText(this, "Error de permisos de notificación", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error: Se requieren permisos de notificación", Toast.LENGTH_SHORT).show();
         }
     }
 }
