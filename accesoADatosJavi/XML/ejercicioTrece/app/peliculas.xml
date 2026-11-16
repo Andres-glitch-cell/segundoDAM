@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas>
+    <pelicula clasificacion="16">
+        <titulo>Origen</titulo>
+        <director>Christopher Nolan</director>
+        <anio>2010</anio>
+        <genero>Ciencia ficción</genero>
+        <duracion>148</duracion>
+    </pelicula>
+    <pelicula clasificacion="7">
+        <titulo>Toy Story</titulo>
+        <director>John Lasseter</director>
+        <anio>1995</anio>
+        <genero>Animación</genero>
+        <duracion>81</duracion>
+    </pelicula>
+    <pelicula clasificacion="18">
+        <titulo>Pulp Fiction</titulo>
+        <director>Quentin Tarantino</director>
+        <anio>1994</anio>
+        <genero>Crimen</genero>
+        <duracion>154</duracion>
+    </pelicula>
+    <pelicula clasificacion="12">
+        <titulo>El señor de los anillos: La comunidad del anillo</titulo>
+        <director>Peter Jackson</director>
+        <anio>2001</anio>
+        <genero>Fantasía</genero>
+        <duracion>178</duracion>
+    </pelicula>
+    <pelicula clasificacion="16">
+        <titulo>Matrix</titulo>
+        <director>Lana y Lilly Wachowski</director>
+        <anio>1999</anio>
+        <genero>Ciencia ficción</genero>
+        <duracion>136</duracion>
+    </pelicula>
+</peliculas>

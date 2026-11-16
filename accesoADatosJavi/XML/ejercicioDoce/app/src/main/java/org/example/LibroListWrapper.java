@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.xml.bind.annotation.XmlElement;
@@ -9,14 +8,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "biblioteca")
 public class LibroListWrapper {
 
-    private List<Libro> libros = new ArrayList<>();
-
-    public LibroListWrapper() {
-    }
-
-    public LibroListWrapper(List<Libro> libros) {
-        this.libros = libros;
-    }
+    private List<Libro> libros;
 
     @XmlElement(name = "libro")
     public List<Libro> getLibros() {

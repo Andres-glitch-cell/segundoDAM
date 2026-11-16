@@ -1,33 +1,35 @@
 package org.example;
 
-import java.io.InputStream;
+import java.io.File;
+import java.util.ArrayList;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.Unmarshaller;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        try {
+            File archivoXML = new File("biblioteca.xml");
 
-        JAXBContext context = JAXBContext.newInstance(LibroListWrapper.class);
+            JAXBContext claseContexto = JAXBContext.newInstance(LibroListWrapper.class);
+            Unmarshaller unmarshaller = claseContexto.createUnmarshaller();
 
-        Unmarshaller unmarshaller = context.createUnmarshaller();
+            LibroListWrapper wrapper = (LibroListWrapper) unmarshaller.unmarshal(archivoXML);
 
-        try (InputStream archivo = App.class.getResourceAsStream("/biblioteca.xml")) {
+            ArrayList<Libro> libroData = new ArrayList<>();
+            libroData.addAll(wrapper.getLibros());
 
-            if (archivo == null) {
-                throw new IllegalStateException("No se encuentra biblioteca.xml en resources");
-            }
-
-            LibroListWrapper biblioteca = (LibroListWrapper) unmarshaller.unmarshal(archivo);
-
-            for (Libro libro : biblioteca.getLibros()) {
+            libroData.forEach(libro -> {
                 System.out.println("Título: " + libro.getTitulo());
                 System.out.println("Autor: " + libro.getAutor());
-                System.out.println("Año: " + libro.getAnioPublicacion());
+                System.out.println("Año de publicación: " + libro.getAnioPublicacion());
                 System.out.println("Precio: " + libro.getPrecio() + " €");
-                System.out.println();
-            }
+                System.out.println("-----------------------------------");
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

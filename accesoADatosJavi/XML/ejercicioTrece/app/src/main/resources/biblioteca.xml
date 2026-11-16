@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <libro>
+        <titulo>Don Quijote de la Mancha</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <anioPublicacion>1605</anioPublicacion>
+        <precio>19.95</precio>
+    </libro>
+    <libro>
+        <titulo>Cien años de soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anioPublicacion>1967</anioPublicacion>
+        <precio>17.50</precio>
+    </libro>
+    <libro>
+        <titulo>La sombra del viento</titulo>
+        <autor>Carlos Ruiz Zafón</autor>
+        <anioPublicacion>2001</anioPublicacion>
+        <precio>21.00</precio>
+    </libro>
+    <libro>
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <anioPublicacion>1949</anioPublicacion>
+        <precio>14.95</precio>
+    </libro>
+    <libro>
+        <titulo>El principito</titulo>
+        <autor>Antoine de Saint-Exupéry</autor>
+        <anioPublicacion>1943</anioPublicacion>
+        <precio>12.75</precio>
+    </libro>
+</biblioteca>

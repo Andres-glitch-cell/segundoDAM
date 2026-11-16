@@ -1,27 +1,22 @@
 package org.example;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name = "libro")
 public class Libro {
-
     private String titulo;
     private String autor;
-    private String anioPublicacion;
+    private int anioPublicacion;
     private double precio;
 
+    // Constructor vacío obligatorio para JAXB
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, String anioPublicacion, double precio) {
+    public Libro(String titulo, String autor, int anioPublicacion, double precio) {
         this.titulo = titulo;
         this.autor = autor;
         this.anioPublicacion = anioPublicacion;
         this.precio = precio;
     }
 
-    @XmlElement
     public String getTitulo() {
         return titulo;
     }
@@ -30,7 +25,6 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    @XmlElement
     public String getAutor() {
         return autor;
     }
@@ -39,16 +33,14 @@ public class Libro {
         this.autor = autor;
     }
 
-    @XmlElement
-    public String getAnioPublicacion() {
+    public int getAnioPublicacion() {
         return anioPublicacion;
     }
 
-    public void setAnioPublicacion(String anioPublicacion) {
+    public void setAnioPublicacion(int anioPublicacion) {
         this.anioPublicacion = anioPublicacion;
     }
 
-    @XmlElement
     public double getPrecio() {
         return precio;
     }
