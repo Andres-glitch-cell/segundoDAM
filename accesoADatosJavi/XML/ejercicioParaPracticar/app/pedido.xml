@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pedido id="2001" fecha="2026-11-17">
+    <cliente>Laura Gómez</cliente>
+    <item>
+        <nombre>Teclado Mecánico</nombre>
+        <precio>45.50</precio>
+    </item>
+    <item>
+        <nombre>Ratón Gaming</nombre>
+        <precio>25.00</precio>
+    </item>
+</pedido>

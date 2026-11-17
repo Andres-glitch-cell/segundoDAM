@@ -1,0 +1,23 @@
+{
+  "[windows]": {
+    "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.13.9-hotspot",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-21",
+        "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.13.9-hotspot",
+        "default": true
+      }
+    ]
+  },
+  "[linux]": {
+    "java.jdt.ls.java.home": "/home/andfersal/mi3ramnl0l/backUpInsti-EXTERNALDISK/00_DAM/SDK_Java",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-24",
+        "path": "/home/andfersal/mi3ramnl0l/backUpInsti-EXTERNALDISK/00_DAM/SDK_Java",
+        "default": true
+      }
+    ]
+  },
+  "java.jdt.ls.vmargs": "-Xms512m -Xmx2048m"
+}

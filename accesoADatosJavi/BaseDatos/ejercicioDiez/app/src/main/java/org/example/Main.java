@@ -1,4 +1,3 @@
-
 package org.example;
 
 import java.sql.Connection;
@@ -17,9 +16,7 @@ public class Main {
         String usuario = System.getenv("DB_USER");
         String clave = System.getenv("DB_PASSWORD");
 
-        if (url == null || url.isBlank()
-                || usuario == null || usuario.isBlank()
-                || clave == null || clave.isBlank()) {
+        if (url == null || url.isBlank()|| usuario == null || usuario.isBlank()|| clave == null || clave.isBlank()) {
             System.err.println("Configura las variables DB_URL, DB_USER y DB_PASSWORD.");
             return;
         }
@@ -29,9 +26,7 @@ public class Main {
             Coche[] arrayCoches = obtenerCoches(conexion);
 
             if (arrayCoches.length == 0) {
-
                 System.out.println("No hay coches en la base de datos.");
-
             } else {
 
                 System.out.println("COCHES ENTRE 2005 Y 2010:");
@@ -43,12 +38,8 @@ public class Main {
                     if (coche.getAño() >= 2005 && coche.getAño() <= 2010) {
                         cochesEnRango++;
 
-                        System.out.println(
-                                coche.getMarca() + " "
-                                        + coche.getModelo()
-                                        + " - Año: " + coche.getAño()
-                                        + " - Precio: " + coche.getPrecio()
-                                        + " - Kilómetros: " + coche.getKilometros());
+                        System.out.println(coche.getMarca() + " " + coche.getModelo() + " - Año: " + coche.getAño()
+                                + " - Precio: " + coche.getPrecio() + " - Kilómetros: " + coche.getKilometros());
                     }
                 }
 

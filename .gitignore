@@ -12,6 +12,9 @@ SDK_Java_Linux/
 # IDEs
 .idea/
 .vscode/
+!.vscode/
+.vscode/*
+!.vscode/settings.json
 .settings/
 **/.metadata/
 

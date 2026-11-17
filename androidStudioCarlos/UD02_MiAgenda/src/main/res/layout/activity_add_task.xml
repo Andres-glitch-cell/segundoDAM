@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:padding="20dp"
+    tools:context=".AddTaskActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear Nueva Tarea"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1976D2"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la tarea *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Ej. Estudiar para examen"
+        android:inputType="textPersonName"
+        android:background="@android:drawable/editbox_background_normal"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints="name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="6dp"/>
+
+    <Button
+        android:id="@+id/btnSeleccionarCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Seleccionar categoría"
+        android:textColor="#212121"
+        android:backgroundTint="#E0E0E0"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="6dp"/>
+
+    <Button
+        android:id="@+id/btnSeleccionarFecha"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Seleccionar fecha"
+        android:textColor="#212121"
+        android:backgroundTint="#E0E0E0"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#424242"
+        android:layout_marginBottom="6dp"/>
+
+    <Button
+        android:id="@+id/btnSeleccionarHora"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Seleccionar hora"
+        android:textColor="#212121"
+        android:backgroundTint="#E0E0E0"
+        android:layout_marginBottom="32dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Guardar"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#1976D2"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Cancelar"
+            android:textSize="16sp"
+            android:backgroundTint="#BDBDBD"
+            android:textColor="#212121"/>
+    </LinearLayout>
+
+</LinearLayout>

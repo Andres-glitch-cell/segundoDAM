@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTituloApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi Agenda"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1976D2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvContadorTareas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Tareas registradas: 0"
+        android:textSize="14sp"
+        android:textColor="#616161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloApp" />
+
+    <ListView
+        android:id="@+id/listViewTareas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNuevaTarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContadorTareas" />
+
+    <TextView
+        android:id="@+id/tvAgendaVacia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No hay tareas registradas\n¡Pulsa 'Nueva tarea' para empezar!"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="#9E9E9E"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/listViewTareas"
+        app:layout_constraintEnd_toEndOf="@+id/listViewTareas"
+        app:layout_constraintStart_toStartOf="@+id/listViewTareas"
+        app:layout_constraintTop_toTopOf="@+id/listViewTareas" />
+
+    <Button
+        android:id="@+id/btnNuevaTarea"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Nueva tarea"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

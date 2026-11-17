@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<centros>
+    <centro id="1">
+        <nombre>IES Joan Ramis i Ramis</nombre>
+        <ciudad>Maó</ciudad>
+        <direccion>Avinguda Vives Llull, 15</direccion>
+        <codigoPostal>07703</codigoPostal>
+        <profesores>
+            <profesor>
+                <nombre>Javi García</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Acceso a Datos</asignatura>
+                    <asignatura>Programación</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Laura Martínez</nombre>
+                <departamento>Matemáticas</departamento>
+                <asignaturas>
+                    <asignatura>Matemáticas Aplicadas</asignatura>
+                    <asignatura>Estadística</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+    <centro id="2">
+        <nombre>CIFP Pau Casesnoves</nombre>
+        <ciudad>Inca</ciudad>
+        <direccion>Carrer de ses Escoles, s/n</direccion>
+        <codigoPostal>07300</codigoPostal>
+        <profesores>
+            <profesor>
+                <nombre>Carlos López</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Bases de Datos</asignatura>
+                    <asignatura>Sistemas Informáticos</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Elena Ruiz</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Desarrollo Web en Entorno Servidor</asignatura>
+                    <asignatura>Despliegue de Aplicaciones Web</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+</centros>
