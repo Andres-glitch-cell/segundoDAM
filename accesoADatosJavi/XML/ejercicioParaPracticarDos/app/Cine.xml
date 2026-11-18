@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cine>
+    <pelicula>
+        <nombre estreno="Barcelona">Pelicula Uno</nombre>
+        <fechaEstreno>2026-11-17</fechaEstreno>
+        <identificador>1</identificador>
+    </pelicula>
+    <pelicula>
+        <nombre estreno="Barcelona">Pelicula Dos</nombre>
+        <fechaEstreno>2046-11-17</fechaEstreno>
+        <identificador>2</identificador>
+    </pelicula>
+</cine>
