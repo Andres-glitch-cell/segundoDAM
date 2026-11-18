@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pacientes>
+    <paciente dni="11111111A">
+        <nombre>Ana Martín</nombre>
+        <fechaNacimiento>1985-03-12</fechaNacimiento>
+        <ciudad>Madrid</ciudad>
+        <doctor>1</doctor>
+    </paciente>
+    <paciente dni="22222222B">
+        <nombre>Pedro López</nombre>
+        <fechaNacimiento>1990-07-25</fechaNacimiento>
+        <ciudad>Toledo</ciudad>
+        <doctor>1</doctor>
+    </paciente>
+    <paciente dni="33333333C">
+        <nombre>Lucía Fernández</nombre>
+        <fechaNacimiento>2015-01-30</fechaNacimiento>
+        <ciudad>Getafe</ciudad>
+        <doctor>2</doctor>
+    </paciente>
+    <paciente dni="44444444D">
+        <nombre>Miguel Ángel Pérez</nombre>
+        <fechaNacimiento>2018-11-02</fechaNacimiento>
+        <ciudad>Alcalá de Henares</ciudad>
+        <doctor>2</doctor>
+    </paciente>
+    <paciente dni="55555555E">
+        <nombre>Sofía Navarro</nombre>
+        <fechaNacimiento>1978-09-18</fechaNacimiento>
+        <ciudad>Madrid</ciudad>
+        <doctor>3</doctor>
+    </paciente>
+    <paciente dni="66666666F">
+        <nombre>David Romero</nombre>
+        <fechaNacimiento>1969-05-07</fechaNacimiento>
+        <ciudad>Leganés</ciudad>
+        <doctor>3</doctor>
+    </paciente>
+    <paciente dni="77777777G">
+        <nombre>Elena Castro</nombre>
+        <fechaNacimiento>2001-12-21</fechaNacimiento>
+        <ciudad>Móstoles</ciudad>
+        <doctor>4</doctor>
+    </paciente>
+    <paciente dni="88888888H">
+        <nombre>Raúl Ortega</nombre>
+        <fechaNacimiento>1995-04-14</fechaNacimiento>
+        <ciudad>Madrid</ciudad>
+        <doctor>1</doctor>
+    </paciente>
+</pacientes>

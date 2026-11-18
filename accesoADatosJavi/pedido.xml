@@ -1,0 +1,14 @@
+
+<pedido>
+    <cliente>Laura Gómez</cliente>
+    <fecha>2026-11-17</fecha>
+    <id>2001</id>
+    <item>
+        <nombre>Teclado Mecánico</nombre>
+        <precio>45.5</precio>
+    </item>
+    <item>
+        <nombre>Monitor</nombre>
+        <precio>129.99</precio>
+    </item>
+</pedido>

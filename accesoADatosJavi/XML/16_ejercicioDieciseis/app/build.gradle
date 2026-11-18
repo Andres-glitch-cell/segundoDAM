@@ -38,6 +38,11 @@ application {
     mainClass = 'org.example.App'
 }
 
+// Permite leer del teclado (Scanner) al usar "gradle run"
+tasks.named('run') {
+    standardInput = System.in
+}
+
 // Configuración de las pruebas
 tasks.named('test') {
     useJUnitPlatform()

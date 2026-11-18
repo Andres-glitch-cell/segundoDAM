@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<medicos>
+    <medico numero="1">
+        <nombre>Laura Gómez</nombre>
+        <especialidad>Cardiología</especialidad>
+        <experiencia>15</experiencia>
+    </medico>
+    <medico numero="2">
+        <nombre>Carlos Ruiz</nombre>
+        <especialidad>Pediatría</especialidad>
+        <experiencia>8</experiencia>
+    </medico>
+    <medico numero="3">
+        <nombre>Marta Sánchez</nombre>
+        <especialidad>Traumatología</especialidad>
+        <experiencia>12</experiencia>
+    </medico>
+    <medico numero="4">
+        <nombre>Javier Torres</nombre>
+        <especialidad>Dermatología</especialidad>
+        <experiencia>5</experiencia>
+    </medico>
+</medicos>
