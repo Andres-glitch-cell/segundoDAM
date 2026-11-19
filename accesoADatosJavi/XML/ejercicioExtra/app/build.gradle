@@ -36,7 +36,11 @@ java {
 
 // Clase principal del programa (cambiar según el ejercicio que quieras ejecutar)
 application {
-    mainClass = 'org.example.App'
+    mainClass = 'org.example.AppPueblos'
+}
+
+tasks.named('run') {
+    workingDir = file('src/main')
 }
 
 // Permite leer entrada interactiva por teclado desde la consola con "gradle run"
