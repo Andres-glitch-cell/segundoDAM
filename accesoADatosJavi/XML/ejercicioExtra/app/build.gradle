@@ -1,0 +1,50 @@
+/*
+ * Configuración del proyecto Java con Gradle.
+ */
+
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Pruebas unitarias con JUnit
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Guava
+    implementation libs.guava
+
+    // Conector MySQL
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // JAXB (javax): conversión entre objetos Java y XML
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+    runtimeOnly 'javax.activation:activation:1.1.1'
+}
+
+// Configuración de Java 21
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Clase principal del programa (cambiar según el ejercicio que quieras ejecutar)
+application {
+    mainClass = 'org.example.App'
+}
+
+// Permite leer entrada interactiva por teclado desde la consola con "gradle run"
+tasks.named('run') {
+    standardInput = System.in
+}
+
+// Configuración de las pruebas
+tasks.named('test') {
+    useJUnitPlatform()
+}
