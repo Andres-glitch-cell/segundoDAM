@@ -4,9 +4,9 @@ import java.io.File; // Para representar los archivos XML
 import java.util.ArrayList; // Para guardar las listas de médicos y pacientes
 import java.util.Scanner; // Para leer lo que escribe el usuario por teclado
 
-import jakarta.xml.bind.JAXBContext; // Punto de entrada de JAXB: sabe qué clases se convierten a XML
-import jakarta.xml.bind.Marshaller; // Convierte objetos Java en XML (escribir)
-import jakarta.xml.bind.Unmarshaller; // Convierte XML en objetos Java (leer)
+import javax.xml.bind.JAXBContext; // Punto de entrada de JAXB: sabe qué clases se convierten a XML
+import javax.xml.bind.Marshaller; // Convierte objetos Java en XML (escribir)
+import javax.xml.bind.Unmarshaller; // Convierte XML en objetos Java (leer)
 
 public class App { // Clase principal del programa
 

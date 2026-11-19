@@ -1,6 +1,6 @@
 package org.example;
 
-import jakarta.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlAttribute;
 
 public class Pelicula {
     private int clasificacion;
