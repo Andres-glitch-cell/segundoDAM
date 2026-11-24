@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Categorías">
+        <menu>
+            <item android:id="@+id/menu_cat_estudios" android:title="Estudios" />
+            <item android:id="@+id/menu_cat_trabajo" android:title="Trabajo" />
+            <item android:id="@+id/menu_cat_personal" android:title="Personal" />
+            <item android:id="@+id/menu_cat_otros" android:title="Otros" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_vaciar"
+        android:title="Vaciar agenda" />
+    <item
+        android:id="@+id/menu_acerca_de"
+        android:title="Acerca de" />
+</menu>
