@@ -107,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
                 Calendar calendario = Calendar.getInstance();
                 int horaActual = calendario.get(Calendar.HOUR_OF_DAY);
                 int minutoActual = calendario.get(Calendar.MINUTE);
+                int segundoActual = calendario.get(Calendar.SECOND);
 
                 TimePickerDialog timerPicker = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        tvHora.setText("Hora seleccionada: " +hourOfDay + ":" +minute  );
+                        tvHora.setText("Hora seleccionada: " + hourOfDay + ":" + minute);
                     }
                 },
                         horaActual, minutoActual, true
