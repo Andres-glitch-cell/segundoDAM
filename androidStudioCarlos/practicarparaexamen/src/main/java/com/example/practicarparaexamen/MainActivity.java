@@ -6,7 +6,6 @@ import android.app.NotificationManager;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -111,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 Calendar calendario = Calendar.getInstance();
                 int horaActual = calendario.get(Calendar.HOUR_OF_DAY);
                 int minutoActual = calendario.get(Calendar.MINUTE);
-                int segundoActual = calendario.get(Calendar.SECOND);
 
                 TimePickerDialog timerPicker = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -139,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     notificator.createNotificationChannel(canalDeNotificacion);
                 }
 
-                Intent abrirPaginaGVA = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.gva.es"));
+                Intent abrirPaginaGVA = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://portal.edu.gva.es/iesjoancoromines/es/centro/"));
                 startActivity(abrirPaginaGVA);
             }
         });
