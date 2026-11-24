@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<provincias>
+    <provincia>
+        <nombre>Madrid</nombre>
+        <numPueblos>179</numPueblos>
+        <ingresos>12500000000</ingresos>
+    </provincia>
+    <provincia>
+        <nombre>Toledo</nombre>
+        <numPueblos>204</numPueblos>
+        <ingresos>2300000000</ingresos>
+    </provincia>
+    <provincia>
+        <nombre>Ávila</nombre>
+        <numPueblos>248</numPueblos>
+        <ingresos>650000000</ingresos>
+    </provincia>
+    <provincia>
+        <nombre>Soria</nombre>
+        <numPueblos>183</numPueblos>
+        <ingresos>700000000</ingresos>
+    </provincia>
+</provincias>
