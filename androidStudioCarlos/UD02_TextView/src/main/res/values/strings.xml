@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PMDM_UD02</string>
+
+    <string name="btn_ejemplos">EJEMPLOS</string>
+    <string name="btn_actividad01">ACTIVIDAD 01</string>
+    <string name="btn_actividad02">ACTIVIDAD 02</string>
+    <string name="btn_actividad03">ACTIVIDAD 03</string>
+
+    <string name="btn_a02_ej1">ACTIVIDAD 02 - EJERCICIO 1</string>
+    <string name="btn_a02_ej2">ACTIVIDAD 02 - EJERCICIO 2</string>
+    <string name="btn_a02_ej3">ACTIVIDAD 02 - EJERCICIO 3</string>
+
+    <string name="btn_a03_ej1">ACTIVIDAD 03 - EJERCICIO 1</string>
+    <string name="btn_a03_ej2">ACTIVIDAD 03 - EJERCICIO 2</string>
+
+    <string name="texto_ej1">Texto construido desde XML\nTama&#241;o 20dp. Bold y color Red</string>
+    <string name="texto_ej3">Texto construido desde XML</string>
+
+    <string name="boton">BOT&#211;N</string>
+    <string name="boton1">BOT&#211;N 1</string>
+    <string name="boton2">BOT&#211;N 2</string>
+    <string name="boton_sin_pulsar">BOT&#211;N SIN PULSAR</string>
+    <string name="boton_pulsado">BOT&#211;N PULSADO</string>
+    <string name="boton1_pulsado">BOT&#211;N 1 PULSADO</string>
+    <string name="boton2_pulsado">BOT&#211;N 2 PULSADO</string>
+</resources>

@@ -2,8 +2,8 @@ package org.example;
 
 import java.io.File;
 import java.util.concurrent.atomic.AtomicInteger;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Unmarshaller;
 
 public class App {
 

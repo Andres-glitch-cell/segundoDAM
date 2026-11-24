@@ -3,8 +3,9 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "pedido")
 public class Pedido {
@@ -14,10 +15,9 @@ public class Pedido {
     private String cliente;
     private List<Item> items = new ArrayList<>();
 
-    public Pedido() {
-    }
+    public Pedido(){}
 
-    public Pedido(int id, String fecha, String cliente, List<Item> items) {
+    public Pedido (int id, String fecha, String cliente, List<Item> items){
         this.id = id;
         this.fecha = fecha;
         this.cliente = cliente;
@@ -62,6 +62,6 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "\nPedido Id=" + id + "\nFecha=" + fecha + "\nCliente=" + cliente + "\nItems=" + items;
+        return "Pedido Id=" + id + " Fecha=" + fecha + " Cliente=" + cliente + " Items=" + items ;
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<provincias>
+    <provincia>
+        <nombre>Castellón</nombre>
+        <numPueblos>135</numPueblos>
+        <ingresos>500000</ingresos>
+    </provincia>
+
+    <provincia>
+        <nombre>Teruel</nombre>
+        <numPueblos>236</numPueblos>
+        <ingresos>200000</ingresos>
+    </provincia>
+
+    <provincia>
+        <nombre>Málaga</nombre>
+        <numPueblos>103</numPueblos>
+        <ingresos>900000</ingresos>
+    </provincia>
+
+    <provincia>
+        <nombre>Valencia</nombre>
+        <numPueblos>266</numPueblos>
+        <ingresos>700000</ingresos>
+    </provincia>
+
+    <provincia>
+        <nombre>Madrid</nombre>
+        <numPueblos>179</numPueblos>
+        <ingresos>1000000</ingresos>
+    </provincia>
+</provincias>

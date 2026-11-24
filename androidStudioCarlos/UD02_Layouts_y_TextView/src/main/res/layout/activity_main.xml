@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  LinearLayout principal: Contenedor vertical que organiza los elementos uno debajo de otro.
+  - android:layout_width="match_parent": Ocupa todo el ancho de la pantalla.
+  - android:layout_height="match_parent": Ocupa todo el alto de la pantalla.
+  - android:orientation="vertical": Coloca los hijos en columna.
+  - android:padding="16dp": Deja un margen interior alrededor de todo el contenido.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Title -->
+    <!-- Título principal de la actividad -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UD02 Actividad 02 - TextView"
+        android:text="UD02 - Práctica de Layouts y TextView (100% XML)"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#333333"
         android:layout_marginBottom="16dp" />
 
-    <!-- Ejercicio 1: Configurado en XML -->
+    <!--
+      Ejercicio 1: TextView configurado completamente en XML.
+      - android:text: Muestra el texto directamente desde strings.xml.
+      - android:textSize="16sp": Tamaño de la letra.
+      - android:textColor: Color del texto en hexadecimal (#0066CC).
+      - android:textStyle="italic": Estilo cursiva.
+      - android:background: Color de fondo (#E6F2FF).
+      - android:padding: Espaciado interno.
+    -->
     <TextView
         android:id="@+id/tv_ejercicio1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/texto_xml_ej1"
+        android:text="Texto 1: Configurado totalmente desde el XML con formato y estilo."
         android:textSize="16sp"
         android:textColor="#0066CC"
         android:textStyle="italic"
@@ -28,21 +43,33 @@
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
 
-    <!-- Ejercicio 2: Configurado en Java -->
+    <!--
+      Ejercicio 2: TextView configurado también puramente en XML (sin código Java).
+      - Demuestra cómo definir colores, negrita, padding y fondo directamente en el archivo XML.
+    -->
     <TextView
         android:id="@+id/tv_ejercicio2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Texto 2: Configurado totalmente desde el XML (sin código Java)."
+        android:textSize="16sp"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        android:background="#E8F5E9"
+        android:padding="12dp"
         android:layout_marginBottom="16dp" />
 
-    <!-- Ejercicio 3: Mixto (XML + Java) -->
+    <!--
+      Ejercicio 3: TextView configurado en XML.
+    -->
     <TextView
         android:id="@+id/tv_ejercicio3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/texto_xml_ej3_parte1"
+        android:text="Texto 3: Configurado por completo en XML sin manipulación programática."
         android:textSize="16sp"
         android:textColor="#222222"
+        android:textStyle="bold|italic"
         android:background="#F0F0F0"
         android:padding="12dp" />
 

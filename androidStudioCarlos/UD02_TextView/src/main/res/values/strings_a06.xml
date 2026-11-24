@@ -1,0 +1,8 @@
+<resources>
+    <string name="btn_actividad06">ACTIVIDAD 06</string>
+    <string name="btn_a06_ej1">ACTIVIDAD 06 - EJERCICIO 1</string>
+    <string name="btn_a06_ej2">ACTIVIDAD 06 - EJERCICIO 2</string>
+    <string name="btn_a06_ej3">ACTIVIDAD 06 - EJERCICIO 3</string>
+    <string name="a06_toca_elemento">Toca un elemento de la lista</string>
+    <string name="a06_elige_menu">Elige una opci&#243;n del men&#250;</string>
+</resources>

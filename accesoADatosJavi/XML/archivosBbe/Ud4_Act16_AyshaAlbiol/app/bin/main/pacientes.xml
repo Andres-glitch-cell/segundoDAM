@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pacientes>
+    <paciente DNI="11111111A">
+        <ciudad>Valencia</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>1995-04-12</fechaNacimiento>
+        <nombre>Laura Martín</nombre>
+    </paciente>
+    <paciente DNI="22222222B">
+        <ciudad>Castellón</ciudad>
+        <doctor>2</doctor>
+        <fechaNacimiento>2001-08-23</fechaNacimiento>
+        <nombre>Pedro García</nombre>
+    </paciente>
+    <paciente DNI="33333333C">
+        <ciudad>Benicarló</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>1988-11-05</fechaNacimiento>
+        <nombre>Lucía Pérez</nombre>
+    </paciente>
+    <paciente DNI="44444444D">
+        <ciudad>Vinaròs</ciudad>
+        <doctor>2</doctor>
+        <fechaNacimiento>2010-02-17</fechaNacimiento>
+        <nombre>Mario Sánchez</nombre>
+    </paciente>
+    <paciente DNI="55555555E">
+        <ciudad>Peñíscola</ciudad>
+        <doctor>3</doctor>
+        <fechaNacimiento>1999-06-30</fechaNacimiento>
+        <nombre>Sofía López</nombre>
+    </paciente>
+    <paciente DNI="66666666F">
+        <ciudad>Valencia</ciudad>
+        <doctor>4</doctor>
+        <fechaNacimiento>1975-09-14</fechaNacimiento>
+        <nombre>Daniel Ruiz</nombre>
+    </paciente>
+    <paciente DNI="77777777G">
+        <ciudad>Castellón</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>2005-12-01</fechaNacimiento>
+        <nombre>Elena Torres</nombre>
+    </paciente>
+    <paciente DNI="88888888H">
+        <ciudad>Benicarló</ciudad>
+        <doctor>4</doctor>
+        <fechaNacimiento>1992-03-21</fechaNacimiento>
+        <nombre>Adrián Gómez</nombre>
+    </paciente>
+    <paciente DNI="09836518Q">
+        <ciudad>Santa Magdalena de Pulpis</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>29/03/2007</fechaNacimiento>
+        <nombre>Aysha Albiol</nombre>
+    </paciente>
+</pacientes>

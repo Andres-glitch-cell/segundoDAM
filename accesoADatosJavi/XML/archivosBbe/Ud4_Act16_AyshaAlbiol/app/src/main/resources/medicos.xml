@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medicos>
+
+    <medico numeroDoctor="1">
+        <nombre>Ana García</nombre>
+        <especialidad>Cardiología</especialidad>
+        <aniosExperiencia>15</aniosExperiencia>
+    </medico>
+
+    <medico numeroDoctor="2">
+        <nombre>Carlos López</nombre>
+        <especialidad>Pediatría</especialidad>
+        <aniosExperiencia>10</aniosExperiencia>
+    </medico>
+
+    <medico numeroDoctor="3">
+        <nombre>María Sánchez</nombre>
+        <especialidad>Dermatología</especialidad>
+        <aniosExperiencia>8</aniosExperiencia>
+    </medico>
+
+    <medico numeroDoctor="4">
+        <nombre>Juan Pérez</nombre>
+        <especialidad>Traumatología</especialidad>
+        <aniosExperiencia>20</aniosExperiencia>
+    </medico>
+
+</medicos>

@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<historial>
+    <registro>
+        <ID>244</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:41:50</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>245</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:45:07</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>246</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:48:02</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>247</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:51:01</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>248</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:51:47</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>249</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:54:05</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>250</ID>
+        <NOMBRE_USUARIO>mohahm</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 13:54:30</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>251</ID>
+        <NOMBRE_USUARIO>sebpar</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:09:30</FECHA_CONEXION>
+        <IP_EQUIPO>2321321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>252</ID>
+        <NOMBRE_USUARIO>sebpar</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:09:51</FECHA_CONEXION>
+        <IP_EQUIPO>2321321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>253</ID>
+        <NOMBRE_USUARIO>sebpar</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:15:45</FECHA_CONEXION>
+        <IP_EQUIPO>2321321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>254</ID>
+        <NOMBRE_USUARIO>sebpar</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:16:43</FECHA_CONEXION>
+        <IP_EQUIPO>2321321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>255</ID>
+        <NOMBRE_USUARIO>sebpar</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:18:46</FECHA_CONEXION>
+        <IP_EQUIPO>2321321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>256</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:32:39</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>257</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:33:26</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>258</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:38:12</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>259</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:38:52</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>260</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:39:04</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>261</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:39:22</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>262</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:40:48</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>263</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:41:13</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>264</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:41:49</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>265</ID>
+        <NOMBRE_USUARIO>andtap</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:42:55</FECHA_CONEXION>
+        <IP_EQUIPO>109.56.67.78</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>266</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:45:58</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>267</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:47:10</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>268</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:52:53</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>269</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:53:20</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>270</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:54:22</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>271</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:55:16</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>272</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:56:14</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>273</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:57:20</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>274</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:59:20</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>275</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:59:30</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>276</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 14:59:50</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>277</ID>
+        <NOMBRE_USUARIO>joadeg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:00:04</FECHA_CONEXION>
+        <IP_EQUIPO>000000</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>278</ID>
+        <NOMBRE_USUARIO>andtie</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:03:31</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>279</ID>
+        <NOMBRE_USUARIO>andtie</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:04:52</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>280</ID>
+        <NOMBRE_USUARIO>andtie</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:10:25</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>281</ID>
+        <NOMBRE_USUARIO>ingyur</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:45:09</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>282</ID>
+        <NOMBRE_USUARIO>ingyur</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 15:47:40</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>284</ID>
+        <NOMBRE_USUARIO>blamon</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 16:51:57</FECHA_CONEXION>
+        <IP_EQUIPO>128.116.98.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>285</ID>
+        <NOMBRE_USUARIO>blamon</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 16:52:46</FECHA_CONEXION>
+        <IP_EQUIPO>128.116.98.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>286</ID>
+        <NOMBRE_USUARIO>blamon</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 16:55:46</FECHA_CONEXION>
+        <IP_EQUIPO>128.116.98.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>287</ID>
+        <NOMBRE_USUARIO>blamon</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 16:57:38</FECHA_CONEXION>
+        <IP_EQUIPO>128.116.98.1</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>288</ID>
+        <NOMBRE_USUARIO>josest</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 17:02:22</FECHA_CONEXION>
+        <IP_EQUIPO>192.09.89.255</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>289</ID>
+        <NOMBRE_USUARIO>josest</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 17:06:44</FECHA_CONEXION>
+        <IP_EQUIPO>192.09.89.255</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>290</ID>
+        <NOMBRE_USUARIO>josest</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 17:07:40</FECHA_CONEXION>
+        <IP_EQUIPO>192.09.89.255</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>291</ID>
+        <NOMBRE_USUARIO>josest</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 17:08:39</FECHA_CONEXION>
+        <IP_EQUIPO>192.09.89.255</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>292</ID>
+        <NOMBRE_USUARIO>josest</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-23 17:11:05</FECHA_CONEXION>
+        <IP_EQUIPO>192.09.89.255</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>293</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:27:05</FECHA_CONEXION>
+        <IP_EQUIPO>12.21.45.16</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>294</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:28:06</FECHA_CONEXION>
+        <IP_EQUIPO>123</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>295</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:28:29</FECHA_CONEXION>
+        <IP_EQUIPO>41</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>296</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:29:00</FECHA_CONEXION>
+        <IP_EQUIPO>41</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>297</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:29:18</FECHA_CONEXION>
+        <IP_EQUIPO>2143</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>298</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:29:46</FECHA_CONEXION>
+        <IP_EQUIPO>421</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>299</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:29:58</FECHA_CONEXION>
+        <IP_EQUIPO>4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>300</ID>
+        <NOMBRE_USUARIO>jorjor</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 08:30:29</FECHA_CONEXION>
+        <IP_EQUIPO>41</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>301</ID>
+        <NOMBRE_USUARIO>danbel</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 20:00:59</FECHA_CONEXION>
+        <IP_EQUIPO>128.9.143.49</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>302</ID>
+        <NOMBRE_USUARIO>danbel</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 20:02:07</FECHA_CONEXION>
+        <IP_EQUIPO>156.238.9.241</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>304</ID>
+        <NOMBRE_USUARIO>marseg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 20:14:46</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>305</ID>
+        <NOMBRE_USUARIO>marseg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 20:16:19</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>306</ID>
+        <NOMBRE_USUARIO>marseg</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-25 20:19:04</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.3.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>307</ID>
+        <NOMBRE_USUARIO>lucpra</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:18:48</FECHA_CONEXION>
+        <IP_EQUIPO>51.48.4.228</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>308</ID>
+        <NOMBRE_USUARIO>lucpra</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:19:21</FECHA_CONEXION>
+        <IP_EQUIPO>51.48.4.228</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>309</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:24:18</FECHA_CONEXION>
+        <IP_EQUIPO>1.2.4</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>310</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:25:57</FECHA_CONEXION>
+        <IP_EQUIPO>456</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>311</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:26:04</FECHA_CONEXION>
+        <IP_EQUIPO>23</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>312</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:26:54</FECHA_CONEXION>
+        <IP_EQUIPO>123</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>313</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:27:24</FECHA_CONEXION>
+        <IP_EQUIPO>132</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>314</ID>
+        <NOMBRE_USUARIO>brijim</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:28:30</FECHA_CONEXION>
+        <IP_EQUIPO>321</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>315</ID>
+        <NOMBRE_USUARIO>davexp</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:30:04</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.67.67</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>316</ID>
+        <NOMBRE_USUARIO>davexp</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:30:12</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.67.67</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>317</ID>
+        <NOMBRE_USUARIO>paboms</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:33:47</FECHA_CONEXION>
+        <IP_EQUIPO>localhost</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>318</ID>
+        <NOMBRE_USUARIO>paboms</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:33:59</FECHA_CONEXION>
+        <IP_EQUIPO>localhost</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>319</ID>
+        <NOMBRE_USUARIO>davllo</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:36:24</FECHA_CONEXION>
+        <IP_EQUIPO>123456</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>320</ID>
+        <NOMBRE_USUARIO>davllo</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:36:48</FECHA_CONEXION>
+        <IP_EQUIPO>213</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>321</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:42:38</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>322</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:42:50</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>323</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:45:31</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>324</ID>
+        <NOMBRE_USUARIO>ethcer</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:49:08</FECHA_CONEXION>
+        <IP_EQUIPO>123.123.123.123</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>325</ID>
+        <NOMBRE_USUARIO>ethcer</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:49:14</FECHA_CONEXION>
+        <IP_EQUIPO>123.123.123.123</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>326</ID>
+        <NOMBRE_USUARIO> izasan</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:52:54</FECHA_CONEXION>
+        <IP_EQUIPO>123</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>331</ID>
+        <NOMBRE_USUARIO>andfer</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 12:33:41</FECHA_CONEXION>
+        <IP_EQUIPO>111.676.676.67</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>332</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:23:12</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>333</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:32:30</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>334</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:38:08</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>335</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:38:21</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>336</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:39:06</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>337</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:41:15</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>338</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:42:01</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>339</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:43:58</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>340</ID>
+        <NOMBRE_USUARIO>cardem</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-30 15:44:11</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.100</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>341</ID>
+        <NOMBRE_USUARIO>test</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-11-12 17:57:07</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.1.1</IP_EQUIPO>
+    </registro>
+</historial>

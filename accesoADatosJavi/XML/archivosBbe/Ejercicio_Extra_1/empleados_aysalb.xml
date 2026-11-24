@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleados>
+    <empleado>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <NOMBRE>Aysha2</NOMBRE>
+        <APELLIDOS>Albiol2</APELLIDOS>
+        <SALARIO>1850.0</SALARIO>
+    </empleado>
+</empleados>

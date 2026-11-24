@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pueblos>
+    <pueblo>
+        <nombre>Benicasim</nombre>
+        <numHabitantes>19000</numHabitantes>
+        <gentilicio>benicense</gentilicio>
+        <provincia>Castellón</provincia>
+    </pueblo>
+
+    <pueblo>
+        <nombre>Peñíscola</nombre>
+        <numHabitantes>8000</numHabitantes>
+        <gentilicio>peñiscolano</gentilicio>
+        <provincia>Castellón</provincia>
+    </pueblo>
+
+    <pueblo>
+        <nombre>Morella</nombre>
+        <numHabitantes>2500</numHabitantes>
+        <gentilicio>morellano</gentilicio>
+        <provincia>Castellón</provincia>
+    </pueblo>
+
+    <pueblo>
+        <nombre>Albarracín</nombre>
+        <numHabitantes>1000</numHabitantes>
+        <gentilicio>albarracinense</gentilicio>
+        <provincia>Teruel</provincia>
+    </pueblo>
+
+    <pueblo>
+        <nombre>Ronda</nombre>
+        <numHabitantes>33000</numHabitantes>
+        <gentilicio>rondeño</gentilicio>
+        <provincia>Málaga</provincia>
+    </pueblo>
+</pueblos>

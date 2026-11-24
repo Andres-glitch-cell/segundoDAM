@@ -22,9 +22,8 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.33'
 
     // JAXB: conversión entre objetos Java y XML (Actualizado para Java 21)
-    implementation 'javax.xml.bind:jaxb-api:2.3.1'
-    runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
-    runtimeOnly 'javax.activation:activation:1.1.1'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+    runtimeOnly 'com.sun.xml.bind:jaxb-impl:4.0.0'
 }
 
 // Configuración de Java 21

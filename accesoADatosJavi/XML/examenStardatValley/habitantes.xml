@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<habitantes>
+    <habitante>
+        <nombre>Lewis</nombre>
+        <profesion>Alcalde</profesion>
+        <edad>55</edad>
+        <ubicacion>Centro del pueblo</ubicacion>
+        <regalos>
+            <regalo>Mandarina</regalo>
+            <regalo>Manzana</regalo>
+            <regalo>Libro</regalo>
+            <regalo>Madera</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Abigail</nombre>
+        <profesion>Estudiante</profesion>
+        <edad>20</edad>
+        <ubicacion>Tienda de Pierre</ubicacion>
+        <regalos>
+            <regalo>Amatista</regalo>
+            <regalo>Anguila picante</regalo>
+            <regalo>Calabaza</regalo>
+            <regalo>Pastel de chocolate</regalo>
+            <regalo>Pez globo</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Alex</nombre>
+        <profesion>Deportista</profesion>
+        <edad>21</edad>
+        <ubicacion>Casa de George y Evelyn</ubicacion>
+        <regalos>
+            <regalo>Desayuno inglés</regalo>
+            <regalo>Banquete de salmón</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Elliott</nombre>
+        <profesion>Escritor</profesion>
+        <edad>28</edad>
+        <ubicacion>Cabaña en la playa</ubicacion>
+        <regalos>
+            <regalo>Granada</regalo>
+            <regalo>Langosta</regalo>
+            <regalo>Pluma de pato</regalo>
+            <regalo>Tinta de calamar</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Emily</nombre>
+        <profesion>Empleada del Saloon</profesion>
+        <edad>27</edad>
+        <ubicacion>Casa de Emily y Haley</ubicacion>
+        <regalos>
+            <regalo>Amatista</regalo>
+            <regalo>Aguamarina</regalo>
+            <regalo>Esmeralda</regalo>
+            <regalo>Tela</regalo>
+            <regalo>Lana</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Haley</nombre>
+        <profesion>Fotógrafa</profesion>
+        <edad>24</edad>
+        <ubicacion>Casa de Emily y Haley</ubicacion>
+        <regalos>
+            <regalo>Coco</regalo>
+            <regalo>Ensalada de frutas</regalo>
+            <regalo>Girasol</regalo>
+            <regalo>Pastel rosa</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Harvey</nombre>
+        <profesion>Médico</profesion>
+        <edad>35</edad>
+        <ubicacion>Clínica del pueblo</ubicacion>
+        <regalos>
+            <regalo>Café</regalo>
+            <regalo>Vino</regalo>
+            <regalo>Aceite de trufa</regalo>
+            <regalo>Encurtidos</regalo>
+            <regalo>Supercomida</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Leah</nombre>
+        <profesion>Artista y escultora</profesion>
+        <edad>28</edad>
+        <ubicacion>Cabaña en el bosque</ubicacion>
+        <regalos>
+            <regalo>Ensalada</regalo>
+            <regalo>Vino</regalo>
+            <regalo>Queso de cabra</regalo>
+            <regalo>Trufa</regalo>
+            <regalo>Salteado</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Maru</nombre>
+        <profesion>Enfermera e inventora</profesion>
+        <edad>22</edad>
+        <ubicacion>Casa de Robin</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Oro</regalo>
+            <regalo>Iridio</regalo>
+            <regalo>Coliflor</regalo>
+            <regalo>Fresa</regalo>
+            <regalo>Paquete de baterías</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Penny</nombre>
+        <profesion>Profesora</profesion>
+        <edad>25</edad>
+        <ubicacion>Remolque del pueblo</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Esmeralda</regalo>
+            <regalo>Melón</regalo>
+            <regalo>Amapola</regalo>
+            <regalo>Raíces con plato</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Sam</nombre>
+        <profesion>Músico</profesion>
+        <edad>21</edad>
+        <ubicacion>Casa de Sam</ubicacion>
+        <regalos>
+            <regalo>Pizza</regalo>
+            <regalo>Higo chumbo</regalo>
+            <regalo>Ojo de tigre</regalo>
+            <regalo>Bollito de arce</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Sebastian</nombre>
+        <profesion>Programador</profesion>
+        <edad>25</edad>
+        <ubicacion>Sótano de la casa de Robin</ubicacion>
+        <regalos>
+            <regalo>Lágrima helada</regalo>
+            <regalo>Obsidiana</regalo>
+            <regalo>Sashimi</regalo>
+            <regalo>Sopa de calabaza</regalo>
+            <regalo>Huevo sombrío</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Shane</nombre>
+        <profesion>Empleado de JojaMart</profesion>
+        <edad>30</edad>
+        <ubicacion>Rancho de Marnie</ubicacion>
+        <regalos>
+            <regalo>Cerveza</regalo>
+            <regalo>Pimiento picante</regalo>
+            <regalo>Pizza</regalo>
+            <regalo>Bocaditos de pimiento</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Caroline</nombre>
+        <profesion>Ama de casa</profesion>
+        <edad>45</edad>
+        <ubicacion>Tienda de Pierre</ubicacion>
+        <regalos>
+            <regalo>Té verde</regalo>
+            <regalo>Coliflor</regalo>
+            <regalo>Ensalada de pescado</regalo>
+            <regalo>Curry tropical</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Clint</nombre>
+        <profesion>Herrero</profesion>
+        <edad>40</edad>
+        <ubicacion>Herrería</ubicacion>
+        <regalos>
+            <regalo>Amatista</regalo>
+            <regalo>Esmeralda</regalo>
+            <regalo>Jade</regalo>
+            <regalo>Rubí</regalo>
+            <regalo>Lingote de iridio</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Demetrius</nombre>
+        <profesion>Científico</profesion>
+        <edad>45</edad>
+        <ubicacion>Casa de Robin</ubicacion>
+        <regalos>
+            <regalo>Fresa</regalo>
+            <regalo>Arroz con leche</regalo>
+            <regalo>Helado</regalo>
+            <regalo>Estofado de judías</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Evelyn</nombre>
+        <profesion>Jardinera</profesion>
+        <edad>70</edad>
+        <ubicacion>Casa de George</ubicacion>
+        <regalos>
+            <regalo>Remolacha</regalo>
+            <regalo>Pastel de chocolate</regalo>
+            <regalo>Rosas de hadas</regalo>
+            <regalo>Tulipán</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>George</nombre>
+        <profesion>Jubilado</profesion>
+        <edad>75</edad>
+        <ubicacion>Casa de George</ubicacion>
+        <regalos>
+            <regalo>Puerro</regalo>
+            <regalo>Champiñones fritos</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Gus</nombre>
+        <profesion>Tabernero y cocinero</profesion>
+        <edad>50</edad>
+        <ubicacion>Saloon Stardrop</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Naranja</regalo>
+            <regalo>Escargot</regalo>
+            <regalo>Curry tropical</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Jas</nombre>
+        <profesion>Estudiante</profesion>
+        <edad>7</edad>
+        <ubicacion>Rancho de Marnie</ubicacion>
+        <regalos>
+            <regalo>Pastel rosa</regalo>
+            <regalo>Rosa de hadas</regalo>
+            <regalo>Pudin de ciruela</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Jodi</nombre>
+        <profesion>Ama de casa</profesion>
+        <edad>40</edad>
+        <ubicacion>Casa de Jodi</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Pastel de chocolate</regalo>
+            <regalo>Medley de verduras</regalo>
+            <regalo>Raviolis de berenjena</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Kent</nombre>
+        <profesion>Exmilitar</profesion>
+        <edad>40</edad>
+        <ubicacion>Casa de Jodi</ubicacion>
+        <regalos>
+            <regalo>Avellanas tostadas</regalo>
+            <regalo>Risotto de helecho</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Krobus</nombre>
+        <profesion>Comerciante de las sombras</profesion>
+        <edad>100</edad>
+        <ubicacion>Alcantarillas</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Calabaza</regalo>
+            <regalo>Huevo sombrío</regalo>
+            <regalo>Mayonesa sombría</regalo>
+            <regalo>Rábano silvestre</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Linus</nombre>
+        <profesion>Recolector</profesion>
+        <edad>60</edad>
+        <ubicacion>Tienda de campaña en la montaña</ubicacion>
+        <regalos>
+            <regalo>Coco</regalo>
+            <regalo>Higo chumbo</regalo>
+            <regalo>Ñame</regalo>
+            <regalo>Plato del mar</regalo>
+            <regalo>Tarta de arándanos</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Marnie</nombre>
+        <profesion>Ganadera</profesion>
+        <edad>50</edad>
+        <ubicacion>Rancho de Marnie</ubicacion>
+        <regalos>
+            <regalo>Diamante</regalo>
+            <regalo>Pastel rosa</regalo>
+            <regalo>Almuerzo de granjero</regalo>
+            <regalo>Pastel de calabaza</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Pam</nombre>
+        <profesion>Conductora de autobús</profesion>
+        <edad>50</edad>
+        <ubicacion>Remolque del pueblo</ubicacion>
+        <regalos>
+            <regalo>Cerveza</regalo>
+            <regalo>Chirivía</regalo>
+            <regalo>Ñame glaseado</regalo>
+            <regalo>Sopa de chirivía</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Pierre</nombre>
+        <profesion>Comerciante</profesion>
+        <edad>45</edad>
+        <ubicacion>Tienda general de Pierre</ubicacion>
+        <regalos>
+            <regalo>Calamar frito</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Robin</nombre>
+        <profesion>Carpintera</profesion>
+        <edad>40</edad>
+        <ubicacion>Tienda de carpintería</ubicacion>
+        <regalos>
+            <regalo>Espaguetis</regalo>
+            <regalo>Queso de cabra</regalo>
+            <regalo>Melocotón</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Vincent</nombre>
+        <profesion>Estudiante</profesion>
+        <edad>5</edad>
+        <ubicacion>Casa de Jodi</ubicacion>
+        <regalos>
+            <regalo>Caracol</regalo>
+            <regalo>Arándano</regalo>
+            <regalo>Uva</regalo>
+            <regalo>Jengibre</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Willy</nombre>
+        <profesion>Pescador</profesion>
+        <edad>60</edad>
+        <ubicacion>Tienda de pesca en la playa</ubicacion>
+        <regalos>
+            <regalo>Bagre</regalo>
+            <regalo>Pepino de mar</regalo>
+            <regalo>Esturión</regalo>
+            <regalo>Calabaza</regalo>
+            <regalo>Trucha tigre</regalo>
+        </regalos>
+    </habitante>
+
+    <habitante>
+        <nombre>Rasmodius</nombre>
+        <profesion>Mago</profesion>
+        <edad>60</edad>
+        <ubicacion>Torre del mago</ubicacion>
+        <regalos>
+            <regalo>Esencia solar</regalo>
+            <regalo>Esencia sombría</regalo>
+            <regalo>Seta lila</regalo>
+            <regalo>Superpepino</regalo>
+        </regalos>
+    </habitante>
+
+</habitantes>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<historial>
+    <registro>
+        <ID>321</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:42:38</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>322</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:42:50</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+    <registro>
+        <ID>323</ID>
+        <NOMBRE_USUARIO>aysalb</NOMBRE_USUARIO>
+        <FECHA_CONEXION>2026-10-26 09:45:31</FECHA_CONEXION>
+        <IP_EQUIPO>192.168.20.5</IP_EQUIPO>
+    </registro>
+</historial>

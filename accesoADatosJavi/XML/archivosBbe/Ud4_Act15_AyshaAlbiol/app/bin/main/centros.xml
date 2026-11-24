@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<centros>
+
+    <!-- Primer centro educativo -->
+    <centro id="1">
+        <nombre>IES Joan Coromines</nombre>
+        <ciudad>Benicarló</ciudad>
+        <direccion>Avenida de Cataluña, 10</direccion>
+        <codigoPostal>12580</codigoPostal>
+
+        <profesores>
+            <profesor>
+                <nombre>Ana García</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Programación</asignatura>
+                    <asignatura>Acceso a Datos</asignatura>
+                </asignaturas>
+            </profesor>
+
+            <profesor>
+                <nombre>Juan Pérez</nombre>
+                <departamento>Matemáticas</departamento>
+                <asignaturas>
+                    <asignatura>Matemáticas</asignatura>
+                </asignaturas>
+            </profesor>
+
+            <profesor>
+                <nombre>María López</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Lenguajes de Marcas</asignatura>
+                    <asignatura>Entornos de Desarrollo</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+
+    <!-- Segundo centro educativo -->
+    <centro id="2">
+        <nombre>IES Ramón Cid</nombre>
+        <ciudad>Benicarló</ciudad>
+        <direccion>Calle Mayor, 25</direccion>
+        <codigoPostal>12580</codigoPostal>
+
+        <profesores>
+            <profesor>
+                <nombre>Carlos Sánchez</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Sistemas Informáticos</asignatura>
+                </asignaturas>
+            </profesor>
+
+            <profesor>
+                <nombre>Laura Martín</nombre>
+                <departamento>Historia</departamento>
+                <asignaturas>
+                    <asignatura>Historia</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+
+</centros>

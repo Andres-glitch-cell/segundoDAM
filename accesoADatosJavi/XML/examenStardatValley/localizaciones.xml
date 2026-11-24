@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localizaciones>
+    <localizacion>
+        <nombre>Centro del pueblo</nombre>
+        <descripcion>Plaza pública del pueblo donde se celebran eventos y festivales.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Tienda de Pierre</nombre>
+        <descripcion>Tienda general donde se venden semillas, alimentos y productos agrícolas.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de George y Evelyn</nombre>
+        <descripcion>Vivienda de George y Evelyn, donde también vive Alex.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Cabaña en la playa</nombre>
+        <descripcion>Pequeña vivienda junto al mar donde vive Elliott.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de Emily y Haley</nombre>
+        <descripcion>Vivienda de Emily y Haley, situada en el pueblo.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Clínica del pueblo</nombre>
+        <descripcion>Centro médico donde Harvey atiende a los habitantes.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Cabaña en el bosque</nombre>
+        <descripcion>Casa de Leah, situada en una zona tranquila del bosque.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de Robin</nombre>
+        <descripcion>Vivienda familiar de Robin, Demetrius, Maru y Sebastian.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Remolque del pueblo</nombre>
+        <descripcion>Pequeña vivienda donde viven Pam y Penny.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de Sam</nombre>
+        <descripcion>Vivienda de Sam, donde vive junto a su familia.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Sótano de la casa de Robin</nombre>
+        <descripcion>Habitación situada en el sótano donde vive Sebastian.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Rancho de Marnie</nombre>
+        <descripcion>Granja dedicada a la cría de animales donde viven Marnie, Shane y Jas.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Mansión del alcalde</nombre>
+        <descripcion>Residencia oficial de Lewis, alcalde de Pueblo Pelícano.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Herrería</nombre>
+        <descripcion>Establecimiento de Clint donde se mejoran herramientas y se procesan minerales.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Minas</nombre>
+        <descripcion>Red de cuevas donde se pueden encontrar minerales, piedras preciosas y
+            monstruos.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de George</nombre>
+        <descripcion>Vivienda de George y Evelyn, situada en Pueblo Pelícano.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Saloon Stardrop</nombre>
+        <descripcion>Bar y restaurante del pueblo regentado por Gus, donde se reúnen los habitantes.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Casa de Jodi</nombre>
+        <descripcion>Vivienda familiar de Jodi, Kent, Sam y Vincent.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Alcantarillas</nombre>
+        <descripcion>Red subterránea donde vive Krobus y se encuentra un comerciante especial.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Isla Jengibre</nombre>
+        <descripcion>Isla tropical donde vive Leo y se pueden descubrir nuevas zonas y recursos.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Tienda de campaña en la montaña</nombre>
+        <descripcion>Campamento de Linus, situado en la zona montañosa cerca de las minas.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Oasis del desierto</nombre>
+        <descripcion>Tienda situada en el desierto de Calico donde trabaja Sandy.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Tienda de carpintería</nombre>
+        <descripcion>Establecimiento de Robin donde se construyen edificios y se mejoran
+            instalaciones de la granja.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Tienda de pesca en la playa</nombre>
+        <descripcion>Establecimiento de Willy donde se venden cañas de pescar y suministros de
+            pesca.</descripcion>
+    </localizacion>
+
+    <localizacion>
+        <nombre>Torre del mago</nombre>
+        <descripcion>Residencia del Mago, situada en el bosque, donde estudia las artes mágicas.</descripcion>
+    </localizacion>
+
+</localizaciones>

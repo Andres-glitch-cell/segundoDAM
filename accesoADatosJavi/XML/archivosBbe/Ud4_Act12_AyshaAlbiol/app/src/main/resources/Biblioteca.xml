@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <libro>
+        <titulo>Sailor Moon 1</titulo>
+        <autor>Naoko Takeuchi</autor>
+        <anio>1992</anio>
+        <precio>8.50</precio>
+    </libro>
+    <libro>
+        <titulo>Sakura Cardcaptor 1</titulo>
+        <autor>CLAMP</autor>
+        <anio>1996</anio>
+        <precio>9.95</precio>
+    </libro>
+    <libro>
+        <titulo>Ranma 1/2 1</titulo>
+        <autor>Rumiko Takahashi</autor>
+        <anio>1987</anio>
+        <precio>8.00</precio>
+    </libro>
+    <libro>
+        <titulo>Detective Conan 1</titulo>
+        <autor>Gosho Aoyama</autor>
+        <anio>1994</anio>
+        <precio>9.00</precio>
+    </libro>
+    <libro>
+        <titulo>Inuyasha 1</titulo>
+        <autor>Rumiko Takahashi</autor>
+        <anio>1996</anio>
+        <precio>8.95</precio>
+    </libro>
+</biblioteca>

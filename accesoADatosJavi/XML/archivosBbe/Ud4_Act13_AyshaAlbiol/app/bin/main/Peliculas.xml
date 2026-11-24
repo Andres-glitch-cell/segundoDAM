@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas>
+    <pelicula clasificacion="7">
+        <titulo>Mi vecino Totoro</titulo>
+        <director>Hayao Miyazaki</director>
+        <anio>1988</anio>
+        <genero>Fantasía</genero>
+        <duracion>86</duracion>
+    </pelicula>
+    <pelicula clasificacion="13">
+        <titulo>El viaje de Chihiro</titulo>
+        <director>Hayao Miyazaki</director>
+        <anio>2001</anio>
+        <genero>Fantasía</genero>
+        <duracion>125</duracion>
+    </pelicula>
+    <pelicula clasificacion="16">
+        <titulo>La princesa Mononoke</titulo>
+        <director>Hayao Miyazaki</director>
+        <anio>1997</anio>
+        <genero>Aventura</genero>
+        <duracion>134</duracion>
+    </pelicula>
+    <pelicula clasificacion="16">
+        <titulo>El castillo ambulante</titulo>
+        <director>Hayao Miyazaki</director>
+        <anio>2004</anio>
+        <genero>Fantasía</genero>
+        <duracion>119</duracion>
+    </pelicula>
+    <pelicula clasificacion="18">
+        <titulo>Akira</titulo>
+        <director>Katsuhiro Otomo</director>
+        <anio>1988</anio>
+        <genero>Ciencia ficción</genero>
+        <duracion>124</duracion>
+    </pelicula>
+</peliculas>
+

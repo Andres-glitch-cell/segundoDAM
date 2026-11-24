@@ -18,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
     private static final String CHANNEL_ID = "canal_ies_joan_coromines";
     private static final int NOTIFICATION_ID = 100;
 

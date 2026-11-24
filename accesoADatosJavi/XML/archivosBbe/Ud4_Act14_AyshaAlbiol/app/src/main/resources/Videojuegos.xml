@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<videojuegos>
+
+    <videojuego>
+        <titulo>Undertale</titulo>
+        <anio>2015</anio>
+        <desarrollador>Toby Fox</desarrollador>
+        <genero>Rol</genero>
+        <plataformas>
+            <plataforma>PC</plataforma>
+            <plataforma>Nintendo Switch</plataforma>
+            <plataforma>PlayStation</plataforma>
+            <plataforma>Xbox</plataforma>
+        </plataformas>
+    </videojuego>
+
+    <videojuego>
+        <titulo>OMORI</titulo>
+        <anio>2020</anio>
+        <desarrollador>OMOCAT</desarrollador>
+        <genero>Rol psicológico</genero>
+        <plataformas>
+            <plataforma>PC</plataforma>
+            <plataforma>Nintendo Switch</plataforma>
+            <plataforma>PlayStation</plataforma>
+            <plataforma>Xbox</plataforma>
+        </plataformas>
+    </videojuego>
+
+    <videojuego>
+        <titulo>Project Zero II: Crimson Butterfly</titulo>
+        <anio>2003</anio>
+        <desarrollador>Tecmo</desarrollador>
+        <genero>Terror</genero>
+        <plataformas>
+            <plataforma>PlayStation 2</plataforma>
+            <plataforma>Xbox</plataforma>
+        </plataformas>
+    </videojuego>
+
+    <videojuego>
+        <titulo>Final Fantasy XIII</titulo>
+        <anio>2009</anio>
+        <desarrollador>Square Enix</desarrollador>
+        <genero>Rol</genero>
+        <plataformas>
+            <plataforma>PlayStation 3</plataforma>
+            <plataforma>Xbox 360</plataforma>
+            <plataforma>PC</plataforma>
+        </plataformas>
+    </videojuego>
+
+    <videojuego>
+        <titulo>The Last of Us</titulo>
+        <anio>2013</anio>
+        <desarrollador>Naughty Dog</desarrollador>
+        <genero>Acción y aventura</genero>
+        <plataformas>
+            <plataforma>PlayStation 3</plataforma>
+            <plataforma>PlayStation 4</plataforma>
+            <plataforma>PC</plataforma>
+        </plataformas>
+    </videojuego>
+
+</videojuegos>
+

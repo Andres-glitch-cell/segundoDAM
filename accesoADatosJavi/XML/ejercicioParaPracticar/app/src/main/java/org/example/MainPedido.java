@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 
 public class MainPedido {
 
@@ -22,12 +22,10 @@ public class MainPedido {
             Pedido pedidoOriginal = new Pedido(2001, "2026-11-17", "Laura Gómez", listaItems);
             JAXBContext contextoClase = JAXBContext.newInstance(Pedido.class);
             Marshaller serielizacion = contextoClase.createMarshaller();
-
             serielizacion.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             serielizacion.setProperty(Marshaller.JAXB_FRAGMENT, true);
             serielizacion.marshal((pedidoOriginal), archivoXML);
             serielizacion.marshal(pedidoOriginal, System.out);
-            
             System.out.println();
             System.out.println("\n2. Leyendo archivo XML a Obvjeto Java");
             Unmarshaller deserielizacion = contextoClase.createUnmarshaller();
