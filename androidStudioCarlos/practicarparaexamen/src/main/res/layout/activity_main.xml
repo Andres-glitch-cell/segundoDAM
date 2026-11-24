@@ -60,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Elegir Hora:">
+
     </Button>
 
     <TextView
@@ -70,7 +71,13 @@
         android:text="Hora seleccionada: ninguna"
         android:textSize="18sp">
 
-
     </TextView>
+
+    <Button
+        android:id="@+id/btnNotificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notificación IES Joan Coromines">
+    </Button>
 
 </LinearLayout>

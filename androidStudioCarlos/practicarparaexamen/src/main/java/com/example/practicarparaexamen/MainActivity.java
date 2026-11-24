@@ -1,8 +1,12 @@
 package com.example.practicarparaexamen;
 
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -118,6 +122,25 @@ public class MainActivity extends AppCompatActivity {
                         horaActual, minutoActual, true
                 );
                 timerPicker.show();
+            }
+        });
+
+        Button btnNotificacion = findViewById(R.id.btnNotificacion);
+        btnNotificacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationManager notificator = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                String canalID = "canal_IES";
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    NotificationChannel canalDeNotificacion = new NotificationChannel(
+                            canalID, "Notificación IES Joan Coromines", NotificationManager.IMPORTANCE_DEFAULT
+                    );
+                    notificator.createNotificationChannel(canalDeNotificacion);
+                }
+
+                Intent abrirPaginaGVA = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.gva.es"));
+                startActivity(abrirPaginaGVA);
             }
         });
     }

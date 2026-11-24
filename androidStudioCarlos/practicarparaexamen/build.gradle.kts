@@ -1,5 +1,21 @@
-﻿plugins {
-id("com.android.application") version "8.13.2"
+﻿import java.io.File
+
+// Auto-detect Android SDK path across Windows and Linux environments
+val localPropsFile = rootProject.file("local.properties")
+val validSdk = listOf(
+    "C:/Android/Sdk",
+    "C:/Users/Andrés/AppData/Local/Android/Sdk",
+    "/home/andfersal/Android/Sdk",
+    System.getenv("ANDROID_HOME") ?: "",
+    System.getenv("ANDROID_SDK_ROOT") ?: ""
+).firstOrNull { it.isNotBlank() && File(it).exists() }
+
+if (validSdk != null && (!localPropsFile.exists() || !localPropsFile.readText().contains(validSdk))) {
+    localPropsFile.writeText("sdk.dir=${validSdk.replace("\\", "/")}\n")
+}
+
+plugins {
+id("com.android.application") version "9.5.2"
 }
 
 android {

@@ -1,1 +1,19 @@
-/build
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Gradle & Build
+.gradle/
+/build/
+
+# Local configuration file (SDK path)
+local.properties
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
