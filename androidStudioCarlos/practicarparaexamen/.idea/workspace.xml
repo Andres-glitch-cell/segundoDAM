@@ -5,6 +5,11 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://C:/Android/Sdk/platforms/android-36/data/res/layout/simple_list_item_1.xml">
+        <config>
+          <theme>@style/Theme.AndroidStudioCarlos</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
         <config>
           <theme>@style/Theme.AndroidStudioCarlos</theme>
@@ -16,22 +21,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f587ac49-59b7-48ed-957b-be14bd672b50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../UD02_MiAgenda/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/build.gradle.kts.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../UD02_MiAgenda/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/java/com/example/ud02_miagenda/CrearTareaActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/drawable/rounded_badge.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/drawable/rounded_button.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/drawable/rounded_button_gray.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/drawable/rounded_button_secondary.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/drawable/rounded_edittext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/layout/activity_crear_tarea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UD02_MiAgenda/src/main/res/menu/menu_principal.xml" beforeDir="false" />
+    <list default="true" id="f587ac49-59b7-48ed-957b-be14bd672b50" name="Changes" comment="caso de Repaso Carlos">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/practicarparaexamen/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/practicarparaexamen/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +35,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=/home/andfersal/.android/avd/Medium_Phone.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\Andrés\.android\avd\Medium_Phone.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -172,18 +166,22 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="caso de Repaso Carlos" />
+    <option name="LAST_COMMIT_MESSAGE" value="caso de Repaso Carlos" />
+  </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.example.practicarparaexamen">
           <value>
-            <CheckInfo lastCheckTimestamp="1795543797647" />
+            <CheckInfo lastCheckTimestamp="1795647523277" />
           </value>
         </entry>
         <entry />
         <entry key="com.example.practicarparaexamen.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1795543797647" />
+            <CheckInfo lastCheckTimestamp="1795647523269" />
           </value>
         </entry>
       </map>
