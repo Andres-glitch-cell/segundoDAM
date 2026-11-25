@@ -1,15 +1,17 @@
-﻿plugins {
-    id("com.android.application") version "8.8.0"
+plugins {
+    alias(libs.plugins.android.application)
 }
 
 android {
     namespace = "com.example.ud02_miagenda"
-    compileSdk = 34
+    compileSdk {
+        version = release(37)
+    }
 
     defaultConfig {
         applicationId = "com.example.ud02_miagenda"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -18,7 +20,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            optimization {
+                enable = true
+                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+            }
         }
     }
     compileOptions {
@@ -28,13 +33,11 @@ android {
 }
 
 dependencies {
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.22"))
-    implementation("androidx.activity:activity-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
 }
-
