@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Opción con SubMenu -->
+    <item android:id="@+id/categorias" android:title="Categorías">
+        <menu>
+            <item android:id="@+id/estudios" android:title="Estudios" />
+            <item android:id="@+id/trabajo"  android:title="Trabajo" />
+            <item android:id="@+id/personal" android:title="Personal" />
+            <item android:id="@+id/otros"    android:title="Otros" />
+        </menu>
+    </item>
+
+    <!-- Opción normal -->
+    <item android:id="@+id/vaciar" android:title="Vaciar agenda" />
+    <item android:id="@+id/acerca" android:title="Acerca de" />
+</menu>

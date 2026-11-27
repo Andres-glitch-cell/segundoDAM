@@ -2,6 +2,7 @@ package com.example.practicarparaexamen;
 
 // Importaciones Android
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,6 +10,8 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -19,10 +22,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
 
@@ -32,17 +31,55 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btnMostrarDialogo;
     private TextView tvResultado;
 
     // ==========================================
     // 2. MÉTODO ONCREATE
     // ==========================================
+    private int contador = 0;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.estudios) {
+            Toast.makeText(this, "Categoría: Estudios", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.trabajo) {
+            Toast.makeText(this, "Categoría: Trabajo", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.personal) {
+            Toast.makeText(this, "Categoría: Personal", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.otros) {
+            Toast.makeText(this, "Categoría: Otros", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.vaciar) {
+            Toast.makeText(this, "Vaciar agenda", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.acerca) {
+            Toast.makeText(this, "Acerca de", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
+
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnMostrarDialogo = findViewById(R.id.btnMostrarDialogo);
+        btnMostrarDialogo.setOnClickListener(v -> {
+            mostrarDialogo();
+        });
 
 
         // ==========================================
@@ -66,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // ==========================================
+        // EJERCICIO 1. FIN SALUDO
+        // ==========================================
 
         // ==========================================
         // EJERCICIO 2. BORRAR CON ALERTDIALOG
@@ -97,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // ==========================================
+        // EJERCICIO 2. FIN DE BORRAR CON ALERTDIALOG
+        // ==========================================
+
+        // ==========================================
         // EJERCICIO 3. SELECTOR DE FECHA
         // ==========================================
 
@@ -113,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 int diaActual = calendario.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog datePicker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         int mesReal = month + 1;
@@ -124,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
                 datePicker.show();
             }
         });
+
+        // ==========================================
+        // EJERCICIO 3. FIN DE SELECTOR DE FECHA
+        // ==========================================
 
         // ==========================================
         // EJERCICIO 4. SELECTOR DE HORA
@@ -152,6 +202,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // ==========================================
+        // EJERCICIO 4. FIN DE SELECTOR DE HORA
+        // ==========================================
+
+        // ==========================================
         // EJERCICIO 5. APERTURA DE PÁGINA WEB
         // ==========================================
 
@@ -166,20 +220,54 @@ public class MainActivity extends AppCompatActivity {
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                     NotificationChannel canalDeNotificacion = new NotificationChannel(canalID, "Notificación IES Joan Coromines", NotificationManager.IMPORTANCE_DEFAULT);
-
                     notificator.createNotificationChannel(canalDeNotificacion);
                 }
-
                 Intent abrirPaginaGVA = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://portal.edu.gva.es/iesjoancoromines/es/centro/"));
 
                 startActivity(abrirPaginaGVA);
             }
         });
+        // ==========================================
+        // EJERCICIO 5. FIN DE LA APERTURA DE PÁGINA WEB
+        // ==========================================
 
         // ==========================================
-        // RESULTADO DEL MENÚ
+        // EJERCICIO 6. CONTADOR DE CLICKS
+        // ==========================================
+        Button btnContador = findViewById(R.id.btnContador);
+        TextView tvContador = findViewById(R.id.tvContador);
+        btnContador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                contador++;
+                tvContador.setText("Contador de clicks: " + contador);
+            }
+        });
+        // ==========================================
+        // EJERCICIO 6. FIN DE CONTADOR DE CLICKS
         // ==========================================
 
-        tvResultado = findViewById(R.id.tvResultado);
     }
+
+    private void mostrarDialogo() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Confirmación?");
+        alertDialogBuilder.setMessage("Que acción quieres hacer?");
+
+        alertDialogBuilder.setPositiveButton("Aceptar", (dialog, which) -> {
+            Toast.makeText(this, "Has pulsado Aceptar", Toast.LENGTH_SHORT).show();
+        });
+
+        alertDialogBuilder.setNegativeButton("Cancelar", (dialog, which) -> {
+            Toast.makeText(this, "Has pulsado Cancelar", Toast.LENGTH_SHORT).show();
+        });
+
+        alertDialogBuilder.setNeutralButton("Más tarde", (dialog, which) -> {
+            Toast.makeText(this, "Has pulsado mas tarde", Toast.LENGTH_SHORT).show();
+        });
+
+        alertDialogBuilder.show();
+    }
+
+
 }

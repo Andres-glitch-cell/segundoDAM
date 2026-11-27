@@ -86,4 +86,36 @@
         android:text="Resultado del menú"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/tvContador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Contador: 0"
+        android:textSize="22sp">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/btnContador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pulsar">
+
+    </Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/btnMostrarDialogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mostrar diálogo" />
+    </LinearLayout>
+
 </LinearLayout>
